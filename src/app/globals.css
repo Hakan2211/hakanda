@@ -36,6 +36,25 @@
   --radius: 0.5rem;
 }
 
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+}
+
 .dark {
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
