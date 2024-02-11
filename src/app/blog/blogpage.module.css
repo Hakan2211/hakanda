@@ -1,0 +1,11 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 880px) 1fr;
+  column-gap: 16px;
+  row-gap: 96px;
+}
+
+.articles_wrapper {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
