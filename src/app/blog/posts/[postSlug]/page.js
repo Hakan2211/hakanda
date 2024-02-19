@@ -8,6 +8,7 @@ import Link from 'next/link';
 import ArrowLeft from '@/components/icons/arrow-left';
 import Header from '@/components/header/header';
 import TableOfContents from '@/components/sidenav/sidenav';
+import { sora } from '@/components/fonts/fonts';
 
 export async function generateMetadata({ params }) {
   const { frontmatter } = await loadBlogPost(params.postSlug);
@@ -35,19 +36,21 @@ async function BlogPost({ params }) {
                 href={'/blog'}
               >
                 <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />
-                <span>Home</span>
+                <span className="">All articles</span>
               </Link>
 
-              <h1 className="text-4xl text-balance w-[100%] leading-relaxed ">
+              <h1
+                className={`${sora.className} text-3xl text-balance w-[100%] leading-relaxed text-slate-900 `}
+              >
                 {frontmatter.title}
               </h1>
               <div>
-                <p className="text-normal">
+                <p className="text-normal text-gray-500">
                   {format(Date.parse(frontmatter.publishedOn), 'MMMM dd, yyyy')}
                 </p>
               </div>
             </div>
-            <div className="py-6 flex flex-col gap-4 leading-[1.9] tracking-{0.3px}">
+            <div className="py-6 flex flex-col gap-4 text-slate-800 leading-[1.9] tracking-{0.3px}">
               <MDXRemote source={content} components={COMPONENT_MAP} />
             </div>
           </div>

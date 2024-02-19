@@ -5,7 +5,7 @@ import styles from './header.module.css';
 import Logo from './logo';
 
 import { useEffect, useState } from 'react';
-import { set } from 'date-fns';
+import { sora } from '../fonts/fonts';
 
 function Header({ title }) {
   const [isShrunk, setIsShrunk] = useState(false);
@@ -43,13 +43,15 @@ function Header({ title }) {
             </span>
           </div>
 
-          <div className=" w-[100%] h-[100%]  backdrop-blur-md flex items-center justify-center">
+          <div className="w-[100%] h-[100%] backdrop-blur-lg flex items-center justify-center">
             <h1
               className={`${
                 showTitle
                   ? styles.titleTransitionVisible
                   : styles.titleTransition
-              } text-2xl font-bold`}
+              } ${
+                sora.className
+              } text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-500 text-transparent bg-clip-text`}
             >
               {title}
             </h1>

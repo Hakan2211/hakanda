@@ -5,6 +5,12 @@
   height: inherit;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    backdrop-filter: blur(8px);
+  }
+}
+
 .header_wrapper {
   grid-column-start: 2;
   grid-column-end: 3;
