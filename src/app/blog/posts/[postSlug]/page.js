@@ -7,6 +7,7 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import ArrowLeft from '@/components/icons/arrow-left';
 import Header from '@/components/header/header';
+import TableOfContents from '@/components/sidenav/sidenav';
 
 export async function generateMetadata({ params }) {
   const { frontmatter } = await loadBlogPost(params.postSlug);
@@ -17,11 +18,14 @@ export async function generateMetadata({ params }) {
 }
 
 async function BlogPost({ params }) {
-  const { frontmatter, content } = await loadBlogPost(params.postSlug);
+  const { frontmatter, content, headings } = await loadBlogPost(
+    params.postSlug
+  );
 
   return (
     <>
       <Header title={frontmatter.title} />
+      <TableOfContents headings={headings} />
       <article>
         <div className={styles.wrapper}>
           <div className={styles.articles_wrapper}>

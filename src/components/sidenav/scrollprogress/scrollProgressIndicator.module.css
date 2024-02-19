@@ -1,0 +1,43 @@
+.scroll_progress_container {
+  width: 2px;
+  opacity: 0.7;
+  transition: height 0.3s ease-out;
+  height: 400px;
+  background-color: #e5e7eb;
+  border-radius: 99999px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.animate {
+  visibility: visible;
+  opacity: 1;
+}
+
+.scroll_progress_fill {
+  width: 100%;
+  background-color: #2563eb;
+  transition: height 0.3s ease-out;
+  border-radius: 99999px;
+}
+
+@media (max-width: 768px) {
+  .scroll_progress_container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #e5e7eb;
+    opacity: 0.7;
+    transition: height 0.3s ease-out;
+  }
+
+  .scroll_progress_fill {
+    background-color: #2563eb;
+    transition: height 0.3s ease-out;
+    height: 100%;
+  }
+}

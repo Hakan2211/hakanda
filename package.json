@@ -16,13 +16,19 @@
     "date-fns": "^3.3.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.323.0",
+    "mdast-util-to-string": "^4.0.0",
     "next": "14.0.4",
     "next-mdx-remote": "^4.4.1",
     "react": "^18",
     "react-dom": "^18",
+    "rehype-slug": "^6.0.0",
+    "remark": "^15.0.1",
+    "remark-mdx": "^3.0.1",
+    "remark-slug": "^7.0.1",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.161.0"
+    "three": "^0.161.0",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
