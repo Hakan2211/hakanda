@@ -29,21 +29,22 @@ function Header({ title }) {
     >
       <div className={styles.wrapper}>
         <div
-          className={`${styles.header_wrapper} flex items-center justify-between gap-1`}
+          className={`${styles.header_wrapper} relative flex items-center justify-between gap-1`}
         >
+          <div className="absolute top-0 left-0 w-[100%] h-[100%] backdrop-blur-lg -z-1 "></div>
           <div>
             <span>
               <Link href={'/'}>
                 <Logo
                   className={`${
                     isShrunk ? 'w-12 h-12' : 'w-20 h-20'
-                  } transition-all duration-300 ease-in-out`}
+                  } transition-all duration-300 ease-in-out relative z-10`}
                 />
               </Link>
             </span>
           </div>
 
-          <div className="w-[100%] h-[100%] backdrop-blur-lg flex items-center justify-center">
+          <div className="w-[100%] h-[100%] z-10 relative flex items-center justify-center">
             <h1
               className={`${
                 showTitle
@@ -57,7 +58,7 @@ function Header({ title }) {
             </h1>
           </div>
 
-          <div>Links</div>
+          <div className="relative z-10">Links</div>
         </div>
       </div>
     </header>

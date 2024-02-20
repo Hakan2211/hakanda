@@ -2,6 +2,7 @@ import { getBlogPostList } from '@/helpers/file-helpers';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import styles from './blogpage.module.css';
+import BlogIntro from '@/components/blogintroduction/blogintroduction';
 
 let year = 0;
 async function Blog() {
@@ -9,6 +10,7 @@ async function Blog() {
 
   return (
     <div className={styles.wrapper}>
+      <BlogIntro />
       <section className={styles.articles_wrapper}>
         <div className="flex flex-col gap-6">
           <h2 className="text-2xl text-slate-800">All articles</h2>
