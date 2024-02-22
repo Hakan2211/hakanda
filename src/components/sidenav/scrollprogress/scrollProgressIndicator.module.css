@@ -18,7 +18,7 @@
 
 .scroll_progress_fill {
   width: 100%;
-  background-color: #0f172a;
+  background-color: #ca8a04;
   transition: height 0.3s ease-out;
   border-radius: 99999px;
 }
@@ -36,7 +36,7 @@
   }
 
   .scroll_progress_fill {
-    background-color: #0f172a;
+    background-color: #ca8a04;
     transition: height 0.3s ease-out;
     height: 100%;
   }

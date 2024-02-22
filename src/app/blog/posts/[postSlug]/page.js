@@ -32,7 +32,7 @@ async function BlogPost({ params }) {
           <div className={styles.articles_wrapper}>
             <div className="flex flex-col gap-4 items-start mb-6">
               <Link
-                className="flex items-center text-sm gap-1 hover:text-blue-600 group"
+                className="flex items-center text-sm gap-1 hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
                 href={'/blog'}
               >
                 <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />

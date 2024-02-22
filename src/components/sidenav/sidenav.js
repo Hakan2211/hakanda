@@ -28,19 +28,23 @@ function TableOfContents({ headings }) {
       >
         {/* <div>{headings.length ? <h3>Table of Contents</h3> : null}</div> */}
 
-        <nav className=" ml-[1.4rem] mb-[1.4rem] max-w-[200px]">
+        <nav className=" ml-[1.4rem] mb-[1.4rem] max-w-[220px] rounded-lg">
           <ul>
             {headings.map((heading, index) => (
               <li
                 key={index}
                 className={`${styles.tocItem} ${
                   isVisible ? styles.fadeIn : ''
-                }`}
+                } hover:bg-slate-100 hover:text-yellow-600 rounded-lg transition-colors duration-300 ease-in-out`}
                 style={{
                   marginLeft: `${heading.depth - 2}em`,
                   lineHeight: 1.5,
                   letterSpacing: '0.3px',
-                  marginBottom: `${heading.depth === 2 ? '20px' : '16px'}`,
+                  //marginBottom: `${heading.depth === 2 ? '20px' : '16px'}`,
+                  paddingTop: `${heading.depth === 2 ? '10px' : '8px'}`,
+                  paddingBottom: `${heading.depth === 2 ? '10px' : '8px'}`,
+                  paddingLeft: `${heading.depth === 2 ? '10px' : '8px'}`,
+
                   animationDelay: `${0.5 + index * 0.5}s`,
                 }}
               >

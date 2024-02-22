@@ -2,6 +2,7 @@ import React from 'react';
 import TwitterIcon from '../icons/twitterIcon';
 import ArrowUpRight from '../icons/arrow-up-right';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 function BlogIntro() {
   return (
@@ -49,18 +50,26 @@ function BlogIntro() {
       <div className="flex gap-4">
         <div className="relative group">
           <div className="w-20 h-6 absolute left-4 bg-yellow-400 filter blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out "></div>
-          <Button className="relative z-10 bg-neutral-100 text-yellow-600 hover:bg-neutral-200 transition-bg duration-300 ease-in-out ">
-            <span>About me</span>
-            <ArrowUpRight className="ml-2 w-4 h-4 " />
+          <Button className="relative z-10 bg-slate-100 text-yellow-600 hover:bg-slate-200 transition-bg duration-300 ease-in-out ">
+            <Link href={'/about'} className="flex items-center">
+              <span>About me</span>
+              <ArrowUpRight className="ml-2 w-4 h-4 " />
+            </Link>
           </Button>
         </div>
 
         <div>
           <div className="relative group">
             <div className="w-20 h-6 absolute left-4 bg-yellow-400 filter blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out "></div>
-            <Button className="relative z-10 bg-neutral-100 text-yellow-600 hover:bg-neutral-200 transition-bg duration-300 ease-in-out ">
-              <span>@hakanbilgo</span>
-              <TwitterIcon className="ml-2 w-4 h-4 " />
+            <Button className="relative z-10 bg-slate-100 text-yellow-600 hover:bg-slate-200 transition-bg duration-300 ease-in-out ">
+              <a
+                className="flex items-center"
+                href="https://twitter.com/hakanbilgo"
+                target="blank"
+              >
+                <span>@hakanbilgo</span>
+                <TwitterIcon className="ml-2 w-4 h-4 " />
+              </a>
             </Button>
           </div>
         </div>

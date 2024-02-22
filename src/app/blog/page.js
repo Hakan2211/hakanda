@@ -37,7 +37,7 @@ async function Blog() {
                       className="rounded-lg"
                       href={`/blog/posts/${post.slug}`}
                     >
-                      <div className="flex items-start justify-start py-4 px-2 -ml-2 w-fit md:w-[45rem] rounded-lg bg-transparent text-gray-700 hover:text-blue-600 hover:bg-blue-100 duration-500   ">
+                      <div className="flex items-start justify-start py-4 px-2 -ml-2 w-fit md:w-[45rem] rounded-lg bg-transparent text-gray-700 hover:text-yellow-600 hover:bg-slate-100 duration-500   ">
                         <p className="min-w-14 mr-8 mt-[2px] text-sm text-gray-500">
                           {format(
                             new Date(Date.parse(post.publishedOn)),
