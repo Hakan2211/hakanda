@@ -1,7 +1,15 @@
-import React from 'react';
+import Header from '@/components/header/header';
+import styles from './about.module.css';
 
 function About() {
-  return <div>About</div>;
+  return (
+    <>
+      <Header />
+      <div className={styles.wrapper}>
+        <div className={styles.about_section}>About</div>
+      </div>
+    </>
+  );
 }
 
 export default About;

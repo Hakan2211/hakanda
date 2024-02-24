@@ -31,7 +31,7 @@ function Header({ title }) {
         <div
           className={`${styles.header_wrapper} relative flex items-center justify-between gap-1`}
         >
-          <div className="absolute top-0 left-0 w-[100%] h-[100%] backdrop-blur-lg -z-1 "></div>
+          <div className="absolute top-0 left-0 w-[100%] h-[100%]  backdrop-blur-lg -z-1 "></div>
           <div>
             <span>
               <Link href={'/'}>
