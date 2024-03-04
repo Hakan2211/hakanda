@@ -45,12 +45,12 @@ async function BlogPost({ params }) {
                 {frontmatter.title}
               </h1>
               <div>
-                <p className="text-normal text-gray-500">
+                <p className="text-sm text-gray-500">
                   {format(Date.parse(frontmatter.publishedOn), 'MMMM dd, yyyy')}
                 </p>
               </div>
             </div>
-            <div className="py-6 flex flex-col gap-4 text-slate-800 leading-[1.9] tracking-{0.3px}">
+            <div className="py-6 flex flex-col gap-4 text-slate-800 leading-[1.9] tracking-[0.3px]">
               <MDXRemote source={content} components={COMPONENT_MAP} />
             </div>
           </div>
