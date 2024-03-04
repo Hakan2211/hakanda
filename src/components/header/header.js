@@ -7,7 +7,7 @@ import Logo from './logo';
 import { useEffect, useState } from 'react';
 import { sora } from '../fonts/fonts';
 
-function Header({ title }) {
+function Header({ title, className }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
 
@@ -25,9 +25,9 @@ function Header({ title }) {
     <header
       className={`${
         isShrunk ? 'h-[60px]' : `h-[120px]`
-      } fixed top-0 z-10 w-[100%] border border-transparent border-solid transition-height duration-300 ease-in-out`}
+      }  fixed top-0 z-10 w-[100%] border border-transparent border-solid transition-height duration-300 ease-in-out`}
     >
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} ${className}`}>
         <div
           className={`${styles.header_wrapper} relative flex items-center justify-between gap-1`}
         >

@@ -21,8 +21,9 @@ function About() {
   const birthday = parse('22 Nov 1992', 'dd MMM yyyy', new Date());
   const age = differenceInYears(new Date(), birthday);
   return (
-    <>
-      <Header />
+    <main className="bg-slate-50">
+      <div className="h-[150px]"></div>
+      <Header className="bg-slate-50" />
       <div className={styles.wrapper}>
         <div className={styles.about_section}>
           <Link
@@ -55,7 +56,7 @@ function About() {
           <Timeline />
         </div>
       </div>
-    </>
+    </main>
   );
 }
 

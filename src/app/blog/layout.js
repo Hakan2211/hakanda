@@ -1,4 +1,5 @@
 import Header from '@/components/header/header';
+import Footer from '@/components/footer/footer';
 
 function Layout({ children }) {
   return (
@@ -6,7 +7,7 @@ function Layout({ children }) {
       <Header />
       <div className="h-[150px]"></div>
       {children}
-      <footer>Bye</footer>
+      <Footer />
     </main>
   );
 }

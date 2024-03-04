@@ -1,9 +1,10 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 880px) 1fr;
-  margin-top: 240px;
+  margin-top: 120px;
   column-gap: 16px;
   row-gap: 96px;
+  /* background-color: #f8fafc; */
 }
 
 .about_section {

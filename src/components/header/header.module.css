@@ -3,6 +3,7 @@
   grid-template-columns: 1fr minmax(auto, 880px) 1fr;
   column-gap: 16px;
   height: inherit;
+  /* background-color: #f8fafc; */
 }
 
 @media (max-width: 768px) {
