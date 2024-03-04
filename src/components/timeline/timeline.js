@@ -102,7 +102,7 @@ function Timeline() {
           learner for life, mirrors my own desire to remain a student of the
           world, ever curious, ever evolving.
         </div>
-        <div>
+        <div className="mb-6">
           In weaving this narrative, I've aimed to capture the essence of my
           journey from my childhood marked by simplicity and imagination,
           through trials of education and professional exploration to a present
