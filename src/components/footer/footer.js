@@ -20,7 +20,7 @@ function Footer() {
           >
             <div className="flex flex-col gap-4">
               <Link
-                href={'/blog'}
+                href={'/articles'}
                 className="flex gap-1 items-center group w-16 "
               >
                 <BlogIcon className="w-6 h-6 text-slate-400 group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
