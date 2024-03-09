@@ -6,6 +6,8 @@ import Logo from './logo';
 
 import { useEffect, useState } from 'react';
 import { sora } from '../fonts/fonts';
+import MoonIcon from '../icons/moonIcon';
+import SunIcon from '../icons/sunIcon';
 
 function Header({ title, className }) {
   const [isShrunk, setIsShrunk] = useState(false);
@@ -58,7 +60,10 @@ function Header({ title, className }) {
             </h1>
           </div>
 
-          <div className="relative z-10">Links</div>
+          <div className="relative z-10">
+            <MoonIcon />
+            <SunIcon />
+          </div>
         </div>
       </div>
     </header>
