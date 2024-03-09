@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import { format, parse, differenceInYears } from 'date-fns';
 import Timeline from '@/components/timeline/timeline';
 import Footer from '@/components/footer/footer';
+import QuickFacts from '@/components/quickfacts/quickfacts';
 
 const ImageCanvas = dynamic(
   () => import('@/components/imageCanvas/imageCanvas'),
@@ -55,6 +56,7 @@ function About() {
             <ImageCanvas />
           </div>
           <Timeline />
+          <QuickFacts />
         </div>
       </div>
       <Footer />
