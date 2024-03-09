@@ -12,7 +12,7 @@ function Footer() {
   const date = new Date();
   let year = date.getFullYear();
   return (
-    <div className="border-t-[1px] border-slate-200">
+    <div className="border-t-[1px] border-slate-200 mt-10">
       <div className={styles.wrapper}>
         <div className={styles.footer_main}>
           <div
