@@ -30,6 +30,7 @@
     "remark": "^15.0.1",
     "remark-mdx": "^3.0.1",
     "remark-slug": "^7.0.1",
+    "rss": "^1.2.2",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.161.0",

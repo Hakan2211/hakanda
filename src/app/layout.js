@@ -1,10 +1,10 @@
 import './globals.css';
-import { BLOG_TITLE } from '@/lib/constants';
+import { BLOG_TITLE, BLOG_DESCRIPTION } from '@/lib/constants';
 import { GeistSans } from 'geist/font/sans';
 
 export const metadata = {
   title: { BLOG_TITLE },
-  description: "Hakan Bilgic's personal blog.",
+  description: { BLOG_DESCRIPTION },
 };
 
 export default function RootLayout({ children }) {

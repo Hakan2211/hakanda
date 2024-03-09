@@ -28,15 +28,15 @@ function Footer() {
                   Blog
                 </span>
               </Link>
-              <Link
-                href={'/rss'}
+              <a
+                href={'/rss.xml'}
                 className="flex gap-1 items-center  group w-16"
               >
                 <RSSIcon className="w-6 h-6 text-slate-400  group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   RSS
                 </span>
-              </Link>
+              </a>
             </div>
 
             <div className="flex flex-col gap-4">
