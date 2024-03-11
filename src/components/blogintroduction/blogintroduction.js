@@ -7,7 +7,7 @@ import Link from 'next/link';
 function BlogIntro() {
   return (
     <div className="flex flex-col gap-6 col-start-2 col-end-3 ">
-      <div className="leading-relaxed tracking-wider text-slate-800">
+      <div className="leading-relaxed tracking-wider text-[var(--text-color-primary-800)]">
         <h1 className="font-medium">
           Welcome! I am{' '}
           <span className="font-semibold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-yellow-800 to-yellow-400">
@@ -30,7 +30,7 @@ function BlogIntro() {
           , seeking to understand the mechanisms that underlie our thoughts,
           actions and the broader economic and social systems.
         </h1>
-        <h2 className="font-normal text-slate-600">
+        <h2 className="font-normal text-[var(--text-color-primary-600)]">
           Reflecting on the nature of our explorations, Friedrich Nietzsche's
           words resonate deeply:{' '}
           <span className="italic underline-offset-8 underline">
@@ -41,7 +41,7 @@ function BlogIntro() {
           acknowledging the chaos that fuels our quest for clarity and the
           structures we construct in response.
         </h2>
-        <h2 className="font-normal text-slate-600">
+        <h2 className="font-normal text-[var(--text-color-primary-600)]">
           Join me in this exploration, where we strive to discern meaning amidst
           the tumult, embracing the elegance of structure as we navigate through
           the uncertainties of life.
@@ -50,7 +50,7 @@ function BlogIntro() {
       <div className="flex gap-4">
         <div className="relative group">
           <div className="w-20 h-6 absolute left-4 bg-yellow-400 filter blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out "></div>
-          <Button className="relative z-10 bg-slate-100 text-yellow-600 hover:bg-slate-200 transition-bg duration-300 ease-in-out ">
+          <Button className="relative z-10 bg-[var(--text-color-primary-100)] text-yellow-600 hover:bg-[var(--text-color-primary-200)] transition-bg duration-300 ease-in-out ">
             <Link href={'/about'} className="flex items-center">
               <span>About me</span>
               <ArrowUpRight className="ml-2 w-4 h-4 " />
@@ -61,7 +61,7 @@ function BlogIntro() {
         <div>
           <div className="relative group">
             <div className="w-20 h-6 absolute left-4 bg-yellow-400 filter blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out "></div>
-            <Button className="relative z-10 bg-slate-100 text-yellow-600 hover:bg-slate-200 transition-bg duration-300 ease-in-out ">
+            <Button className="relative z-10 bg-[var(--text-color-primary-100)] text-yellow-600 hover:bg-[var(--text-color-primary-200)] transition-bg duration-300 ease-in-out ">
               <a
                 className="flex items-center"
                 href="https://twitter.com/hakanbilgo"

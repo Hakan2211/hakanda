@@ -12,18 +12,18 @@ function Footer() {
   const date = new Date();
   let year = date.getFullYear();
   return (
-    <div className="border-t-[1px] border-slate-200 mt-10">
+    <div className="border-t-[1px] border-[var(--text-color-primary-200)] mt-10">
       <div className={styles.wrapper}>
         <div className={styles.footer_main}>
           <div
-            className={`${styles.footer_links} text-slate-400 text-sm py-2  `}
+            className={`${styles.footer_links} text-[var(--text-color-primary-400)] text-sm py-2  `}
           >
             <div className="flex flex-col gap-4">
               <Link
                 href={'/articles'}
                 className="flex gap-1 items-center group w-16 "
               >
-                <BlogIcon className="w-6 h-6 text-slate-400 group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
+                <BlogIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Blog
                 </span>
@@ -32,7 +32,7 @@ function Footer() {
                 href={'/rss.xml'}
                 className="flex gap-1 items-center  group w-16"
               >
-                <RSSIcon className="w-6 h-6 text-slate-400  group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
+                <RSSIcon className="w-6 h-6 text-[var(--text-color-primary-400)]  group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   RSS
                 </span>
@@ -45,7 +45,7 @@ function Footer() {
                 target="_blank"
                 className="flex gap-1 items-center group w-20"
               >
-                <TwitterIcon className="w-6 h-6 text-slate-400 group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
+                <TwitterIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Twitter
                 </span>
@@ -55,7 +55,7 @@ function Footer() {
                 target="_blank"
                 className="flex gap-1 items-center hover:cursor-pointer group w-28 "
               >
-                <InstagramIcon className="w-6 h-6 text-slate-400 group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
+                <InstagramIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Instagram
                 </span>
@@ -67,13 +67,13 @@ function Footer() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=hbilgic1992@gmail.com"
                 className="flex gap-1 items-center hover:cursor-pointer w-24 group"
               >
-                <SendIcon className="w-6 h-6 text-slate-400 group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
+                <SendIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Contact
                 </span>
               </a>
               <div className="flex gap-1 items-center group w-28 hover:cursor-pointer relative ">
-                <MailIcon className="w-6 h-6 text-slate-400 group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
+                <MailIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Newsletter
                 </span>
@@ -89,7 +89,9 @@ function Footer() {
             </Link>
 
             <p className="mr-28">
-              &#169; {year}
+              <span className="text-[var(--text-color-primary-400)]">
+                &#169; {year}
+              </span>
               <span className="tracking-wider ml-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-800 to-yellow-400">
                 Hakan Bilgic
               </span>

@@ -20,6 +20,7 @@
     "geist": "^1.2.2",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
+    "js-cookie": "^3.0.5",
     "lucide-react": "^0.323.0",
     "mdast-util-to-string": "^4.0.0",
     "next": "14.0.4",

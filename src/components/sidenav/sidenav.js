@@ -35,7 +35,7 @@ function TableOfContents({ headings }) {
                 key={index}
                 className={`${styles.tocItem} ${
                   isVisible ? styles.fadeIn : ''
-                } hover:bg-slate-100 hover:text-yellow-600 rounded-lg transition-colors duration-300 ease-in-out`}
+                } hover:bg-[var(--text-color-primary-100)] text-[var(--text-color-primary-800)] hover:text-yellow-600 rounded-lg transition-colors duration-300 ease-in-out`}
                 style={{
                   marginLeft: `${heading.depth - 2}em`,
                   lineHeight: 1.5,

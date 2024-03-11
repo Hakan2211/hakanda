@@ -51,12 +51,12 @@ function ScrollProgress({ height, bgColor, fillColor }) {
     <div
       className={`${styles.scroll_progress_container} ${
         isVisible ? styles.animate : ''
-      }`}
+      } bg-[var(--scroll-container)] `}
     >
       <div
         // style={{ height: `${scrollProgress}%`, inlineStyles }}
         style={dynamicStyles}
-        className={`${styles.scroll_progress_fill}`}
+        className={`${styles.scroll_progress_fill} bg-[var(--scroll-fill)]`}
       ></div>
     </div>
   );

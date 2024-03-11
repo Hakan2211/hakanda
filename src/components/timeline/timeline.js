@@ -3,9 +3,9 @@ import timelinesvg1 from './timelinesvg1';
 
 function Timeline() {
   return (
-    <div className="mt-10 text-base leading-[1.9] tracking-[0.3px] text-slate-600">
+    <div className="mt-10 text-base leading-[1.9] tracking-[0.3px] text-[var(--text-color-primary-600)]">
       <div className="text-base  leading-[1.9] tracking-[0.3px]">
-        <div className="text-2xl py-6 tracking-wider  text-slate-700">
+        <div className="text-2xl py-6 tracking-wider  text-[var(--text-color-primary-700)]">
           <span className="text-yellow-600">1992:</span> The start of my journey
         </div>
         <div className="leading-relaxed tracking-wider">
@@ -19,7 +19,7 @@ function Timeline() {
       </div>
 
       <div>
-        <div className="text-2xl py-6 tracking-wider text-slate-700">
+        <div className="text-2xl py-6 tracking-wider text-[var(--text-color-primary-700)]">
           <span className="text-yellow-600">1997:</span> A childhood adventure
           to remember
         </div>
@@ -35,7 +35,7 @@ function Timeline() {
       </div>
 
       <div>
-        <div className="text-2xl py-6 tracking-wider text-slate-700">
+        <div className="text-2xl py-6 tracking-wider text-[var(--text-color-primary-700)]">
           <span className="text-yellow-600">2009:</span> Dreams versus reality
         </div>
         <div>
@@ -49,7 +49,7 @@ function Timeline() {
       </div>
 
       <div>
-        <div className="text-2xl py-6 tracking-wider text-slate-700  ">
+        <div className="text-2xl py-6 tracking-wider text-[var(--text-color-primary-700)]">
           <span className="text-yellow-600">2011 - 2014:</span> Apprenticeship
           insights
         </div>
@@ -63,7 +63,7 @@ function Timeline() {
       </div>
 
       <div>
-        <div className="text-2xl py-6 tracking-wider text-slate-700  ">
+        <div className="text-2xl py-6 tracking-wider text-[var(--text-color-primary-700)]">
           <span className="text-yellow-600">2014 - 2020:</span> University days:
           bridging fields
         </div>
@@ -78,7 +78,7 @@ function Timeline() {
       </div>
 
       <div>
-        <div className="text-2xl py-6 tracking-wider text-slate-700 ">
+        <div className="text-2xl py-6 tracking-wider text-[var(--text-color-primary-700)]">
           The power of stories
         </div>
         <div>
@@ -90,7 +90,7 @@ function Timeline() {
       </div>
 
       <div>
-        <div className="text-2xl py-6 tracking-wider text-slate-700  ">
+        <div className="text-2xl py-6 tracking-wider text-[var(--text-color-primary-700)]">
           Reflecting on the path walked and the road ahead
         </div>
         <div>

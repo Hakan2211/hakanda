@@ -23,20 +23,20 @@ function About() {
   const birthday = parse('22 Nov 1992', 'dd MMM yyyy', new Date());
   const age = differenceInYears(new Date(), birthday);
   return (
-    <main className="bg-slate-50">
+    <main className="bg-[var(--bg-color)]">
       <div className="h-[150px]"></div>
-      <Header className="bg-slate-50" />
+      <Header className="bg-[var(--bg-color)]" />
       <div className={styles.wrapper}>
         <div className={styles.about_section}>
           <Link
-            className="flex items-center text-sm gap-1 hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
+            className="flex items-center text-sm gap-1 text-[var(--text-color-primary-900)] hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
             href={'/articles'}
           >
             <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />
             <span className="">Articles</span>
           </Link>
           <div className="mt-10 mb-5">
-            <div className="text-xl text-slate-800 leading-relaxed tracking-wider">
+            <div className="text-xl text-[var(--text-color-primary-800)] leading-relaxed tracking-wider">
               <span className="text-3xl bg-clip-text text-transparent  bg-gradient-to-r from-emerald-800 to-emerald-400 ">
                 Bonjour, tout le monde!
               </span>{' '}
@@ -45,7 +45,7 @@ function About() {
                 You reached the section where you can get to know more about
                 myself and my journey.
               </p>
-              <p className="text-base text-slate-600 py-6 tracking-wider leading-relaxed">
+              <p className="text-base text-[var(--text-color-primary-600)] py-6 tracking-wider leading-relaxed">
                 Yes, I am the man on the picture below. It was shot in{' '}
                 {formattedDate} in Switzerland. Time flies, doesn't it? So, I am{' '}
                 {age} years old now and that is my story.

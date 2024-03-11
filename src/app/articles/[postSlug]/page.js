@@ -32,7 +32,7 @@ async function BlogPost({ params }) {
           <div className={styles.articles_wrapper}>
             <div className="flex flex-col gap-4 items-start mb-6">
               <Link
-                className="flex items-center text-sm gap-1 hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
+                className="flex items-center text-sm gap-1 text-[var(--text-color-primary-800)] hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
                 href={'/articles'}
               >
                 <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />
@@ -40,17 +40,17 @@ async function BlogPost({ params }) {
               </Link>
 
               <h1
-                className={`${sora.className} text-3xl text-balance w-[100%] leading-relaxed text-slate-900 `}
+                className={`${sora.className} text-3xl text-balance w-[100%] leading-relaxed text-[var(--text-color-primary-900)] `}
               >
                 {frontmatter.title}
               </h1>
               <div>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-[var(--text-color-secondary-500)]">
                   {format(Date.parse(frontmatter.publishedOn), 'MMMM dd, yyyy')}
                 </p>
               </div>
             </div>
-            <div className="py-6 flex flex-col gap-4 text-slate-800 leading-[1.9] tracking-[0.3px]">
+            <div className="py-6 flex flex-col gap-4 text-[var(--text-color-primary-800)] leading-[1.9] tracking-[0.3px]">
               <MDXRemote source={content} components={COMPONENT_MAP} />
             </div>
           </div>

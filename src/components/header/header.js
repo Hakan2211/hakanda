@@ -8,10 +8,36 @@ import { useEffect, useState } from 'react';
 import { sora } from '../fonts/fonts';
 import MoonIcon from '../icons/moonIcon';
 import SunIcon from '../icons/sunIcon';
+import clsx from 'clsx';
+import Cookies from 'js-cookie';
+import {
+  COLOR_THEME_COOKIE_NAME,
+  LIGHT_TOKENS,
+  DARK_TOKENS,
+} from '@/lib/constants';
 
 function Header({ title, className }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
+  const [theme, setTheme] = useState(
+    () => Cookies.get(COLOR_THEME_COOKIE_NAME) || 'light'
+  );
+
+  function handleToggleTheme() {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+
+    Cookies.set(COLOR_THEME_COOKIE_NAME, newTheme, {
+      expires: 365,
+    });
+
+    const newTokens = newTheme === 'light' ? LIGHT_TOKENS : DARK_TOKENS;
+    const root = document.documentElement;
+
+    Object.entries(newTokens).forEach(([key, value]) => {
+      root.style.setProperty(key, value);
+    });
+  }
 
   useEffect(() => {
     const handler = () => {
@@ -23,6 +49,7 @@ function Header({ title, className }) {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
+  console.log(Cookies.get(COLOR_THEME_COOKIE_NAME));
   return (
     <header
       className={`${
@@ -54,16 +81,19 @@ function Header({ title, className }) {
                   : styles.titleTransition
               } ${
                 sora.className
-              } text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-500 text-transparent bg-clip-text`}
+              } text-2xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
             >
               {title}
             </h1>
           </div>
 
-          <div className="relative z-10">
-            <MoonIcon />
-            <SunIcon />
-          </div>
+          <button className="relative z-10" onClick={handleToggleTheme}>
+            {theme === 'light' ? (
+              <SunIcon className="text-[var(--text-color-primary-800)]" />
+            ) : (
+              <MoonIcon className="text-[var(--text-color-primary-800)]" />
+            )}
+          </button>
         </div>
       </div>
     </header>
