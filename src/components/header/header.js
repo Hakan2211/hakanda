@@ -16,12 +16,10 @@ import {
   DARK_TOKENS,
 } from '@/lib/constants';
 
-function Header({ title, className }) {
+function Header({ title, className, initialTheme }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
-  const [theme, setTheme] = useState(
-    () => Cookies.get(COLOR_THEME_COOKIE_NAME) || 'light'
-  );
+  const [theme, setTheme] = useState(initialTheme || 'light');
 
   function handleToggleTheme() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
