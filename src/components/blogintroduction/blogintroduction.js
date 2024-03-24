@@ -14,12 +14,19 @@ function BlogIntro() {
             Hakan
           </span>
           . This blog serves as a hub for my explorations into{' '}
-          <span className="bg-yellow-200 rounded-lg p-1">psychology</span>,
-          <span className="bg-red-200 rounded-lg p-1">neuroscience</span>, the
-          dynamics of the{' '}
-          <span className="bg-blue-200 rounded-lg p-1">stock market</span>, and
-          personal reflections on a broad spectrum of topics. Here, we delve
-          into complex interplay between{' '}
+          <span className="bg-[var(--background-topic-yellow)] rounded-lg p-1">
+            psychology
+          </span>
+          ,
+          <span className="bg-[var(--background-topic-red)] rounded-lg p-1">
+            neuroscience
+          </span>
+          , the dynamics of the{' '}
+          <span className="bg-[var(--background-topic-blue)] rounded-lg p-1">
+            stock market
+          </span>
+          , and personal reflections on a broad spectrum of topics. Here, we
+          look into complex interplay between{' '}
           <span className="-rotate-6 inline-block bg-clip-text text-transparent bg-gradient-to-r from-emerald-800 to-emerald-400">
             order
           </span>{' '}

@@ -18,6 +18,9 @@ export const LIGHT_COLOR = {
   '--text-color-secondary-500': '#6b7280', // date articles route for a post and postslug date
   '--scroll-fill': '#a3a3a3',
   '--scroll-container': '#e5e7eb',
+  '--background-topic-yellow': '#fef08a',
+  '--background-topic-red': '#fecaca',
+  '--background-topic-blue': '#bfdbfe',
 };
 
 export const DARK_COLOR = {
@@ -29,12 +32,15 @@ export const DARK_COLOR = {
   '--text-color-primary-500': '#64748b',
   '--text-color-primary-400': '#475569',
   '--text-color-primary-300': '#334155',
-  '--text-color-primary-200': '#1e293b',
+  '--text-color-primary-200': '#475569',
   '--text-color-primary-100': '#0f172a',
   '--text-color-secondary-700': '#d1d5db',
   '--text-color-secondary-500': '#a1a1aa',
   '--scroll-fill': '#475569',
   '--scroll-container': '#020617',
+  '--background-topic-yellow': '#a16207',
+  '--background-topic-red': '#450a0a',
+  '--background-topic-blue': '#1e3a8a',
 };
 export const LIGHT_TOKENS = { ...LIGHT_COLOR };
 export const DARK_TOKENS = { ...DARK_COLOR };

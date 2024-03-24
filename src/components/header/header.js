@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 import { sora } from '../fonts/fonts';
 import MoonIcon from '../icons/moonIcon';
 import SunIcon from '../icons/sunIcon';
-import clsx from 'clsx';
 import Cookies from 'js-cookie';
 import {
   COLOR_THEME_COOKIE_NAME,
@@ -47,7 +46,6 @@ function Header({ title, className, initialTheme }) {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  console.log(Cookies.get(COLOR_THEME_COOKIE_NAME));
   return (
     <header
       className={`${
