@@ -2,9 +2,33 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 
+const draw = {
+  hidden: { strokeDasharray: 0, strokeDashoffset: 0 },
+  visible: {
+    strokeDasharray: [0, 300],
+    strokeDashoffset: [100, 0],
+    transition: { duration: 5, ease: 'easeInOut' },
+  },
+};
+
+const ellipseAnimation = {
+  initial: { x: 0 },
+  animate: {
+    x: [0, -0.1, 0, 0.1, 0], // move from 0 to 100
+    transition: {
+      x: {
+        duration: 3,
+        ease: 'easeInOut',
+        repeat: 2, // Repeat animation
+        repeatType: 'loop', // Restart animation
+      },
+    },
+  },
+};
+
 function Logo({ className }) {
   return (
-    <svg
+    <motion.svg
       className={className}
       width="100%"
       height="100%"
@@ -19,6 +43,8 @@ function Logo({ className }) {
         strokeLinejoin: 'round',
         strokeMiterlimit: 1.5,
       }}
+      initial="hidden"
+      animate="visible"
     >
       <g transform="matrix(-1.94421e-05,-0.108506,0.18328,-6.17297e-05,-21.3394,44.3765)">
         <clipPath id="_clip1">
@@ -101,7 +127,11 @@ function Logo({ className }) {
         </g>
       </g>
       <g transform="matrix(0.164837,0,0,0.253065,-14.8282,-0.763314)">
-        <path
+        <motion.path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit={1.5}
+          variants={draw}
           d="M195.644,3.016C195.644,3.016 221.637,19.964 224.214,44.152C226.791,68.34 223.259,151.071 223.259,151.071C223.259,151.071 221.051,185.913 190.81,200.594"
           style={{
             fill: 'none',
@@ -127,7 +157,11 @@ function Logo({ className }) {
         </g>
       </g>
       <g transform="matrix(0.164837,0,0,0.253065,-18.9844,-0.763314)">
-        <path
+        <motion.path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit={1.5}
+          variants={draw}
           d="M195.644,3.016C195.644,3.016 221.637,19.964 224.214,44.152C226.791,68.34 223.259,151.071 223.259,151.071C223.259,151.071 221.051,185.913 190.81,200.594"
           style={{
             fill: 'none',
@@ -259,7 +293,10 @@ function Logo({ className }) {
         </g>
       </g>
       <g transform="matrix(14.9752,0,0,15.7549,-36.1607,-10.2421)">
-        <ellipse
+        <motion.ellipse
+          variants={ellipseAnimation}
+          initial="initial"
+          animate="animate"
           cx="4.084"
           cy="2.191"
           rx="0.084"
@@ -433,7 +470,7 @@ function Logo({ className }) {
           />
         </linearGradient>
       </defs>
-    </svg>
+    </motion.svg>
   );
 }
 
