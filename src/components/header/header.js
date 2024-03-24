@@ -14,6 +14,7 @@ import {
   LIGHT_TOKENS,
   DARK_TOKENS,
 } from '@/lib/constants';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Header({ title, className, initialTheme }) {
   const [isShrunk, setIsShrunk] = useState(false);
@@ -84,11 +85,18 @@ function Header({ title, className, initialTheme }) {
           </div>
 
           <button className="relative z-10" onClick={handleToggleTheme}>
-            {theme === 'light' ? (
-              <SunIcon className="text-[var(--text-color-primary-800)]" />
-            ) : (
-              <MoonIcon className="text-[var(--text-color-primary-800)]" />
-            )}
+            <AnimatePresence>
+              {theme === 'light' ? (
+                <SunIcon
+                  className="text-[var(--text-color-primary-800)]   hover:text-yellow-600
+                  duration-500
+                  transition-colors
+                  ease-in-out"
+                />
+              ) : (
+                <MoonIcon className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out" />
+              )}
+            </AnimatePresence>
           </button>
         </div>
       </div>

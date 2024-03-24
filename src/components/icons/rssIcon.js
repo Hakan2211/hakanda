@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-function RSSIcon({ className }) {
+function RSSIcon({ className, isHovered }) {
   const variants = {
     hover: {
       rotate: [0, -10, 10, -10, 0], // Shake by rotating slightly to both sides
@@ -22,7 +22,8 @@ function RSSIcon({ className }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       variants={variants}
-      whileHover="hover"
+      //whileHover="hover"
+      animate={isHovered ? 'hover' : 'initial'}
     >
       <path d="M4 11a9 9 0 0 1 9 9"></path>
       <path d="M4 4a16 16 0 0 1 16 16"></path>

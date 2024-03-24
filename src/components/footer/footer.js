@@ -7,6 +7,7 @@ import RSSIcon from '../icons/rssIcon';
 import SendIcon from '../icons/sendIcon';
 import TwitterIcon from '../icons/twitterIcon';
 import styles from './footer.module.css';
+import LinkComponent from './linkComponent';
 
 function Footer() {
   const date = new Date();
@@ -19,16 +20,14 @@ function Footer() {
             className={`${styles.footer_links} text-[var(--text-color-primary-400)] text-sm py-2  `}
           >
             <div className="flex flex-col gap-4">
-              <Link
-                href={'/articles'}
-                className="flex gap-1 items-center group w-16 "
-              >
+              <LinkComponent href={'/articles'}>
                 <BlogIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in" />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Blog
                 </span>
-              </Link>
-              <a
+              </LinkComponent>
+              <LinkComponent
+                as="a"
                 href={'/rss.xml'}
                 className="flex gap-1 items-center  group w-16"
               >
@@ -36,11 +35,12 @@ function Footer() {
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   RSS
                 </span>
-              </a>
+              </LinkComponent>
             </div>
 
             <div className="flex flex-col gap-4">
-              <a
+              <LinkComponent
+                as="a"
                 href="https://twitter.com/hakanbilgo"
                 target="_blank"
                 className="flex gap-1 items-center group w-20"
@@ -49,8 +49,9 @@ function Footer() {
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Twitter
                 </span>
-              </a>
-              <a
+              </LinkComponent>
+              <LinkComponent
+                as="a"
                 href="https://www.instagram.com/lifebooke"
                 target="_blank"
                 className="flex gap-1 items-center hover:cursor-pointer group w-28 "
@@ -59,11 +60,13 @@ function Footer() {
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Instagram
                 </span>
-              </a>
+              </LinkComponent>
             </div>
 
             <div className="flex flex-col gap-4">
-              <a
+              <LinkComponent
+                as="a"
+                target="_blank"
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=hbilgic1992@gmail.com"
                 className="flex gap-1 items-center hover:cursor-pointer w-24 group"
               >
@@ -71,13 +74,16 @@ function Footer() {
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Contact
                 </span>
-              </a>
-              <div className="flex gap-1 items-center group w-28 hover:cursor-pointer relative ">
+              </LinkComponent>
+              <LinkComponent
+                href={'/articles'}
+                className="flex gap-1 items-center group w-28 hover:cursor-pointer relative "
+              >
                 <MailIcon className="w-6 h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in " />
                 <span className="group-hover:text-yellow-600 transition-colors duration-300 ease-in">
                   Newsletter
                 </span>
-              </div>{' '}
+              </LinkComponent>{' '}
               <span className="absolute text-xs translate-y-16 translate-x-6 underline underline-offset-4">
                 coming soon!
               </span>

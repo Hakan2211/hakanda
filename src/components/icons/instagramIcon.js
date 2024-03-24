@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-function InstagramIcon({ className }) {
+function InstagramIcon({ className, isHovered }) {
   const variants = {
     hover: {
       rotate: [0, -10, 10, -10, 0], // Shake by rotating slightly to both sides
@@ -22,7 +22,8 @@ function InstagramIcon({ className }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       variants={variants}
-      whileHover="hover"
+      // whileHover="hover"
+      animate={isHovered ? 'hover' : 'initial'}
     >
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>

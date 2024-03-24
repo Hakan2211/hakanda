@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-function SendIcon({ className }) {
+function SendIcon({ className, isHovered }) {
   const variants = {
     hover: {
       rotate: [0, -10, 10, -10, 0], // Shake by rotating slightly to both sides
@@ -21,7 +21,8 @@ function SendIcon({ className }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       variants={variants}
-      whileHover="hover"
+      //whileHover="hover"
+      animate={isHovered ? 'hover' : 'initial'}
     >
       <line x1="22" y1="2" x2="11" y2="13"></line>
       <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-function BlogIcon({ className }) {
+function BlogIcon({ className, isHovered }) {
   const variants = {
     hover: {
       rotate: [0, -10, 10, -10, 0], // Shake by rotating slightly to both sides
@@ -19,7 +19,8 @@ function BlogIcon({ className }) {
       strokeWidth="1.5"
       stroke="currentColor"
       variants={variants}
-      whileHover="hover"
+      // whileHover="hover"
+      animate={isHovered ? 'hover' : 'initial'}
     >
       <path
         strokeLinecap="round"
