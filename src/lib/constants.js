@@ -21,6 +21,7 @@ export const LIGHT_COLOR = {
   '--background-topic-yellow': '#fef08a',
   '--background-topic-red': '#fecaca',
   '--background-topic-blue': '#bfdbfe',
+  '--background-topic-green': '#a7f3d0',
 };
 
 export const DARK_COLOR = {
@@ -41,6 +42,7 @@ export const DARK_COLOR = {
   '--background-topic-yellow': '#a16207',
   '--background-topic-red': '#450a0a',
   '--background-topic-blue': '#1e3a8a',
+  '--background-topic-green': '#064e3b',
 };
 export const LIGHT_TOKENS = { ...LIGHT_COLOR };
 export const DARK_TOKENS = { ...DARK_COLOR };

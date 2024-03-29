@@ -40,7 +40,7 @@ async function BlogPost({ params }) {
               </Link>
 
               <h1
-                className={`${sora.className} text-3xl text-balance w-[100%] leading-relaxed text-[var(--text-color-primary-900)] `}
+                className={`${sora.className} text-xl tracking-wider md:text-3xl text-balance w-[100%] leading-relaxed text-[var(--text-color-primary-900)] `}
               >
                 {frontmatter.title}
               </h1>

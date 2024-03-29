@@ -50,7 +50,7 @@ function Header({ title, className, initialTheme }) {
   return (
     <header
       className={`${
-        isShrunk ? 'h-[60px]' : `h-[120px]`
+        isShrunk ? 'h-[85px] md:h-[60px]' : `h-[120px]`
       }  fixed top-0 z-10 w-[100%] border border-transparent border-solid transition-height duration-300 ease-in-out`}
     >
       <div className={`${styles.wrapper} ${className}`}>
@@ -78,7 +78,7 @@ function Header({ title, className, initialTheme }) {
                   : styles.titleTransition
               } ${
                 sora.className
-              } text-2xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
+              } text-lg md:text-2xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
             >
               {title}
             </h1>

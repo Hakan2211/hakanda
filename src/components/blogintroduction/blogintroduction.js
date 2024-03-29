@@ -8,7 +8,7 @@ function BlogIntro() {
   return (
     <div className="flex flex-col gap-6 col-start-2 col-end-3 ">
       <div className="leading-relaxed tracking-wider text-[var(--text-color-primary-800)]">
-        <h1 className="font-medium">
+        <h1 className="font-medium md:font-normal tracking-wider leading-[1.9] md:leading-loose text-[1.25rem] md:text-[1.5rem]">
           Welcome! I am{' '}
           <span className="font-semibold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-yellow-800 to-yellow-400">
             Hakan
@@ -37,7 +37,7 @@ function BlogIntro() {
           , seeking to understand the mechanisms that underlie our thoughts,
           actions and the broader economic and social systems.
         </h1>
-        <h2 className="font-normal text-[var(--text-color-primary-600)]">
+        <h2 className="font-normal leading-[1.9] tracking-widest text-[1rem] md:text-[1.25rem] text-[var(--text-color-primary-600)]">
           Reflecting on the nature of our explorations, Friedrich Nietzsche's
           words resonate deeply:{' '}
           <span className="italic underline-offset-8 underline">
@@ -48,7 +48,7 @@ function BlogIntro() {
           acknowledging the chaos that fuels our quest for clarity and the
           structures we construct in response.
         </h2>
-        <h2 className="font-normal text-[var(--text-color-primary-600)]">
+        <h2 className="font-normal leading-[1.9] tracking-widest text-[1rem] md:text-[1.25rem] text-[var(--text-color-primary-600)]">
           Join me in this exploration, where we strive to discern meaning amidst
           the tumult, embracing the elegance of structure as we navigate through
           the uncertainties of life.
