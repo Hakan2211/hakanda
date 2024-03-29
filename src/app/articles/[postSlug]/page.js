@@ -9,9 +9,17 @@ import ArrowLeft from '@/components/icons/arrow-left';
 import Header from '@/components/header/header';
 import TableOfContents from '@/components/sidenav/sidenav';
 import { sora } from '@/components/fonts/fonts';
+import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }) {
-  const { frontmatter } = await loadBlogPost(params.postSlug);
+  const blogPostData = await loadBlogPost(params.postSlug);
+
+  if (!blogPostData) {
+    return null;
+  }
+
+  const { frontmatter } = blogPostData;
+
   return {
     title: `${frontmatter.title} • ${BLOG_TITLE}`,
     description: frontmatter.description,
@@ -19,9 +27,13 @@ export async function generateMetadata({ params }) {
 }
 
 async function BlogPost({ params }) {
-  const { frontmatter, content, headings } = await loadBlogPost(
-    params.postSlug
-  );
+  const blogPostData = await loadBlogPost(params.postSlug);
+
+  if (!blogPostData) {
+    return notFound();
+  }
+
+  const { frontmatter, content, headings } = blogPostData;
 
   return (
     <>
