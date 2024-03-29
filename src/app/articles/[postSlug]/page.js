@@ -44,9 +44,16 @@ async function BlogPost({ params }) {
               >
                 {frontmatter.title}
               </h1>
-              <div>
-                <p className="text-sm text-[var(--text-color-secondary-500)]">
+              <div className="flex gap-8 items-center">
+                <p className="text-sm text-[var(--text-color-primary-500)]">
                   {format(Date.parse(frontmatter.publishedOn), 'MMMM dd, yyyy')}
+                </p>
+                <p>
+                  {frontmatter.readTime ? (
+                    <span className="text-sm text-[var(--text-color-primary-500)]">
+                      {frontmatter.readTime} minutes read
+                    </span>
+                  ) : null}
                 </p>
               </div>
             </div>

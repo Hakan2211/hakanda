@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import styles from './blogpage.module.css';
 import BlogIntro from '@/components/blogintroduction/blogintroduction';
+import React from 'react';
 
 let year = 0;
 async function Blog() {
@@ -27,7 +28,7 @@ async function Blog() {
                 printYear = false;
               }
               return (
-                <>
+                <React.Fragment key={post.slug}>
                   <li>
                     {printYear ? (
                       <p className="py-8 text-[var(--text-color-primary-900)] font-medium text-lg">
@@ -46,13 +47,14 @@ async function Blog() {
                             'MMM dd'
                           )}
                         </p>
+
                         <span className="" key={post.slug}>
                           {post.title}
                         </span>
                       </div>
                     </Link>
                   </li>
-                </>
+                </React.Fragment>
               );
             })}
           </ul>
