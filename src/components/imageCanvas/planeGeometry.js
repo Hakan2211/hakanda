@@ -15,6 +15,7 @@ void main() {
     vec4 color = texture2D(utexture, vUv);
 
   gl_FragColor = vec4(color.r, color.g, color.b, 1.0);
+  
 }`;
 const vertexShader = `
 uniform float utime;
