@@ -2,8 +2,8 @@ import ArrowRight from '../icons/arrow-right';
 
 function QuickFacts() {
   return (
-    <div className="text-base leading-[1.9] tracking-[0.3px] text-[var(--text-color-primary-700)]">
-      <div className="text-2xl py-6 tracking-wider underline underline-offset-4">
+    <div className="text-base leading-[1.9] tracking-[0.3px] text-[var(--text-color-primary-600)]">
+      <div className="text-2xl py-6 tracking-wider underline underline-offset-4 text-[var(--text-color-primary-700)] ">
         Quick facts about me
       </div>
       <div>
