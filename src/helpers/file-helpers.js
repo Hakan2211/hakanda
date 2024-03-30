@@ -9,7 +9,6 @@ import { toString } from 'mdast-util-to-string';
 import remarkSlug from 'remark-slug';
 import { slugify } from '@/lib/utils';
 import { serialize } from 'next-mdx-remote/serialize';
-import rehypeSlug from 'rehype-slug';
 
 export async function getBlogPostList() {
   const fileNames = await readDirectory('/content');
@@ -40,7 +39,6 @@ export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkMdx, remarkSlug],
-      //rehypePlugins: [rehypeSlug],
     },
   });
 

@@ -2,19 +2,25 @@
 
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
+import { useSlider } from './useSlider';
+import { MathUtils } from 'three/src/math/MathUtils.js';
 
 const fragmentShader = `  
 
 uniform float utime;
 uniform sampler2D utexture;
+uniform sampler2D uPrevTexture;
+uniform float uProgression;
 varying vec2 vUv;
 void main() {
 
-    vec4 color = texture2D(utexture, vUv);
+    vec4 curTexture = texture2D(utexture, vUv);
+    vec4 prevTexture = texture2D(uPrevTexture, vUv);
+    vec4 finalTexture = mix(prevTexture, curTexture, uProgression);
 
-  gl_FragColor = vec4(color.r, color.g, color.b, 1.0);
+  gl_FragColor = finalTexture;
 }`;
 const vertexShader = `
 uniform float utime;
@@ -57,13 +63,29 @@ void main() {
 
 function PlaneGeometry() {
   const mesh = useRef();
+  const material = useRef();
   const [mousePosition, setMousePosition] = useState(new THREE.Vector2(0, 0));
 
-  const texture = useTexture('./hakan_about.jpg');
+  const { items, curSlide } = useSlider();
+  const image = items[curSlide].img;
+  const texture = useTexture(image);
+
+  const [lastImage, setLastImage] = useState(image);
+  const prevTexture = useTexture(lastImage);
+
+  useEffect(() => {
+    const newImage = image;
+    material.current.uniforms.uProgression.value = 0.0;
+    return () => {
+      setLastImage(newImage);
+    };
+  }, [image]);
 
   const uniforms = {
     utime: { value: 0.0 },
     utexture: { value: texture },
+    uPrevTexture: { value: prevTexture },
+    uProgression: { value: 0.0 },
     uMouse: { value: new THREE.Vector2() },
   };
 
@@ -71,27 +93,18 @@ function PlaneGeometry() {
     const time = clock.getElapsedTime();
     mesh.current.material.uniforms.utime.value = time;
     mesh.current.material.uniforms.uMouse.value = mousePosition;
+    material.current.uniforms.uProgression.value = MathUtils.lerp(
+      material.current.uniforms.uProgression.value,
+      1.0,
+      0.05
+    );
   });
-
-  // const handlePointerMove = (event) => {
-  //   const x = event.pointer.x;
-  //   const y = event.pointer.y;
-
-  //   setMousePosition(new THREE.Vector2(x, y));
-  //   console.log('Pointer Move:', x, y);
-  // };
-
-  // const handlePointerMove = useCallback((event) => {
-  //   // Directly use the pointer's normalized device coordinates (NDC)
-  //   const x = (event.clientX / window.innerWidth) * 2 - 1;
-  //   const y = -(event.clientY / window.innerHeight) * 2 + 1;
-  //   setMousePosition(new THREE.Vector2(x, y));
-  // }, []);
 
   return (
     <mesh ref={mesh}>
       <planeGeometry args={[13.5, 7.3, 32, 32]} />
       <shaderMaterial
+        ref={material}
         wireframe={false}
         fragmentShader={fragmentShader}
         vertexShader={vertexShader}
@@ -102,4 +115,23 @@ function PlaneGeometry() {
   );
 }
 
+useSlider.getState().items.forEach((item) => {
+  useTexture.preload(item.img);
+});
+
 export default PlaneGeometry;
+
+// const handlePointerMove = (event) => {
+//   const x = event.pointer.x;
+//   const y = event.pointer.y;
+
+//   setMousePosition(new THREE.Vector2(x, y));
+//   console.log('Pointer Move:', x, y);
+// };
+
+// const handlePointerMove = useCallback((event) => {
+//   // Directly use the pointer's normalized device coordinates (NDC)
+//   const x = (event.clientX / window.innerWidth) * 2 - 1;
+//   const y = -(event.clientY / window.innerHeight) * 2 + 1;
+//   setMousePosition(new THREE.Vector2(x, y));
+// }, []);

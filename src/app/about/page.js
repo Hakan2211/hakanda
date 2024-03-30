@@ -29,7 +29,7 @@ function About() {
       <div className={styles.wrapper}>
         <div className={styles.about_section}>
           <Link
-            className="flex items-center text-sm gap-1 text-[var(--text-color-primary-900)] hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
+            className="flex items-center w-fit text-sm gap-1 text-[var(--text-color-primary-900)] hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
             href={'/articles'}
           >
             <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />
@@ -46,13 +46,13 @@ function About() {
                 myself and my journey.
               </p>
               <p className="text-base text-[var(--text-color-primary-600)] py-6 tracking-wider leading-relaxed">
-                Yes, I am the man on the picture below. It was shot in{' '}
-                {formattedDate} in Switzerland. Time flies, doesn't it? So, I am{' '}
-                {age} years old now and that is my story.
+                Some pictures of me below in case you are curious who is behind
+                the articles. <br></br> I am {age} years old now and that is my
+                story.
               </p>
             </div>
           </div>
-          <div className="w-full h-[30rem]">
+          <div className="w-full h-[30rem] relative">
             <ImageCanvas />
           </div>
           <Timeline />
