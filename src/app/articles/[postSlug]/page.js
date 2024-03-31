@@ -37,6 +37,7 @@ async function BlogPost({ params }) {
 
   return (
     <>
+      {/* {frontmatter.title ? frontmatter.title : null} */}
       <Header title={frontmatter.title} />
       <TableOfContents headings={headings} />
       <article>

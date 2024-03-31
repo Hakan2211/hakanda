@@ -65,9 +65,7 @@ function Footer() {
 
             <div className="flex flex-col gap-4">
               <LinkComponent
-                as="a"
-                target="_blank"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=hbilgic1992@gmail.com"
+                href={'/contact'}
                 className="flex gap-1 items-center hover:cursor-pointer w-24 group"
               >
                 <SendIcon className="w-5 h-5 md:w-6 md:h-6 text-[var(--text-color-primary-400)] group-hover:text-yellow-600 transition-colors duration-300 ease-in" />

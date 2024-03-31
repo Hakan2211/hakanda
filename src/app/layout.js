@@ -9,6 +9,7 @@ import {
   DARK_TOKENS,
   LIGHT_TOKENS,
 } from '@/lib/constants';
+import { Toaster } from '@/components/ui/sonner';
 
 export const metadata = {
   title: { BLOG_TITLE },
@@ -25,7 +26,10 @@ export default function RootLayout({ children }) {
       // data-color-theme={theme}
       style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
     >
-      <body className={GeistSans.className}>{children}</body>
+      <body className={GeistSans.className}>
+        <main>{children}</main>
+        <Toaster />
+      </body>
     </html>
   );
 }
