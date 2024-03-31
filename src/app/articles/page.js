@@ -2,8 +2,9 @@ import { getBlogPostList } from '@/helpers/file-helpers';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import styles from './blogpage.module.css';
-import BlogIntro from '@/components/blogintroduction/blogintroduction';
+
 import React from 'react';
+import BlogIntro from '@/components/blogintroduction/blogintroduction';
 
 let year = 0;
 async function Blog() {
