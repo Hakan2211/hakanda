@@ -10,6 +10,8 @@ import Header from '@/components/header/header';
 import TableOfContents from '@/components/sidenav/sidenav';
 import { sora } from '@/components/fonts/fonts';
 import { notFound } from 'next/navigation';
+import { cookies } from 'next/headers';
+import { COLOR_THEME_COOKIE_NAME } from '@/lib/constants';
 
 export async function generateMetadata({ params }) {
   const blogPostData = await loadBlogPost(params.postSlug);
@@ -29,6 +31,9 @@ export async function generateMetadata({ params }) {
 async function BlogPost({ params }) {
   const blogPostData = await loadBlogPost(params.postSlug);
 
+  const savedTheme = cookies().get(COLOR_THEME_COOKIE_NAME);
+  const theme = savedTheme?.value || 'light';
+
   if (!blogPostData) {
     return notFound();
   }
@@ -38,7 +43,7 @@ async function BlogPost({ params }) {
   return (
     <>
       {/* {frontmatter.title ? frontmatter.title : null} */}
-      <Header title={frontmatter.title} />
+      <Header initialTheme={theme} title={frontmatter.title} />
       <TableOfContents headings={headings} />
       <article>
         <div className={styles.wrapper}>

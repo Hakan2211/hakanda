@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
       style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
     >
       <body className={GeistSans.className}>
+        <Header initialTheme={theme} />
         <main>{children}</main>
         <Toaster />
       </body>

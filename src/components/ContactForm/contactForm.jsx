@@ -49,7 +49,12 @@ function ContactForm() {
                 Email
               </FormLabel>
               <FormControl>
-                <Input placeholder="Type your email" {...field} type="email" />
+                <Input
+                  className=""
+                  placeholder="Type your email"
+                  {...field}
+                  type="email"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -74,7 +79,7 @@ function ContactForm() {
           className="relative mt-6 z-10 bg-[var(--text-color-primary-100)] text-yellow-600 hover:bg-[var(--text-color-primary-200)] transition-bg duration-300 ease-in-out"
           type="submit"
         >
-          Submit
+          Send Message
         </Button>
       </form>
     </Form>

@@ -19,6 +19,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 function Header({ title, className, initialTheme }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
+
   const [theme, setTheme] = useState(initialTheme || 'light');
 
   function handleToggleTheme() {

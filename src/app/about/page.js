@@ -1,4 +1,3 @@
-import Header from '@/components/header/header';
 import styles from './about.module.css';
 import Link from 'next/link';
 import ArrowLeft from '@/components/icons/arrow-left';
@@ -25,7 +24,7 @@ function About() {
   return (
     <main className="bg-[var(--bg-color)]">
       <div className="h-[150px]"></div>
-      <Header className="bg-[var(--bg-color)]" />
+
       <div className={styles.wrapper}>
         <div className={styles.about_section}>
           <Link
