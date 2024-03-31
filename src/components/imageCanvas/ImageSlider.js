@@ -156,7 +156,7 @@ function ImageSlider() {
       setLastImage(newImage);
       clearTimeout(timeout);
     };
-  }, [image]);
+  }, [image, direction, progression]);
 
   useFrame(({ clock, pointer }) => {
     const time = clock.getElapsedTime();

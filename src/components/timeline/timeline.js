@@ -1,6 +1,3 @@
-import Arrow from './arrow';
-import timelinesvg1 from './timelinesvg1';
-
 function Timeline() {
   return (
     <div className="mt-10 text-base leading-[1.9] tracking-[0.3px] text-[var(--text-color-primary-600)]">

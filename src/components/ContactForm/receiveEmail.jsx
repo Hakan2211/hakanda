@@ -16,7 +16,7 @@ export default function ReceiveEmail({ senderEmail, message }) {
   return (
     <Html>
       <Head />
-      <Preview>You received an email form your site Hakando</Preview>
+      <Preview>You received an email from your site Hakando</Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>

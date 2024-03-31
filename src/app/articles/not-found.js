@@ -21,9 +21,8 @@ function NotFound() {
             className="underline underline-offset-4 duration-300 transition-colors ease-in-out hover:text-[var(--background-topic-blue)]"
             href="/articles"
           >
-            {' '}
             Click here
-          </Link>{' '}
+          </Link>
           to go back to all articles.
         </p>
       </div>
