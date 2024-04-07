@@ -58,7 +58,7 @@ function BlogIntro() {
         <div className="relative group">
           <div className="w-20 h-6 absolute left-4 bg-yellow-400 filter blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out "></div>
           <Button className="relative z-10 bg-[var(--text-color-primary-100)] text-yellow-600 hover:bg-[var(--text-color-primary-200)] transition-bg duration-300 ease-in-out ">
-            <Link href={'/about'} className="flex items-center">
+            <Link prefetch={true} href={'/about'} className="flex items-center">
               <span>About me</span>
               <ArrowUpRight className="ml-2 w-4 h-4 " />
             </Link>
