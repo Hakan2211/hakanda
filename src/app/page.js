@@ -1,15 +1,11 @@
-import Link from 'next/link';
+import CanvasLanding from '@/components/landingpage/canvas';
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      <div>Home</div>
-      <Link
-        className="w-fit bg-blue-400  z-30 text-slate-100 hover:cursor-pointer "
-        href="/articles"
-      >
-        Articles
-      </Link>
+    <div className="flex flex-col bg-[var(--bg-color)] h-[100svh]">
+      <div>
+        <CanvasLanding />
+      </div>
     </div>
   );
 }

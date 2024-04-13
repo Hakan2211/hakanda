@@ -15,12 +15,23 @@ import {
   DARK_TOKENS,
 } from '@/lib/constants';
 import { AnimatePresence, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 function Header({ title, className, initialTheme }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
 
   const [theme, setTheme] = useState(initialTheme || 'light');
+
+  const pathname = usePathname();
+
+  const shakeVariant = {
+    hover: {
+      x: [0, -10, 10, -10, 7, 0], // Move the element along the x-axis
+      rotate: [0, -10, 10, -10, 10, 0],
+      transition: { type: 'ease', repeat: Infinity, duration: 1.5 },
+    },
+  };
 
   function handleToggleTheme() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -85,20 +96,40 @@ function Header({ title, className, initialTheme }) {
             </h1>
           </div>
 
-          <button className="relative z-10" onClick={handleToggleTheme}>
-            <AnimatePresence>
-              {theme === 'light' ? (
-                <SunIcon
-                  className="text-[var(--text-color-primary-800)]   hover:text-yellow-600
+          <div className="flex gap-4">
+            <nav className="z-20">
+              <ul className="flex items-center justify-between gap-6 w-fit leading-[1.9] tracking-[0.3px] text-xl">
+                {pathname === '/' ? (
+                  <motion.li
+                    variants={shakeVariant}
+                    whileHover="hover"
+                    style={{ display: 'inline-block' }}
+                  >
+                    <Link
+                      className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out  "
+                      href="/articles"
+                    >
+                      Articles
+                    </Link>
+                  </motion.li>
+                ) : null}
+              </ul>
+            </nav>
+            <button className="relative z-10" onClick={handleToggleTheme}>
+              <AnimatePresence>
+                {theme === 'light' ? (
+                  <SunIcon
+                    className="text-[var(--text-color-primary-800)]   hover:text-yellow-600
                   duration-500
                   transition-colors
                   ease-in-out"
-                />
-              ) : (
-                <MoonIcon className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out" />
-              )}
-            </AnimatePresence>
-          </button>
+                  />
+                ) : (
+                  <MoonIcon className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out" />
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
       </div>
     </header>
