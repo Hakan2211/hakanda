@@ -1,8 +1,10 @@
 'use client';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Elephant from './elephant_model/elephant';
+import LandingText from './text/landingtext';
+import Particles from './particles/particles';
 
 function CanvasLanding() {
   return (
@@ -11,11 +13,11 @@ function CanvasLanding() {
         <OrbitControls />
         <ambientLight intensity={1.5} />
         <pointLight position={[10, 10, 10]} />
-        {/* <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh> */}
-        <Elephant />
+        <Suspense>
+          <Elephant />
+        </Suspense>
+        <LandingText />
+        {/* <Particles /> */}
       </Canvas>
     </div>
   );
