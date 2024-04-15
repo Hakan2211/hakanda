@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { Text, Float } from '@react-three/drei';
 import * as THREE from 'three';
+import useViewport from '@/hooks/useViewport';
 
 const vertexShader = `
   varying vec2 vUv;
@@ -123,6 +125,17 @@ const MyShaderMaterial = new THREE.ShaderMaterial({
 });
 
 function LandingText() {
+  const viewport = useViewport();
+
+  const fontSize1 =
+    viewport === 'mobile' ? 0.25 : viewport === 'laptop' ? 0.27 : 0.25;
+  const fontSize2 =
+    viewport === 'mobile' ? 0.23 : viewport === 'laptop' ? 0.25 : 0.23;
+
+  const positionY1 =
+    viewport === 'mobile' ? 2.4 : viewport === 'laptop' ? 2.6 : 2.65;
+  const positionY2 =
+    viewport === 'mobile' ? 2.0 : viewport === 'laptop' ? 2.2 : 2.25;
   return (
     <>
       <Float
@@ -133,7 +146,7 @@ function LandingText() {
       >
         <Text
           color="white"
-          fontSize={0.27}
+          fontSize={fontSize1}
           maxWidth={4}
           lineHeight={1}
           letterSpacing={0.02}
@@ -141,7 +154,7 @@ function LandingText() {
           font="/B612.ttf"
           anchorX="center"
           anchorY="middle"
-          position={[0, 2.8, 0]}
+          position={[0, positionY1, 0]}
           rotation={[0, 0, 0]}
           material={MyShaderMaterial}
         >
@@ -149,7 +162,7 @@ function LandingText() {
         </Text>
         <Text
           color="white"
-          fontSize={0.25}
+          fontSize={fontSize2}
           maxWidth={4}
           lineHeight={1}
           letterSpacing={0.02}
@@ -157,7 +170,7 @@ function LandingText() {
           font="/B612.ttf"
           anchorX="center"
           anchorY="middle"
-          position={[0, 2.4, 0]}
+          position={[0, positionY2, 0]}
           rotation={[0, 0, 0]}
           material={MyShaderMaterial}
         >

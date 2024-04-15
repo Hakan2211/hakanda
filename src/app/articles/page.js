@@ -6,6 +6,10 @@ import styles from './blogpage.module.css';
 import React from 'react';
 import BlogIntro from '@/components/blogintroduction/blogintroduction';
 
+export const metadata = {
+  title: `Hakanda • Hakan Bilgic's articles.`,
+};
+
 let year = 0;
 async function Blog() {
   const data = await getBlogPostList();

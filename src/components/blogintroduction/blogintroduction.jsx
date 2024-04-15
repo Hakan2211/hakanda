@@ -9,29 +9,29 @@ function BlogIntro() {
     <div className="flex flex-col gap-6 col-start-2 col-end-3 ">
       <div className="leading-relaxed tracking-wider text-[var(--text-color-primary-800)]">
         <h1 className="font-medium md:font-normal tracking-wider leading-[1.9] md:leading-loose text-[1.25rem] md:text-[1.5rem]">
-          Welcome! I am
+          Welcome! I am{' '}
           <span className="font-semibold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-yellow-800 to-yellow-400">
             Hakan
           </span>
           . This blog serves as a hub for my explorations into
-          <span className="bg-[var(--background-topic-yellow)] rounded-lg p-1">
+          <span className="bg-[var(--background-topic-yellow)] rounded-lg p-1 mr-1">
             psychology
           </span>
           ,
-          <span className="bg-[var(--background-topic-red)] rounded-lg p-1">
+          <span className="bg-[var(--background-topic-red)] rounded-lg p-1 mr-1 ml-1">
             neuroscience
           </span>
           , the dynamics of the
-          <span className="bg-[var(--background-topic-blue)] rounded-lg p-1">
+          <span className="bg-[var(--background-topic-blue)] rounded-lg p-1 mr-1 ml-1">
             stock market
           </span>
           , and personal reflections on a broad spectrum of topics. Here, we
-          look into complex interplay between
+          look into complex interplay between{' '}
           <span className="-rotate-6 inline-block bg-clip-text text-transparent bg-gradient-to-r from-emerald-800 to-emerald-400">
             order
-          </span>
-          and
-          <span className="inline-block rotate-6 bg-clip-text text-transparent bg-gradient-to-r from-lime-800 to-lime-400 ">
+          </span>{' '}
+          and{' '}
+          <span className="inline-block rotate-6 bg-clip-text text-transparent bg-gradient-to-r from-lime-800 to-lime-400 mr-1 ">
             chaos
           </span>
           , seeking to understand the mechanisms that underlie our thoughts,

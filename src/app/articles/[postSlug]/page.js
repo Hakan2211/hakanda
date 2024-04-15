@@ -32,7 +32,7 @@ async function BlogPost({ params }) {
   const blogPostData = await loadBlogPost(params.postSlug);
 
   const savedTheme = cookies().get(COLOR_THEME_COOKIE_NAME);
-  const theme = savedTheme?.value || 'light';
+  const theme = savedTheme?.value || 'dark';
 
   if (!blogPostData) {
     return notFound();

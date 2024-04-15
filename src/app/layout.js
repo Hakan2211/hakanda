@@ -1,24 +1,24 @@
 import './globals.css';
-import { BLOG_TITLE, BLOG_DESCRIPTION } from '@/lib/constants';
 import { GeistSans } from 'geist/font/sans';
-
 import Header from '@/components/header/header';
 import { cookies } from 'next/headers';
 import {
   COLOR_THEME_COOKIE_NAME,
   DARK_TOKENS,
   LIGHT_TOKENS,
+  BLOG_TITLE,
+  BLOG_DESCRIPTION,
 } from '@/lib/constants';
 import { Toaster } from '@/components/ui/sonner';
 
 export const metadata = {
-  title: { BLOG_TITLE },
-  description: { BLOG_DESCRIPTION },
+  title: `${BLOG_TITLE}`,
+  description: `${BLOG_DESCRIPTION}`,
 };
 
 export default function RootLayout({ children }) {
   const savedTheme = cookies().get(COLOR_THEME_COOKIE_NAME);
-  const theme = savedTheme?.value || 'light';
+  const theme = savedTheme?.value || 'dark';
 
   return (
     <html
