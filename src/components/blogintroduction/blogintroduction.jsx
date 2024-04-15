@@ -3,10 +3,18 @@ import TwitterIcon from '../icons/twitterIcon';
 import ArrowUpRight from '../icons/arrow-up-right';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import ArrowLeft from '../icons/arrow-left';
 
 function BlogIntro() {
   return (
     <div className="flex flex-col gap-6 col-start-2 col-end-3 ">
+      <Link
+        className="flex items-center w-fit text-sm gap-1 text-[var(--text-color-primary-900)] hover:text-yellow-600 transition-colors duration-300 ease-in-out  group"
+        href={'/'}
+      >
+        <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />
+        <span className="">Home</span>
+      </Link>
       <div className="leading-relaxed tracking-wider text-[var(--text-color-primary-800)]">
         <h1 className="font-medium md:font-normal tracking-wider leading-[1.9] md:leading-loose text-[1.25rem] md:text-[1.5rem]">
           Welcome! I am{' '}

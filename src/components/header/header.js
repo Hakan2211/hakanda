@@ -115,7 +115,15 @@ function Header({ title, className, initialTheme }) {
                 ) : null}
               </ul>
             </nav>
-            <button className="relative z-10" onClick={handleToggleTheme}>
+            <button
+              className="relative z-10"
+              onClick={handleToggleTheme}
+              aria-label={
+                theme === 'light'
+                  ? 'Switch to dark mode'
+                  : 'Switch to light mode'
+              }
+            >
               <AnimatePresence>
                 {theme === 'light' ? (
                   <SunIcon
@@ -123,9 +131,13 @@ function Header({ title, className, initialTheme }) {
                   duration-500
                   transition-colors
                   ease-in-out"
+                    aria-hidden="true"
                   />
                 ) : (
-                  <MoonIcon className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out" />
+                  <MoonIcon
+                    className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out"
+                    aria-hidden="true"
+                  />
                 )}
               </AnimatePresence>
             </button>
