@@ -133,9 +133,9 @@ function LandingText() {
     viewport === 'mobile' ? 0.23 : viewport === 'laptop' ? 0.25 : 0.23;
 
   const positionY1 =
-    viewport === 'mobile' ? 2.4 : viewport === 'laptop' ? 2.6 : 2.65;
+    viewport === 'mobile' ? 2.2 : viewport === 'laptop' ? 2.4 : 2.65;
   const positionY2 =
-    viewport === 'mobile' ? 2.0 : viewport === 'laptop' ? 2.2 : 2.25;
+    viewport === 'mobile' ? 1.8 : viewport === 'laptop' ? 2.0 : 2.25;
   return (
     <>
       <Float

@@ -24,9 +24,9 @@ function Elephant() {
   }, [actions, pathname]);
 
   const scale =
-    viewport === 'mobile' ? 0.74 : viewport === 'laptop' ? 0.78 : 0.8;
+    viewport === 'mobile' ? 0.76 : viewport === 'laptop' ? 0.79 : 0.8;
   const positionY =
-    viewport === 'mobile' ? -2 : viewport === 'laptop' ? -2 : -2.1;
+    viewport === 'mobile' ? -2.2 : viewport === 'laptop' ? -2.2 : -2.1;
 
   return (
     <>
