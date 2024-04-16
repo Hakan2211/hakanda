@@ -1,6 +1,6 @@
-export const BLOG_TITLE = "Hakanda • Hakan Bilgic's personal site.";
+export const BLOG_TITLE = "Hakanda • Hakan Bilgic's website.";
 export const BLOG_DESCRIPTION =
-  'Personal Website of Hakan Bilgic. Hakan writes about neuroscience, stock market and psychology. He shares his ideas and creations. From articles, books and his courses you will find information about his work.';
+  "This is Hkan Bilgic's website. Hakan writes about neuroscience, stock market and psychology. He shares his ideas and creations. From articles, books and his courses you will find information about his work.";
 
 export const COLOR_THEME_COOKIE_NAME = 'color-theme';
 
