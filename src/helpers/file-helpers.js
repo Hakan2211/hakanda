@@ -43,7 +43,7 @@ export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [remarkMdx, remarkSlug],
+      remarkPlugins: [remarkSlug],
     },
   });
 

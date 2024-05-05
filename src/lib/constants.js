@@ -22,6 +22,18 @@ export const LIGHT_COLOR = {
   '--background-topic-red': '#fecaca',
   '--background-topic-blue': '#bfdbfe',
   '--background-topic-green': '#a7f3d0',
+  '--alert-info': '#dbeafe',
+  '--alert-info-border': '#D8E9FD',
+  '--alert-info-icon': '#8BBEF9',
+  '--alert-warning': '#fef9c3',
+  '--alert-warning-border': '#FDF7B0',
+  '--alert-warning-icon': '#FDE5AF',
+  '--alert-success': '#dcfce7',
+  '--alert-success-border': '#D9FCE5',
+  '--alert-success-icon': '#A1F7BF',
+  '--alert-bg-info': '#04264E',
+  '--alert-bg-warning': '#F9B310',
+  '--alert-bg-success': '#053817',
 };
 
 export const DARK_COLOR = {
@@ -43,6 +55,18 @@ export const DARK_COLOR = {
   '--background-topic-red': '#450a0a',
   '--background-topic-blue': '#1e3a8a',
   '--background-topic-green': '#064e3b',
+  '--alert-info': '#0B1532',
+  '--alert-info-border': '#121C40',
+  '--alert-info-icon': '#213e97',
+  '--alert-warning': '#B47C04',
+  '--alert-warning-border': '#A06E03',
+  '--alert-warning-icon': '#F0A505',
+  '--alert-success': '#0c311b',
+  '--alert-success-border': '#082112',
+  '--alert-success-icon': '#1C733F',
+  '--alert-bg-info': '#8AA1E5',
+  '--alert-bg-warning': '#FDE5AF',
+  '--alert-bg-success': '#ADEBC6',
 };
 export const LIGHT_TOKENS = { ...LIGHT_COLOR };
 export const DARK_TOKENS = { ...DARK_COLOR };
