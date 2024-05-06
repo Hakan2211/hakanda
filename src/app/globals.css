@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+  .signature-stroke {
+    stroke: var(--text-color-primary-800);
+  }
 }
 
 @layer base {
@@ -43,29 +46,35 @@
   --gray-300: hsl(209, 18%, 37%);
   --gray-500: hsl(210deg, 8%, 50%);
 
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
   scroll-behavior: smooth;
 }
 
 @media (min-width: 500px) {
   html {
-    scrollbar-color: var(--gray-300) var(--background);
+    scrollbar-color: var(--scroll-fill) var(--scroll-container);
     scrollbar-width: thin;
   }
 
   ::-webkit-scrollbar {
     width: 10px;
-    background-color: var(--background);
+    background-color: var(--scroll-container);
     /* ... */
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 1000px;
     /* background-color: var(--gray-300); */
     background-color: red;
-    border: 2px solid var(--background);
+    border: 2px solid var(--scroll-container);
     /* ... */
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--gray-500);
+    background-color: var(--scroll-fill);
   }
 }
 

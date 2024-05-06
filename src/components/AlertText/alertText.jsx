@@ -63,7 +63,9 @@ function AlertText({
       {showLabel && <AlertLabel>{getLabel(variant)}</AlertLabel>}
       {!showLabel && <AlertIcon>{getIcon(variant)}</AlertIcon>}
       <AlertTitle className="">{title}</AlertTitle>
-      <AlertDescription className="">{description}</AlertDescription>
+      <AlertDescription className="text-base leading-[1.9] tracking-[0.3]">
+        {description}
+      </AlertDescription>
     </Alert>
   );
 }
