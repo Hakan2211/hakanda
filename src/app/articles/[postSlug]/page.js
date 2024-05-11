@@ -12,6 +12,7 @@ import { sora } from '@/components/fonts/fonts';
 import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { COLOR_THEME_COOKIE_NAME } from '@/lib/constants';
+import Head from 'next/head';
 
 export async function generateMetadata({ params }) {
   const blogPostData = await loadBlogPost(params.postSlug);
@@ -42,7 +43,14 @@ async function BlogPost({ params }) {
 
   return (
     <>
-      {/* {frontmatter.title ? frontmatter.title : null} */}
+      <Head>
+        <title>
+          {frontmatter.title} • {BLOG_TITLE}
+        </title>
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:image" content={frontmatter.image} />
+        <meta property="og:type" content="article" />
+      </Head>
       <Header initialTheme={theme} title={frontmatter.title} />
       <TableOfContents headings={headings} />
       <article>

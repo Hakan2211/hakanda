@@ -9,6 +9,7 @@ import {
 import AlertInfo from '../icons/alert-info';
 import AlertSuccess from '../icons/alert-success';
 import AlertWarning from '../icons/alert-warning';
+import AlertDanger from '../icons/alert-danger';
 
 function AlertText({
   title,
@@ -19,18 +20,22 @@ function AlertText({
 }) {
   const getIcon = (variant) => {
     switch (variant) {
-      case 'info':
-        return (
-          <AlertInfo className="w-10 h-10 text-[var(--alert-info-icon)] bg-[var(--alert-bg-info)] rounded-full p-1 " />
-        );
       case 'success':
         return (
           <AlertSuccess className="w-10 h-10 text-[var(--alert-success-icon)] bg-[var(--alert-bg-success)] rounded-full p-1" />
         );
       case 'warning':
-      default:
         return (
           <AlertWarning className="w-10 h-10 text-[var(--alert-warning-icon)] bg-[var(--alert-bg-warning)] rounded-full p-1" />
+        );
+      case 'danger':
+        return (
+          <AlertDanger className="w-10 h-10 text-[var(--alert-danger-icon)] bg-[var(--alert-bg-danger)] rounded-full p-1" />
+        );
+      case 'info':
+      default:
+        return (
+          <AlertInfo className="w-10 h-10 text-[var(--alert-info-icon)] bg-[var(--alert-bg-info)] rounded-full p-1 " />
         );
     }
   };
@@ -45,6 +50,13 @@ function AlertText({
       case 'success':
         return (
           <div className="text-[var(--alert-success-icon)] bg-[var(--alert-bg-success)] rounded-lg p-2">
+            {labelText}
+          </div>
+        );
+
+      case 'danger':
+        return (
+          <div className="text-[var(--alert-danger-icon)] bg-[var(--alert-bg-danger)] rounded-lg p-2">
             {labelText}
           </div>
         );

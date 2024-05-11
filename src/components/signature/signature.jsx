@@ -3,8 +3,10 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useInView } from 'react-intersection-observer';
+import Textlink from '../textlink/textlink';
+import Twitterlink from '../textlink/twitterlink';
 
-function Signature({ className }) {
+function Signature({ className, shareLink, shareTitle }) {
   const ref = useRef(null);
   const { ref: inViewRef, inView } = useInView({
     triggerOnce: false,
@@ -40,11 +42,30 @@ function Signature({ className }) {
   return (
     <div className="border-t-[1px] border-[var(--text-color-primary-200)]">
       <div className="mt-5">
-        <p>Have you liked this article? Share it with a friend on Twitter.</p>
-        <p>
-          If you have a question or you want to give feedback - you can shoot me
-          a message
-        </p>
+        <div className="leading-[1.9] tracking-[0.5px] text-base">
+          Have you liked this article?{' '}
+          <Textlink
+            classname="no-underline hover:text-[var(--text-color-primary-800)] duration-300"
+            text="Share it with a friend on Twitter."
+            href={`https://twitter.com/intent/tweet?text=${shareTitle} https://www.hakanda.com/articles/${shareLink} by @hakanbilgo`}
+          />
+        </div>
+        <div>
+          If you have a question or you want to give feedback - shoot me a{' '}
+          <Textlink
+            classname="no-underline hover:text-[var(--text-color-primary-800)] duration-300"
+            text="message"
+            href="/contact"
+            as="link"
+          />{' '}
+          or via{' '}
+          <Twitterlink
+            href="https://www.twitter.com/hakanbilgo"
+            className="no-underline hover:text-[var(--text-color-primary-800)] duration-300"
+          >
+            Twitter
+          </Twitterlink>
+        </div>
         <p className="mt-5">Have a lovely day.</p>
         <p className="mb-5">
           &#x2015; <span>Hakan Bilgic</span>

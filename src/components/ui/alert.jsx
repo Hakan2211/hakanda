@@ -12,6 +12,8 @@ const alertVariants = cva('relative w-full rounded-lg border p-4', {
         'border-[var(--alert-warning-border)] text-[var(--text-color-primary-800)] bg-[var(--alert-warning)]',
       success:
         'border-[var(--alert-success-border)] text-[var(--text-color-primary-800)] bg-[var(--alert-success)]',
+      danger:
+        'border-[var(--alert-danger-border)] text-[var(--text-color-primary-800)] bg-[var(--alert-danger)]',
     },
   },
   defaultVariants: {
