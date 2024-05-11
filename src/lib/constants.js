@@ -34,6 +34,8 @@ export const LIGHT_COLOR = {
   '--alert-bg-info': '#04264E',
   '--alert-bg-warning': '#F9B310',
   '--alert-bg-success': '#053817',
+  '--textlink-blue': '#1555E0',
+  '--textlink-decoration': '#e2e8f0',
 };
 
 export const DARK_COLOR = {
@@ -67,6 +69,8 @@ export const DARK_COLOR = {
   '--alert-bg-info': '#8AA1E5',
   '--alert-bg-warning': '#FDE5AF',
   '--alert-bg-success': '#ADEBC6',
+  '--textlink-blue': '#447AEE',
+  '--textlink-decoration': '#334155',
 };
 export const LIGHT_TOKENS = { ...LIGHT_COLOR };
 export const DARK_TOKENS = { ...DARK_COLOR };

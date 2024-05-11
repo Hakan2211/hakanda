@@ -8,7 +8,6 @@ readTime: '35'
 
 ## Mock article
 
-<TestComponent />
 <AlertText
   title="hallo"
   description="hallo das ist ein test. Lang lebe die Königin. J`adore la reine. 
@@ -41,6 +40,11 @@ readTime: '35'
   "
   variant="success"
 />
+<AlertText
+  title="Callout with a Link"
+  variant="info"
+  description={<Textlink text="google" href="https://www.google.de" />}
+/>
 
 Hallo das ist ein Test. Lang lebe die Königin. J`adore la reine.
 
@@ -48,4 +52,25 @@ Das ist ein Abstand.
 
 Lass mal sehen, ob das funktioniert.
 
+<Textlink text="google" href="https://www.google.de" />
+<Textlink text="articles" href="/articles" as="link" />
+<Twitterlink href="https://www.twitter.com/CorleoneOffer">
+  Stan Ivanov
+</Twitterlink>
+<Listcomponent
+  type="unordered"
+  items={[
+    <Textlink text="hakan" href="www.hakanda.com/articles" />,
+    'nummer2',
+    'drei',
+  ]}
+/>
+<Listcomponent
+  type="ordered"
+  items={[
+    <Textlink text="hakan" href="www.hakanda.com/articles" />,
+    'nummer2',
+    'drei',
+  ]}
+/>
 <Signature />
