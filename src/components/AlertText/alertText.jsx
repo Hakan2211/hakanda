@@ -22,20 +22,20 @@ function AlertText({
     switch (variant) {
       case 'success':
         return (
-          <AlertSuccess className="w-10 h-10 text-[var(--alert-success-icon)] bg-[var(--alert-bg-success)] rounded-full p-1" />
+          <AlertSuccess className="w-10 h-10 text-[var(--alert-success-icon)] bg-[var(--alert-bg-success)] border-4 border-[var(--bg-color)] rounded-full p-1" />
         );
       case 'warning':
         return (
-          <AlertWarning className="w-10 h-10 text-[var(--alert-warning-icon)] bg-[var(--alert-bg-warning)] rounded-full p-1" />
+          <AlertWarning className="w-10 h-10 text-[var(--alert-warning-icon)] border-4 border-[var(--bg-color)] bg-[var(--alert-bg-warning)] rounded-full p-1" />
         );
       case 'danger':
         return (
-          <AlertDanger className="w-10 h-10 text-[var(--alert-danger-icon)] bg-[var(--alert-bg-danger)] rounded-full p-1" />
+          <AlertDanger className="w-10 h-10 text-[var(--alert-danger-icon)] bg-[var(--alert-bg-danger)] border-4 border-[var(--bg-color)] rounded-full p-1" />
         );
       case 'info':
       default:
         return (
-          <AlertInfo className="w-10 h-10 text-[var(--alert-info-icon)] bg-[var(--alert-bg-info)] rounded-full p-1 " />
+          <AlertInfo className="w-10 h-10 text-[var(--alert-info-icon)] bg-[var(--alert-bg-info)] rounded-full p-1 border-4 border-[var(--bg-color)] " />
         );
     }
   };
@@ -43,7 +43,7 @@ function AlertText({
     switch (variant) {
       case 'info':
         return (
-          <div className="text-[var(--alert-info-icon)] bg-[var(--alert-bg-info)] rounded-lg p-2">
+          <div className="text-[var(--alert-info-icon)]  bg-[var(--alert-bg-info)] rounded-lg p-2">
             {labelText}
           </div>
         );
@@ -71,7 +71,7 @@ function AlertText({
   };
 
   return (
-    <Alert variant={variant} className="my-5">
+    <Alert variant={variant} className={`${showLabel ? 'mt-16' : 'mt-10'} `}>
       {showLabel && <AlertLabel>{getLabel(variant)}</AlertLabel>}
       {!showLabel && <AlertIcon>{getIcon(variant)}</AlertIcon>}
       <AlertTitle className="">{title}</AlertTitle>

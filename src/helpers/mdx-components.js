@@ -7,6 +7,11 @@ import Signature from '@/components/signature/signature';
 import Textlink from '@/components/textlink/textlink';
 import Twitterlink from '@/components/textlink/twitterlink';
 import Listcomponent from '@/components/listcomponent/listcomponent';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
 
 const COMPONENT_MAP = {
   pre: CodeSnippet,
@@ -19,6 +24,9 @@ const COMPONENT_MAP = {
   Textlink,
   Twitterlink,
   Listcomponent,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
 };
 
 export default COMPONENT_MAP;

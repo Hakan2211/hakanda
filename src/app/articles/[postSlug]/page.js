@@ -83,7 +83,7 @@ async function BlogPost({ params }) {
                 </p>
               </div>
             </div>
-            <div className="py-6 flex flex-col gap-4 text-[var(--text-color-primary-800)] leading-[1.9] tracking-[0.3px]">
+            <div className="pb-6 pt-12 flex flex-col gap-4 text-[var(--text-color-primary-800)] leading-[1.9] tracking-[0.3px]">
               <MDXRemote source={content} components={COMPONENT_MAP} />
             </div>
           </div>
