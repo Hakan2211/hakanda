@@ -71,7 +71,10 @@ function AlertText({
   };
 
   return (
-    <Alert variant={variant} className={`${showLabel ? 'mt-16' : 'mt-10'} `}>
+    <Alert
+      variant={variant}
+      className={`${showLabel ? 'mt-16 mb-8' : 'mt-10'} `}
+    >
       {showLabel && <AlertLabel>{getLabel(variant)}</AlertLabel>}
       {!showLabel && <AlertIcon>{getIcon(variant)}</AlertIcon>}
       <AlertTitle className="">{title}</AlertTitle>

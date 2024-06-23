@@ -12,6 +12,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card';
+import HoverCardWrapper from '@/components/hoverCardWrapper/hoverCardWrapper';
 
 const COMPONENT_MAP = {
   pre: CodeSnippet,
@@ -27,6 +28,7 @@ const COMPONENT_MAP = {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
+  HoverCardWrapper,
 };
 
 export default COMPONENT_MAP;

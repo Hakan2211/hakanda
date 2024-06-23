@@ -6,6 +6,8 @@ export const COLOR_THEME_COOKIE_NAME = 'color-theme';
 
 export const LIGHT_COLOR = {
   '--bg-color': '#f8fafc',
+  '--popover': '#1a202c',
+  '--popover-text': '#e2e8f0',
   '--text-color-primary-800': '#1e2936', // text-slate-800 all articles headline, mdx content and blogintro
   '--text-color-primary-900': '#0f172a', // text-slate-900 h1postslug year articles
   '--text-color-primary-700': '#334155', // timeline
@@ -44,6 +46,8 @@ export const LIGHT_COLOR = {
 
 export const DARK_COLOR = {
   '--bg-color': '#1a202c',
+  '--popover': '#f8fafc',
+  '--popover-text': '#1e2936',
   '--text-color-primary-800': '#e2e8f0',
   '--text-color-primary-900': '#f1f5f9',
   '--text-color-primary-700': '#cbd5e1',
