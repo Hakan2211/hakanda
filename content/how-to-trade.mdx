@@ -36,7 +36,7 @@ We will explore these stages in greater depth in future articles.'
 
 Before entering a trade, it is crucial to establish a mental framework that allows you to predict and anticipate potential price movements.
 This framework consists of several key variables: the float, the volume, the time, and the price.
-The behavior of the equity—its range, volatility, and the speed of its price movements—depends on these variables.
+The behavior of the equity — its range, volatility, and the speed of its price movements — depends on these variables.
 Let's explore each of these elements in detail.
 
 ### The float
@@ -46,10 +46,10 @@ the investing and trading public. When a company is formed, it announces the
 total authorized shares, which includes both outstanding shares and restricted
 shares. By subtracting the restricted shares from the outstanding shares, you
 arrive at the float. It's worth noting that different platforms may report
-slightly different figures for the float. Minor discrepancies are generally
-inconsequential. However, significant differences warrant a closer examination
-of the company’s filings to determine the correct number of outstanding shares
-and to subtract the shares held by insiders.<HoverCardWrapper content={<div><p>When a new ticker pops up on your scanners with a press release, there are several third-party sources to consult for float information. For a quick reference, you can use <Textlink text='DilutionTracker' href='https://dilutiontracker.com/' />. If you need a comparison between common third-party sources, check out <Textlink text='KnowTheFloat' href='https://knowthefloat.com' />.</p><p>When more time is available or if the numbers seem inconsistent, you can investigate the filings at <Textlink text='BamSEC' href='https://www.bamsec.com/' />.</p><p>Personally, I use DilutionTracker for a quick glance and fast decisions to make a scalp trade. However, if I am trading a setup like a gap-up short at the open, I always review the filings.</p><p>When trading with a big-picture strategy, it is essential to plan and prepare thoroughly, which is also true for swing trading.</p></div>} />
+slightly different figures for the float. <HoverCardWrapper content={<span>When a new ticker pops up on your scanners with a press release, there are several third-party sources to consult for float information. For a quick reference, you can use <Textlink text="DilutionTracker" href="https://dilutiontracker.com/" />. If you need a comparison between common third-party sources, check out <Textlink text="KnowTheFloat" href="https://knowthefloat.com" />. When more time is available or if the numbers seem inconsistent, you can investigate the filings at <Textlink text="BamSEC" href="https://www.bamsec.com/" />. Personally, I use DilutionTracker for a quick glance and fast decisions to make a scalp trade. However, if I am trading a setup like a gap-up short at the open, I always review the filings. When trading with a big-picture strategy, it is essential to plan and prepare thoroughly, which is also true for swing trading. </span>} /> Minor discrepancies are generally inconsequential. However, significant differences warrant a closer examination of the company's filings to determine the correct number of outstanding shares and to subtract the shares held by insiders. />
+Minor discrepancies are generally inconsequential. However, significant differences
+warrant a closer examination of the company’s filings to determine the correct number
+of outstanding shares and to subtract the shares held by insiders.
 
 <AlertText
   variant="info"
@@ -78,10 +78,341 @@ and to subtract the shares held by insiders.<HoverCardWrapper content={<div><p>W
 
 Generally, there exists an inverse correlation between a stock’s float and its price volatility.
 In essence, a lower float often implies a heightened likelihood of broader price ranges and more rapid, aggressive movements.
-This relationship is depicted in the graph below, illustrating the inverse correlation between float and volatility.
+This relationship is depicted in the graphs below, illustrating the inverse correlation between float and volatility.
+
+<FloatVolatilityCorrelation labelColor="#1c733f" labelFontSize="16px" />
+
+Initially, I plotted only the red graph, but soon realized this might mislead some into interpreting the individual data points too precisely.
+For instance, a 20M float showing a 12% price volatility could lead to the argument that higher floats had higher volatility in past financial markets.
+To mitigate this, I introduced the dashed blue line.
+This addition underscores the dynamic nature of the correlation, illustrating that volatility is influenced not only by float size
+but also by various factors such as market cycles and catalysts like positive earnings reports or 'groundbreaking' innovations.
+Thus, while the relationship between float size and stock price volatility is fluid and subject to adjustment, the overall trend remains evident.
+
+The market capitalization of companies is often categorized by size, offering a framework for understanding their characteristics.
+Unlike market capitalization <TooltipWrapper content={<span>Hello</span>} />, there isn't a universally consistent categorization of equities based on their float size.
+Consequently, the classification of different float sizes may vary slightly among traders.
+This categorization holds particular significance for me, as it shapes my perception of stocks' liquidity, price range, and volatility.
+Below, you will find tables that outline the general market capitalization sizes, ranging from nano cap to mega cap, alongside
+my personal classification of float sizes, from nano float to mid float.
+I have not included float sizes larger than mid floats, as stocks with larger floats do not concern me in my trading activities.
+
+<Table>
+  <TableCaption>
+    Table 1: Market Capitalization Categories and Ranges
+  </TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Market Cap Category</TableHead>
+      <TableHead>Market Cap Range</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Nano Cap</TableCell>
+      <TableCell>Below $50M</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Micro Cap</TableCell>
+      <TableCell>$50M - $300M</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Small Cap</TableCell>
+      <TableCell>$300M - $2B</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Mid Cap</TableCell>
+      <TableCell>$2B - $10B</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Large Cap</TableCell>
+      <TableCell>$10B - $200B</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Mega Cap</TableCell>
+      <TableCell>Above $200B</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+<Table>
+  <TableCaption>
+    Table 2: Float Size Categories, Ranges, and Characteristics
+  </TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Float Size Category</TableHead>
+      <TableHead>Float Size Range</TableHead>
+      <TableHead>Characteristics</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Nano Float</TableCell>
+      <TableCell>Below 1M</TableCell>
+      <TableCell>
+        Highly volatile, low liquidity, expensive and scarce locates.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Micro Float</TableCell>
+      <TableCell>1M - 5M</TableCell>
+      <TableCell>
+        Highly volatile, low liquidity, siginicant price swings if major holders
+        dominate the float.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Small Float</TableCell>
+      <TableCell>5M - 20M</TableCell>
+      <TableCell>Volatile, moderate liquidity</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Mid Float</TableCell>
+      <TableCell>20M - 60M</TableCell>
+      <TableCell>
+        Moderate volatility, good liquidity, generally stable but can experience
+        unexpected moves in seldom cases.
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+<AlertText
+  variant="warning"
+  title="Check the institutional ownership"
+  description="When analyzing the float, it is essential to consider the institutional ownership of the stock.
+ High institutional ownership can lead to a lower float, as institutions often hold large blocks of shares. 
+ This can result in a higher level of price stability and lower volatility. Conversely, low institutional ownership
+  can lead to a higher float, which may result in greater price volatility. Therefore, it is crucial to check the institutional ownership
+   of a stock before making a trading decision."
+/>
+
+<InteractiveFloat />
 
 ### The volume
 
+Hello this is a mock text for the volume section. It`s a test to see how the text will look like.
+Keep in mind that this is just a test and the final text will be different. The king of the jungle is the lion.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+The lion is the king of the jungle. The lion is the king of the jungle. The lion is the king of the jungle.
+
 ### The time
 
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+
 ### The price
+
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
+The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.

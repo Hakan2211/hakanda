@@ -6,6 +6,7 @@ export const COLOR_THEME_COOKIE_NAME = 'color-theme';
 
 export const LIGHT_COLOR = {
   '--bg-color': '#f8fafc',
+  '--canvas-bg-color': '#E0E1E0',
   '--popover': '#1a202c',
   '--popover-text': '#e2e8f0',
   '--text-color-primary-800': '#1e2936', // text-slate-800 all articles headline, mdx content and blogintro
@@ -46,6 +47,7 @@ export const LIGHT_COLOR = {
 
 export const DARK_COLOR = {
   '--bg-color': '#1a202c',
+  '--canvas-bg-color': '#0E121B',
   '--popover': '#f8fafc',
   '--popover-text': '#1e2936',
   '--text-color-primary-800': '#e2e8f0',

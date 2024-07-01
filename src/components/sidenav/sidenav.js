@@ -1,12 +1,39 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './sidenav.module.css';
 import { slugify } from '@/lib/utils';
 import ScrollProgress from './scrollprogress/scrollProgressIndicator';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 function TableOfContents({ headings }) {
+  console.log(headings, 'headings');
   const [isVisible, setIsVisible] = useState(false);
+  const elementRefs = useRef(headings.map(() => React.createRef()));
+  // const activeIndex = useScrollSpy(
+  //   headings.map((heading) => document.getElementById(slugify(heading.id))),
+  //   {
+  //     offset: 100,
+  //   }
+  // );
+  useEffect(() => {
+    elementRefs.current = elementRefs.current.slice(0, headings.length);
+    headings.forEach((heading, index) => {
+      elementRefs.current[index].current = document.getElementById(
+        slugify(heading.id)
+      );
+    });
+  }, [headings]);
+
+  // Use useScrollSpy hook properly outside of useEffect
+  const elements = elementRefs.current.map((ref) => ref.current);
+  const activeIndex = useScrollSpy(elements.filter(Boolean), {
+    offset: 100,
+    threshold: 0,
+    rootMargin: '0px 0px 0px 0px',
+  });
+  console.log(activeIndex);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -35,6 +62,8 @@ function TableOfContents({ headings }) {
                 key={index}
                 className={`${styles.tocItem} ${
                   isVisible ? styles.fadeIn : ''
+                } ${
+                  index === activeIndex ? 'text-yellow-600' : ''
                 } hover:bg-[var(--text-color-primary-100)] text-[var(--text-color-primary-800)] hover:text-yellow-600 rounded-lg transition-colors duration-300 ease-in-out`}
                 style={{
                   marginLeft: `${heading.depth - 2}em`,

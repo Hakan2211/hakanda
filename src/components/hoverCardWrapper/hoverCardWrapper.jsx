@@ -1,3 +1,5 @@
+'use client';
+
 import {
   HoverCard,
   HoverCardContent,
@@ -6,24 +8,20 @@ import {
 
 function HoverCardWrapper({ trigger = '*', content }) {
   return (
-    <span
-      style={{
-        display: 'inline',
-        position: 'relative',
-      }}
-    >
-      <HoverCard>
-        <HoverCardTrigger
-          className="cursor-pointer text-[var(--alert-bg-danger)] text-lg"
-          //style={{ marginLeft: '2px', display: 'inline' }}
-        >
-          {trigger}
-        </HoverCardTrigger>
-        <HoverCardContent className="bg-[var(--popover)] opacity-95 text-[var(--popover-text)]">
-          {content}
-        </HoverCardContent>
-      </HoverCard>
-    </span>
+    <HoverCard className="relative inline-block">
+      <HoverCardTrigger
+        asChild="span"
+        className="cursor-pointer text-[var(--alert-bg-danger)] text-lg"
+      >
+        <span>{trigger}</span>
+      </HoverCardTrigger>
+      <HoverCardContent
+        asChild="span"
+        className="inline-block bg-[var(--popover)] opacity-95 text-[var(--popover-text)]"
+      >
+        <span>{content}</span>
+      </HoverCardContent>
+    </HoverCard>
   );
 }
 

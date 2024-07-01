@@ -13,6 +13,30 @@ import {
   HoverCardTrigger,
 } from '@/components/ui/hover-card';
 import HoverCardWrapper from '@/components/hoverCardWrapper/hoverCardWrapper';
+import TooltipWrapper from '@/components/tooltipWrapper/tooltipWrapper';
+
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+
+const FloatVolatilityCorrelation = dynamic(
+  () =>
+    import(
+      '@/components/functionPlots/floatVolatilityCorrelation/floatVolatilityCorrelation'
+    ),
+  { ssr: false }
+);
+
+const InteractiveFloat = dynamic(
+  () => import('@/components/interactiveFloat/interactiveFloat'),
+  { ssr: false }
+);
 
 const COMPONENT_MAP = {
   pre: CodeSnippet,
@@ -29,6 +53,16 @@ const COMPONENT_MAP = {
   HoverCardContent,
   HoverCardTrigger,
   HoverCardWrapper,
+  TooltipWrapper,
+  FloatVolatilityCorrelation,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  InteractiveFloat,
 };
 
 export default COMPONENT_MAP;
