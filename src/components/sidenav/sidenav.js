@@ -7,7 +7,6 @@ import ScrollProgress from './scrollprogress/scrollProgressIndicator';
 import useScrollSpy from '@/hooks/useScrollSpy';
 
 function TableOfContents({ headings }) {
-  console.log(headings, 'headings');
   const [isVisible, setIsVisible] = useState(false);
   const elementRefs = useRef(headings.map(() => React.createRef()));
   // const activeIndex = useScrollSpy(
@@ -32,7 +31,6 @@ function TableOfContents({ headings }) {
     threshold: 0,
     rootMargin: '0px 0px 0px 0px',
   });
-  console.log(activeIndex);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +42,22 @@ function TableOfContents({ headings }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isVisible]);
+
+  function handleClick(event, id) {
+    event.preventDefault();
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      const offset = 200; // Height of the fixed header or other offset
+      const elementTop =
+        window.scrollY + targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementTop - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth', // Smooth scroll
+      });
+    }
+  }
 
   return (
     <aside className={`${styles.sidenav} text-sm`}>
@@ -77,7 +91,12 @@ function TableOfContents({ headings }) {
                   animationDelay: `${0.5 + index * 0.5}s`,
                 }}
               >
-                <a href={`#${slugify(heading.id)}`}>{heading.text}</a>
+                <a
+                  href={`#${slugify(heading.id)}`}
+                  onClick={(e) => handleClick(e, slugify(heading.id))}
+                >
+                  {heading.text}
+                </a>
               </li>
             ))}
           </ul>
