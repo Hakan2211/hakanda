@@ -14,10 +14,12 @@ function TooltipWrapper({ trigger = '*', content }) {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger>{trigger}</TooltipTrigger>
-        <CustomTooltipContent asChild>
+        <TooltipTrigger className="-translate-y-1 -translate-x-1 cursor-pointer text-[var(--alert-bg-danger)] text-base">
+          {trigger}
+        </TooltipTrigger>
+        <TooltipContent className="inline-block bg-[var(--popover)] opacity-95 text-[var(--popover-text)]">
           <span>{content}</span>
-        </CustomTooltipContent>
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
