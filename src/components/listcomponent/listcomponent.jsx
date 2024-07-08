@@ -22,7 +22,7 @@ function Listcomponent({ type = 'unordered', items }) {
   );
 
   return (
-    <ListWrapper className="flex flex-col leading-[2.5] tracking-[0.5px] my-8">
+    <ListWrapper className="flex flex-col leading-[2.5] tracking-[0.5px] my-4">
       {items.map((item, index) => (
         <ListItem key={index} index={index}>
           {item}

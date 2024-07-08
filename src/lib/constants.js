@@ -70,7 +70,7 @@ export const DARK_COLOR = {
   '--alert-info': '#0B1532',
   '--alert-info-border': '#121C40',
   '--alert-info-icon': '#213e97',
-  '--alert-warning': '#B47C04',
+  '--alert-warning': '#B0811C', //'#9F7419',
   '--alert-warning-border': '#A06E03',
   '--alert-warning-icon': '#F0A505',
   '--alert-success': '#0c311b',

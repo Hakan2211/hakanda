@@ -24,6 +24,7 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
     "framer-motion": "^11.0.6",
+    "framer-motion-3d": "^11.2.13",
     "function-plot": "^1.25.0",
     "geist": "^1.2.2",
     "gray-matter": "^4.0.3",

@@ -69,7 +69,7 @@ function Header({ title, className, initialTheme }) {
         <div
           className={`${styles.header_wrapper} relative flex items-center justify-between gap-1`}
         >
-          <div className="absolute top-0 left-0 w-[100%] h-[100%]  backdrop-blur-lg -z-1 "></div>
+          <div className="absolute top-0 left-0 w-[100%] h-[100%] backdrop-blur-2xl -z-1"></div>
           <div>
             <span>
               <Link href={'/'}>
@@ -90,7 +90,7 @@ function Header({ title, className, initialTheme }) {
                   : styles.titleTransition
               } ${
                 sora.className
-              } p-4 text-lg md:text-2xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
+              } p-4 text-lg md:text-xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
             >
               {title}
             </h1>

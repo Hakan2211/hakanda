@@ -8,15 +8,15 @@ import {
 
 function HoverCardWrapper({ trigger = '*', content }) {
   return (
-    <HoverCard className="relative inline-block">
+    <HoverCard openDelay={300} className="relative inline-block">
       <HoverCardTrigger
-        asChild="span"
+        asChild
         className="cursor-pointer text-[var(--alert-bg-danger)] text-lg"
       >
         <span>{trigger}</span>
       </HoverCardTrigger>
       <HoverCardContent
-        asChild="span"
+        asChild
         className="inline-block bg-[var(--popover)] opacity-95 text-[var(--popover-text)]"
       >
         <span>{content}</span>

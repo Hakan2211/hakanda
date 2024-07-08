@@ -10,12 +10,14 @@ import {
 
 import React from 'react';
 
-function TooltipWrapper({ trigger = '*', content }) {
+function TooltipWrapper({ trigger = '*', content, triggerPosition }) {
   return (
     <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger className="-translate-y-1 -translate-x-1 cursor-pointer text-[var(--alert-bg-danger)] text-base">
-          {trigger}
+      <Tooltip className="relative inline-block" delayDuration={300}>
+        <TooltipTrigger
+          className={`${triggerPosition} cursor-pointer text-[var(--alert-bg-danger)] text-base`}
+        >
+          <span>{trigger}</span>
         </TooltipTrigger>
         <TooltipContent className="inline-block bg-[var(--popover)] opacity-95 text-[var(--popover-text)]">
           <span>{content}</span>

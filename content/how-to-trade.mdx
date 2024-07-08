@@ -46,17 +46,15 @@ the investing and trading public. When a company is formed, it announces the
 total authorized shares, which includes both outstanding shares and restricted
 shares. By subtracting the restricted shares from the outstanding shares, you
 arrive at the float. It's worth noting that different platforms may report
-slightly different figures for the float.<HoverCardWrapper content={<span>When a new ticker pops up on your scanners with a press release, there are several third-party sources to consult for float information. For a quick reference, you can use <Textlink text="DilutionTracker" href="https://dilutiontracker.com/" />. If you need a comparison between common third-party sources, check out <Textlink text="KnowTheFloat" href="https://knowthefloat.com" />. When more time is available or if the numbers seem inconsistent, you can investigate the filings at <Textlink text="BamSEC" href="https://www.bamsec.com/" />. Personally, I use DilutionTracker for a quick glance and fast decisions to make a scalp trade. However, if I am trading a setup like a gap-up short at the open, I always review the filings. When trading with a big-picture strategy, it is essential to plan and prepare thoroughly, which is also true for swing trading. </span>} /> Minor discrepancies are generally inconsequential. However, significant differences warrant a closer examination of the company's filings to determine the correct number of outstanding shares and to subtract the shares held by insiders. />
-Minor discrepancies are generally inconsequential. However, significant differences
-warrant a closer examination of the company’s filings to determine the correct number
-of outstanding shares and to subtract the shares held by insiders.
+slightly different figures for the float.<HoverCardWrapper content={<span>When a new ticker pops up on your scanners with a press release, there are several <b>third-party sources</b> to consult for float information. For a quick reference, you can use <Textlink text="DilutionTracker" href="https://dilutiontracker.com/" />. If you need a comparison between common third-party sources, check out <Textlink text="KnowTheFloat" href="https://knowthefloat.com" />. When more time is available or if the numbers seem inconsistent, you can investigate the filings at <Textlink text="BamSEC" href="https://www.bamsec.com/" />. Personally, I use DilutionTracker for a quick glance and fast decisions to make a scalp trade. However, if I am trading a setup like a gap-up short at the open, I always review the filings. When trading with a big-picture strategy, it is essential to plan and prepare thoroughly, which is also true for swing trading. </span>}/>
+Minor discrepancies are generally inconsequential. However, significant differences warrant a closer examination of the company's filings to determine the correct number of outstanding shares and to subtract the shares held by insiders.
 
 <AlertText
   variant="info"
   title="The formula for calculating the float"
   description={
     <>
-      <p className="border rounded-lg w-fit p-2">
+      <p className="border rounded-lg w-fit p-2 mt-4">
         <span className="">Float</span> = Outstanding shares - Restricted shares
       </p>
       <Listcomponent
@@ -90,12 +88,15 @@ but also by various factors such as market cycles and catalysts like positive ea
 Thus, while the relationship between float size and stock price volatility is fluid and subject to adjustment, the overall trend remains evident.
 
 The market capitalization of companies is often categorized by size, offering a framework for understanding their characteristics.
-Unlike market capitalization <TooltipWrapper trigger='?' content={<span>Hello</span>} />, there isn't a universally consistent categorization of equities based on their float size.
+Unlike market capitalization <TooltipWrapper trigger='?' triggerPosition='-translate-x-1 -translate-y-1' content={<span><b>Market capitalization</b>, often referred to as "<i>market cap</i>," represents the <b>total value</b> of a company as determined by the stock market. This value is <strong>calculated by multiplying the total number of a company’s outstanding shares by the current price per share</strong>. A company’s market cap rises when the share price increases or when the company issues additional shares. Conversely, it falls when the share price declines or when the company repurchases its shares. This measure provides investors with a <b>quick snapshot of a company's size and its market value</b>.</span>} />,
+there isn't a universally consistent categorization of equities based on their float size.
 Consequently, the classification of different float sizes may vary slightly among traders.
 This categorization holds particular significance for me, as it shapes my perception of stocks' liquidity, price range, and volatility.
 Below, you will find tables that outline the general market capitalization sizes, ranging from nano cap to mega cap, alongside
 my personal classification of float sizes, from nano float to mid float.
-I have not included float sizes larger than mid floats, as stocks with larger floats do not concern me in my trading activities.
+I have not included float sizes larger than mid floats, as stocks with larger floats do not significantly impact my trading strategies.
+In my experience, the float size is more critical when dealing with smaller to mid-sized stocks, where it can greatly influence price movements
+and volatility. For large-cap stocks, other factors take precedence in my trading decisions.
 
 <Table>
   <TableCaption>
@@ -181,12 +182,19 @@ I have not included float sizes larger than mid floats, as stocks with larger fl
 <AlertText
   variant="warning"
   title="Check the institutional ownership"
-  description="When analyzing the float, it is essential to consider the institutional ownership of the stock.
- High institutional ownership can lead to a lower float, as institutions often hold large blocks of shares. 
- This can result in a higher level of price stability and lower volatility. Conversely, low institutional ownership
-  can lead to a higher float, which may result in greater price volatility. Therefore, it is crucial to check the institutional ownership
-   of a stock before making a trading decision."
+  description="When analyzing a company's stock float, it is crucial to consider the institutional ownership. High institutional ownership can lead to a lower float since institutions often hold substantial blocks of shares. When using tools like DilutionTracker, you should subtract institutional ownership (I/O) from the total float to get an accurate measure. Understanding I/O can help you avoid unexpected behaviors where a stock acts like a low-float stock, even if you expected it to behave like a mid-float stock.
+  However, it's important to note that even with accurate float calculations, stock behavior can still vary. The float does not guarantee or predict the stock's behavior with complete certainty. Instead, it offers a framework for understanding potential movements and characteristics. The float should be seen as a guide to what is possible and how the stock might behave, rather than a definitive predictor."
 />
+
+Below, you will find a 3D Environment Canvas that I have created. You can zoom in
+and out, as well as move the camera, by left-clicking, holding, and dragging the
+cursor. I hope this interactive widget brings the topic to life, making it more tangible
+and engaging.
+
+In this canvas, you will see three differently sized boxes, each labeled to reflect its size.
+The green box labeled "10M" is ten times larger than the red box labeled "1M," and the yellow box labeled "50M" is five times larger than
+the green box. Click on either the boxes or their labels and observe how the boxes move. Pay close attention to the damping effect at the end
+of their motion, and notice how far they rebound before settling back. Enjoy exploring this interactive experience for a few moments!
 
 <InteractiveFloat />
 
