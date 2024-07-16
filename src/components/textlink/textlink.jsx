@@ -5,7 +5,7 @@ function Textlink({ classname, text, href, as }) {
   if (as === 'link') {
     return (
       <Link
-        className={`${classname} w-fit text-[var(--textlink-blue)] decoration-[var(--textlink-decoration)] hover:decoration-[var(--textlink-blue)] transition-colors ease-out duration-150 underline underline-offset-4`}
+        className={`${classname} whitespace-nowrap w-fit text-[var(--textlink-blue)] decoration-[var(--textlink-decoration)] hover:decoration-[var(--textlink-blue)] transition-colors ease-out duration-150 underline underline-offset-4`}
         href={href}
       >
         {text}
@@ -14,7 +14,7 @@ function Textlink({ classname, text, href, as }) {
   }
   return (
     <a
-      className={`${classname} w-fit text-[var(--textlink-blue)] decoration-[var(--textlink-decoration)] hover:decoration-[var(--textlink-blue)] transition-colors ease-out duration-150 underline underline-offset-4`}
+      className={`${classname} whitespace-nowrap w-fit text-[var(--textlink-blue)] decoration-[var(--textlink-decoration)] hover:decoration-[var(--textlink-blue)] transition-colors ease-out duration-150 underline underline-offset-4`}
       target="_blank"
       rel="noopener noreferrer"
       href={href}

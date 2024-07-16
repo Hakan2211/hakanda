@@ -10,7 +10,11 @@ import {
 
 import React from 'react';
 
-function TooltipWrapper({ trigger = '*', content, triggerPosition }) {
+const TooltipWrapper = ({ trigger = '*', content }) => {
+  const triggerPosition =
+    trigger === '?'
+      ? '-translate-x-1 -translate-y-1'
+      : 'translate-x-0 translate-y-0';
   return (
     <TooltipProvider>
       <Tooltip className="relative inline-block" delayDuration={300}>
@@ -25,6 +29,6 @@ function TooltipWrapper({ trigger = '*', content, triggerPosition }) {
       </Tooltip>
     </TooltipProvider>
   );
-}
+};
 
 export default TooltipWrapper;

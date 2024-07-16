@@ -24,12 +24,19 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import YouTubeEmbed from '@/components/thirdPartyEmbed/YouTubeEmbed';
+import TwitterEmbed from '@/components/thirdPartyEmbed/TwitterEmbed';
 
 const FloatVolatilityCorrelation = dynamic(
   () =>
     import(
       '@/components/functionPlots/floatVolatilityCorrelation/floatVolatilityCorrelation'
     ),
+  { ssr: false }
+);
+
+const CyclesPlot = dynamic(
+  () => import('@/components/functionPlots/cyclesPlot/cyclesPlot'),
   { ssr: false }
 );
 
@@ -55,6 +62,7 @@ const COMPONENT_MAP = {
   HoverCardWrapper,
   TooltipWrapper,
   FloatVolatilityCorrelation,
+  CyclesPlot,
   Table,
   TableBody,
   TableCaption,
@@ -63,6 +71,8 @@ const COMPONENT_MAP = {
   TableHeader,
   TableRow,
   InteractiveFloat,
+  YouTubeEmbed,
+  TwitterEmbed,
 };
 
 export default COMPONENT_MAP;

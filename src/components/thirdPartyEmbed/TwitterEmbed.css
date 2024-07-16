@@ -1,0 +1,11 @@
+.tweet-container_root__0rJLq {
+  max-width: 100% !important;
+  background-color: var(--popover-text);
+  color: var(--popover);
+  border: var(--canvas-bg-color) 2px solid;
+}
+
+.tweet-container_root__0rJLq:hover {
+  background-color: var(--bg-canvas);
+  cursor: pointer;
+}

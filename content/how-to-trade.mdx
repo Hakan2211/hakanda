@@ -198,17 +198,436 @@ of their motion, and notice how far they rebound before settling back. Enjoy exp
 
 <InteractiveFloat />
 
+While the float does not directly affect the calculation of market capitalization,
+it can influence the stock price, which in turn impacts the market cap.
+A significant retail trader, a group of retail traders, or an institution can manipulate the stock price
+by locking up a portion of the freely tradable float. You can't verify if a part of the float has been locked by consulting third-party sources.
+
+I assume these traders adopt a systematic approach in choosing which stocks to manipulate.
+The criteria might include the 'right' float range, their accumulation ratio (float locking) relative to the float, and the stock price.
+The float should neither be too small nor too large. A small float, when partially locked, becomes even smaller,
+leading to excessive volatility that might deter retail traders. Conversely, a float that is too large would be difficult to influence significantly.
+The accumulation ratio must also be carefully balanced. If too small, traders have less control over supply and demand.
+If too large, the remaining free float becomes overly volatile, again discouraging average retail traders.
+These traders might use a specific formula or prefer certain values based on past success.
+If I were to choose, I would consider a float of 3M-8M, an accumulation ratio of 50%-70%, and a stock price range of $1-$4.
+However, this is speculative and cannot be proven with certainty.
+
+Selecting a 50%-70% float locking ratio allows sufficient control over supply and demand without overwhelming influence from retail traders.
+For example, locking 3M shares of a 5M float stock balances control and volatility.
+Lower stock prices require less capital to accumulate the float, making risk management easier and allowing risk distribution across multiple accounts
+in a group setting.
+Consider a stock priced at $1. Ten accounts could accumulate 300k shares each.
+Retail traders might believe they are trading a 5M float stock, unaware that 3M shares are locked,
+effectively reducing the tradable float to 2M and altering volatility expectations.
+The float rotates faster than retail traders anticipate, attracting more traders emotionally as they witness rapid turnover.
+High float rotation can lead to unpredictable stock prices and extreme price swings.
+Thus, traders should be aware of float rotation when dealing with small float stocks and recognize when a stock's movement does not align with its float,
+indicating possible float locking.
+
+Companies may also pay groups of retail traders to manipulate stock prices higher, attracting other retail traders to buy.
+The manipulation technique involves splitting the float into locked and freely tradable portions, stealthily accumulating shares,
+and creating hype and momentum through chat rooms and social media. They may spread rumors or release news to trigger technical indicators,
+such as breaking resistance levels, attracting technical retail traders.
+The resulting rapid price increase induces FOMO <TooltipWrapper trigger='?' content={<span className="text-center"><b>Fear Of Missing Out</b></span>} /> among retail traders, who buy emotionally.
+Manipulators then gradually sell their shares, maintaining the illusion of a continuing rally.
+Once the price reaches a significant high, they dump large quantities of shares, causing the price to plummet.
+This method is reminiscent of the <Textlink href='https://www.timothysykes.com/blog/7-step-pennystocking-framework/' text='7-step pennystocking framework'/> by <Twitterlink href='https://twitter.com/timothysykes'>Timothy Sykes</Twitterlink>, which visualizes how emotional responses shape chart patterns.
+
+In nature, you can observe how animals use techniques to hunt their prey.
+One of my favorite animals is the orca, or killer whale. In the video below,
+you can watch how they break the ice with subsurface waves, creating smaller pieces and generating bubbles to disorient their prey, such as seals.
+I love watching animal documentaries, especially those focusing on hunting and survival techniques. When I saw this video,
+it reminded me to the float manipulation technique, where the float is broken into a smaller piece and 'bubbles' are created to disorient retail traders.
+
+<YouTubeEmbed
+  id="fs8ZveNZQ8g"
+  caption="YouTube video: Orca hunt technique - subsurface waves."
+/>
+
+<AlertText
+  variant="info"
+  showLabel={true}
+  labelText="Personal experience"
+  description={
+    <span>
+      During my university years, I worked three jobs to pay my tuition fees.
+      One of these jobs was as a logistician at the football stadium of a
+      Bundesliga club, earning $10 per hour. Although it wasn't the best
+      financial decision, it taught me the value of money and hard work. Back
+      then, I had no idea I would become a full-time trader. I only loved
+      studying the markets and building a long-term portfolio with the little
+      money I managed to save. However, two important lessons stayed with me
+      from that time. Inside the stadium, there were twenty food shops in the
+      mid-section area where people could buy beer, soft drinks, fries,
+      schnitzels, and sausages. My job was to prepare the inventory for these
+      shops before the game, fill the main warehouse, and restock the shops when
+      they sold out. It was a stressful and exhausting ten-hour job. I would
+      arrive 5-6 hours before the game started, work through the 1.5-hour game,
+      and stay another 2-3 hours afterward to return the beer barrels, count the
+      inventory, restock the warehouse, and change the oil for the fryers for
+      the next game. Being at the stadium so early, I observed the ebb and flow
+      of people. Security controlled the crowd before entry, and people arrived
+      at different times - some 10 minutes and others an hour before the game.
+      The stadium filled gradually, but the exit was swift once the game ended.
+      Watching the crowd exit simultaneously from the top of the stadium was
+      quite a sight.{' '}
+      <span className="underline underline-offset-2">
+        This experience led to two thoughts that have stayed with me.
+      </span>
+      <br></br>
+      <br></br>
+      <b>
+        First, creating and building something takes much longer than destroying
+        or quitting.
+        <br></br>
+        Second, I imagined the stadium as a microcosm of our world: people are born,
+        live, and then die, making way for the next generation. We are here for a
+        brief period, whether as spectators, workers, or something else, and must
+        leave to allow others to take our place.
+      </b>
+      <br></br>
+      <br></br>
+      Years later, when observing the cycles of small-cap stocks, another
+      thought struck me. I imagined each spectator as a trader, buying and
+      selling items in the stadium to make a profit. How many would be
+      profitable when they left the stadium? One thing was clear: people need to
+      be smart or lucky to make a profit. And what about the companies that
+      prepared and sold the items? They were the real winners. Imagine if people
+      traded only during the 90 minutes of the game, when emotions and crowd
+      dynamics were at their peak, rather than before or after the game.
+      <br></br>
+      <br></br>
+      Have you ever had an experience that you later compared to something else,
+      creating an analogy or metaphor that gave you a new perspective or a better
+      understanding? I'd love to hear your stories and insights.
+    </span>
+  }
+/>
+
 ### The volume
 
-Hello this is a mock text for the volume section. It`s a test to see how the text will look like.
-Keep in mind that this is just a test and the final text will be different. The king of the jungle is the lion.
+Volume stands as a vital indicator for predicting price movements in the stock market.
+Its significance cannot be overstated, and while entire books could be devoted to its intricacies,
+I aim to offer a distilled yet comprehensive overview.
+The task of selecting which aspects to cover was daunting, given the vastness of the topic.
+However, this article aims to provide a clear and concise understanding,
+offering a glimpse into the complexities that underlie volume analysis.
+
+Volume can be examined independently or as a complementary tool to price action analysis.
+Every proficient trader I know keeps volume charts alongside price candlesticks.
+Volume is a universal metric, utilized across all markets—stocks, futures, options,
+commodities, and even forex. Mastering the interpretation of volume and its interplay with price action,
+governed by the laws of demand and supply, equips one with the ability to navigate any market.
+These fundamental laws are ubiquitous, explaining the recurring patterns seen in different trading arenas.
+
+Charles Dow’s theory is indispensable for anyone serious about trading.
+He introduced the concept of volume-price confirmation and anomalies.
+According to Dow, a price move backed by rising volume is considered valid.
+Conversely, a price move on low volume is deemed an anomaly, indicating underlying issues.
+Comparing volume candles with price candles in terms of their size and length is beneficial.
+Ideally, the largest price candle should align with the largest volume candle, reflecting the strength of the move.
+This idea resonates with Richard Wyckoff’s “law of cause and effect,” which asserts that
+the magnitude of the effect is proportional to the cause.
+Thus, significant causes yield substantial effects, while minor causes result in minor effects.
+
+<AlertText
+variant="info"
+description={
+<span>
+<Textlink text='Richard Wyckoff' href='https://en.wikipedia.org/wiki/Richard_Wyckoff' /> introduced three fundamental laws that govern the market. 
+Each of these laws can be likened to natural phenomena, making them easier to comprehend and remember.
+<br></br>
+<br></br>
+<strong>The Law of Supply and Demand:</strong>
+<br></br>
+Much like the ebb and flow of tides, the market reacts
+to the balance between supply and demand. When demand surpasses supply, prices naturally rise to satiate this demand.
+Conversely, when supply exceeds demand, prices fall, absorbing the excess. Imagine a bustling marketplace:
+when everyone clamors for a rare item, its price skyrockets.
+But when the market is flooded with goods, prices plummet to clear the stalls.
+<br></br>
+<br></br>
+<strong>The Law of Cause and Effect:</strong>
+<br></br>
+This law is reminiscent of planting a seed and harvesting its fruits. 
+For every effect in the market, there must be an initiating cause, 
+and the magnitude of the effect is directly proportional to the cause. 
+Picture a farmer: 
+the quality and quantity of the harvest directly correlate to the effort and care put into sowing and nurturing the crops.
+<br></br>
+<br></br>
+<strong>The Law of Effort and Result:</strong>
+<br></br>
+Comparable to the principles of physics, this law states that every action in the market must produce a corresponding reaction. 
+The price movements on the chart should mirror the volume activity below. Just as in nature, 
+where a stone thrown into a pond creates ripples, in the market, volume (effort) creates price action (result). 
+The two should resonate in harmony, with the volume being the force that drives the consequent price action.
+
+</span>}
+
+/>
+
+Despite the opacity often associated with stock markets,
+due to factors like high-frequency trading algorithms, insider trading, and dilution,
+volume remains a transparent metric. Volume data, including the number of shares traded and their prices,
+is accessible to all. This visibility allows traders to identify historical demand and supply zones,
+revealing where the market has accumulated or distributed shares.
+
+A distinction exists between small-cap and large-cap stocks.
+Large-cap stocks generally exhibit high, consistent volume and liquidity.
+In contrast, small-cap stocks often experience sporadic volume spikes triggered by catalysts
+such as favorable news, unexpectedly good earnings reports, or groundbreaking technological advancements.
+While such catalysts also affect large-cap stocks, the key difference lies in the pre-existing
+high volume in large caps before the catalyst event. Small caps typically show little liquidity beforehand.
+Traders like <Twitterlink href='https://x.com/pradeepbonde'>Pradeep Bonde</Twitterlink> focus on these momentum bursts and episodic pivot plays driven by positive catalysts.
+
+In stock trading, understanding liquidity traps, clearing house buy-ins, and the dynamics of short selling
+is crucial for grasping market behavior and stability.
+A liquidity trap occurs when an asset becomes difficult to trade without significantly
+impacting its price, often due to a lack of willing buyers or sellers.
+This can lead to rapid price movements if a large number of shares are suddenly traded.
+Clearing houses ensure smooth trade settlements. A buy-in happens when a seller fails to deliver sold shares by the settlement date,
+prompting the clearing house to purchase the necessary shares to fulfill the buyer's order.
+Failures to deliver (FTDs) occur when a seller cannot provide the security by the settlement date,
+which can result from logistical issues or intentional short selling without securing the shares.
+Persistent FTDs attract regulatory scrutiny and potential penalties.
+To address FTDs, clearing houses initiate buy-ins to ensure buyers receive their shares.
+Short sellers can become trapped when they cannot close their positions due to a lack of
+available shares or rising prices, leading to a short squeeze.
+This forces short sellers to buy back shares to cover their positions, further driving up the price.
+In a liquidity trap,
+the scarcity of shares exacerbates this issue, potentially leading to forced buy-ins by clearing houses.
+Frequent FTDs signal a shortage of available shares, creating a liquidity trap that complicates
+trading without causing significant price movements. Short sellers contribute to FTDs when
+they cannot deliver shares, prompting clearing houses to conduct buy-ins. During a short squeeze,
+rising prices force short sellers to cover their positions, leading to more FTDs and additional buy-ins.
+This cycle of FTDs, buy-ins, and liquidity issues results in extreme price volatility and market instability.
+
+<AlertText
+  variant="danger"
+  title="The Distinction Between High Volume and Liquidity"
+  description={
+    <span>
+      <b>High Volume</b>
+      <br></br>
+      Trading volume signifies the sheer number of shares or contracts exchanged
+      in a given period, typically measured daily. A surge in volume suggests a heightened
+      level of interest and participation, often spurred by pivotal news, earnings
+      reports, or other significant events. High volume indicates that a multitude
+      of buyers and sellers are engaged in the market, contributing to dynamic price
+      movements. Such environments can be ripe with opportunities as traders react
+      to the influx of new information.
+      <br></br>
+      <br></br>
+      <b>Liquidity</b>
+      <br></br>
+      Liquidity, on the other hand, pertains to the ease with which an asset can be bought or 
+      sold without causing a substantial change in its price. 
+      A liquid market is characterized by a sufficient number of buyers and sellers,
+      ensuring that large transactions can be executed smoothly and swiftly. 
+      The hallmark of high liquidity is its ability to stabilize prices, mitigating 
+      the risk of sharp, unwelcome fluctuations.
+      <br></br>
+      <br></br>
+      <b>Distinguishing Factors</b>
+      <br></br>
+      The distinction between volume and liquidity becomes apparent when examining their measurements and implications. 
+      Volume is quantifiable by the number of trades, offering a snapshot of market activity. Liquidity, however, 
+      is gauged by the market's capacity to absorb trades with minimal impact on prices, highlighting the quality 
+      and depth of market participation. For traders, these differences are crucial. High volume may signal robust 
+      activity and potential volatility, enticing those who thrive on market movements. Conversely, high liquidity is a beacon 
+      for those seeking to execute large trades with minimal disruption, ensuring lower transaction costs and greater price stability.
+      It is essential not to conflate high volume with high liquidity. A market teeming with trades does not automatically guarantee ease of transaction.
+      A stock might exhibit high volume but remain susceptible to significant price swings if buyer-seller imbalances persist. 
+      Similarly, a highly liquid market may offer stable prices and tight bid-ask spreads but not necessarily experience high trading volumes
+      <br></br>
+      <br></br>
+      <b>The Importance of Clarity</b>
+      <br></br>
+      Confusing volume with liquidity can lead to flawed trading strategies and increased risk. Entering a high-volume market under the mistaken
+       belief of inherent liquidity might result in unexpected price impacts and transaction difficulties. 
+       Conversely, recognizing the nuances of liquidity helps in navigating markets with precision, particularly in managing risk 
+       and ensuring efficient execution of trades.
+    </span>
+
+}
+/>
+
+On the first day of a news or catalyst release, stocks can be subject to manipulation.
+To navigate this, I estimate the volume likely to be transacted by the end of the day to calculate the float rotation.
+This helps guide my decisions compared to the expected volume.
+Recognizing volume soaking at key levels is also crucial, especially when moves get repeatedly soaked.
+Observing manipulation when highs or lows are cleared out, stuffed, and soaked again at higher prices is essential.<br></br><Twitterlink href="https://twitter.com/TradetheMatrix1">Tradethematrix</Twitterlink> has categorized rigged stocks and their manipulation into four types, offering valuable insights for any trader.
+
+<AlertText
+variant="warning"
+description={
+  <span>
+  Be mindful that not every dip to key price levels followed by a subsequent recovery should be considered a trap.
+  It is essential to examine your biases and question the current market environment and cycle.
+  Often, traders with a short bias lament rebounds as deceptive actions, but in truth, their biases are skewing their perception.
+  I have observed this tendency among short-biased traders, who frequently misinterpret market bounces as false signals. 
+  In reality, these movements are not inherently deceptive; rather, it is the traders' own prejudices 
+  that distort their understanding of the market dynamics.
+  </span>
+}
+
+/>
+
+In conclusion, understanding and analyzing volume is essential for successful trading.
+By grasping the interplay of various market dynamics and employing practical strategies,
+traders can navigate the complexities of the stock market with greater confidence and insight.
 
 ### The time
 
-Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
-Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big. Elephants are big.
+The concept of time, when added to the variables of volume and price, transforms a chart into a three-dimensional representation.
+For me, studying time in this context is both the most exhilarating and the most challenging aspect.
+Like with the volume chapter, I found it necessary to be selective to maintain the focus of this article.
+
+Time, one of the seven SI base units, is universally experienced. Everyone has 24 hours a day and seven days a week,
+moving at a constant pace. Yet, our perception of time can vary significantly depending on our emotions and circumstances.
+When entertained or challenged, time may seem to fly, while in moments of boredom or distress, it can drag interminably.
+
+In trading, we utilize various timeframes on charts, ranging from short to long resolutions.
+Commonly, traders refer to 1-minute, 5-minute, 15-minute, 30-minute, 60-minute, daily, weekly, and monthly timeframes.
+Larger timeframes provide a broader perspective, revealing overall trends and critical support and resistance areas.
+Smaller timeframes are used to implement detailed analyses derived from these broader views.
+However, shorter timeframes have a higher noise-to-signal ratio, making it easy to be misled without the context of longer timeframes.
+
+Experienced traders have witnessed and navigated multiple market cycles.
+Ralph Nelson Elliott's wave theory, which posits that markets move in patterns of five and three waves within a trend,
+underscores the cyclical nature of market psychology, swinging between optimism and pessimism.
+Elliott's theory, incorporating the Fibonacci sequence and the golden ratio, describes these waves as fractal and multi-periodic.
+
+<Table>
+  <TableCaption>
+    Table 3: The standardized designation of Elliott wave degrees
+  </TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Cycle name</TableHead>
+      <TableHead>Period duration</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Grand supercycle</TableCell>
+      <TableCell>multi-century</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Supercycle</TableCell>
+      <TableCell>multi-decade (40-70 years)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Cycle</TableCell>
+      <TableCell>one to several years (several decades)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Primary</TableCell>
+      <TableCell>few months to two years</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Intermediate</TableCell>
+      <TableCell>weeks to months</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Minor</TableCell>
+      <TableCell>weeks</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Minute</TableCell>
+      <TableCell>days</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Minuette</TableCell>
+      <TableCell>hours</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Subminuette</TableCell>
+      <TableCell>minutes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+Understanding the interplay between large-cap and small-cap cycles is crucial.
+Large-cap cycles influence and often precede small-cap cycles, with money flowing from more stable assets to riskier,
+more volatile ones. A weak large-cap cycle typically leads to a subdued small-cap environment,
+as investors withdraw funds or refrain from investing in riskier assets. Conversely,
+a robust large-cap market often signals a forthcoming surge in small-cap activity, albeit with a time lag.
+Multiple small-cap cycles can occur within a single large-cap cycle.<br></br>
+The graph below illustrates this theory. The yellow and green graphs depict that
+multiple small-cap cycles (yellow) can fit within a single large-cap cycle
+(green). The blue and red graphs show that small-cap cycles follow large-cap
+cycles in rising markets. During weak large-cap cycles, small-cap activity tends
+to be flat and less active.
+
+<CyclesPlot labelColor="#1c733f" labelFontSize="16px" />
+
+Tracking factors that influence big-cap cycles, such as US bonds, bond yields, the US dollar, and economic indicators like
+the Federal Reserve's interest rate decisions and inflation data, is essential.
+This broader view helps in forming an informed perspective rather than relying solely on ETF-related assets like SPY and IWM.
+
+Small-cap stocks thrive in a strong overall market, where gains from big caps are often reinvested.
+However, small caps have distinct cycles influenced by news-driven "runners" that tend to spike and fade
+throughout the day. This pattern has led many traders to adopt a short bias, anticipating declines post-peak. Over time,
+aggressive shorting can lead to dramatic short squeezes, where the stock price skyrockets as short sellers rush to cover their positions.
+This, in turn, fuels FOMO (fear of missing out) among traders, who then chase rising stocks,
+often resulting in rapid gains followed by swift declines.
+This cycle repeats as traders recalibrate their strategies.
+
+<AlertText
+  variant="info"
+  description={
+    <>
+      <span>
+        Time also plays a critical role in the speed of buying and selling. In
+        the video below, it is explained how selling slowly can prevent a rapid
+        price drop. This strategy highlights the importance of timing in trade
+        execution, as the speed of transactions can significantly impact market
+        prices.
+      </span>
+      <YouTubeEmbed
+        id="tCylH-WzqrU"
+        caption="YouTube video: Baron Harkonnen advises Rabban to sell slowly to avoid a rapid drop in price."
+      />
+    </>
+  }
+/>
+
+Some traders make decisions based on daily time-specific patterns. Here is an interactive widget I prepared:
+by pressing the times on the clock, you can explore the different trading activities throughout the day.
+
+Additionally, there are several seasonal trends that savvy investors track and trade,
+offering significant advantages when understood and leveraged effectively.
+
+During election years, stock market volatility often increases due to uncertainty over potential policy changes.
+Small-cap stocks, in particular, can be highly sensitive to shifts in regulations and economic policies influenced by election outcomes.
+For example, in the United States, small caps have historically shown a tendency to rally in the months following presidential elections,
+especially if the results favor pro-business policies.
+
+Seasonal demand for commodities also impacts market trends. Gold prices, for instance, tend to rise during the summer months
+due to increased demand from India, where gold is traditionally purchased for weddings and festivals. Similarly,
+the demand for chocolate peaks during the winter holidays such as Christmas and Valentine’s Day,
+driving up prices and potentially benefiting small-cap companies in the confectionery industry.
+Agricultural cycles can also affect prices, such as wheat, where a poor harvest one year can lead to higher prices the next,
+impacting small-cap stocks in the agricultural sector.
+
+The adage "Sell in May and go away" is based on the historical underperformance of the market during the summer months,
+suggesting that investors should sell their stocks in May and re-enter the market in October. Small-cap stocks,
+which are often more volatile, might experience more pronounced seasonal effects.
+Historical data indicates that small caps often underperform during the summer and tend to rally in the fall and winter.
+
+Retail stocks, particularly small-cap retailers, often see significant increases in sales during the holiday season,
+such as Black Friday and Christmas. This boost in sales can lead to stock price increases,
+as strong holiday sales are reflected in earnings reports released in the first quarter of the following year.
+Similarly, the back-to-school season in late summer can lead to higher sales for small-cap companies in the retail and apparel sectors,
+positively impacting their stock prices due to increased sales volumes during this period.
+
+Lastly, the tax season around the April tax filing deadline can influence consumer spending and saving behaviors.
+Small-cap financial services companies often see increased business from tax preparation services and related financial products,
+with companies providing tax-related software and services experiencing a spike in sales leading up to the filing deadline.
+Understanding these seasonal trends and their impact on small-cap stocks can provide investors with valuable insights and opportunities
+for strategic trading.
 
 ### The price
-
-The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
-The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal. The eagle is a pretty animal.
