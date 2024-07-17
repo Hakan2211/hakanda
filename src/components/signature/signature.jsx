@@ -47,7 +47,7 @@ function Signature({ className, shareLink, shareTitle }) {
           <Textlink
             classname="no-underline hover:text-[var(--text-color-primary-800)] duration-300"
             text="Share it with a friend on Twitter."
-            href={`https://twitter.com/intent/tweet?text=${shareTitle} https://www.hakanda.com/articles/${shareLink} by @hakanbilgo`}
+            href={`https://twitter.com/intent/tweet?text=${shareTitle}`}
           />
         </div>
         <div>
