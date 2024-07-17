@@ -45,6 +45,11 @@ const InteractiveFloat = dynamic(
   { ssr: false }
 );
 
+const AnalogClock = dynamic(
+  () => import('@/components/analogClock/analogClock'),
+  { ssr: false }
+);
+
 const COMPONENT_MAP = {
   pre: CodeSnippet,
 
@@ -73,6 +78,7 @@ const COMPONENT_MAP = {
   InteractiveFloat,
   YouTubeEmbed,
   TwitterEmbed,
+  AnalogClock,
 };
 
 export default COMPONENT_MAP;

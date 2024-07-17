@@ -229,7 +229,7 @@ Companies may also pay groups of retail traders to manipulate stock prices highe
 The manipulation technique involves splitting the float into locked and freely tradable portions, stealthily accumulating shares,
 and creating hype and momentum through chat rooms and social media. They may spread rumors or release news to trigger technical indicators,
 such as breaking resistance levels, attracting technical retail traders.
-The resulting rapid price increase induces FOMO <TooltipWrapper trigger='?' content={<span className="text-center"><b>Fear Of Missing Out</b></span>} /> among retail traders, who buy emotionally.
+The resulting rapid price increase induces FOMO <TooltipWrapper trigger='?' content={<span className="text-center"><b>Fear Of Missing Out</b> isn't limited to trading. It affects people across all professions and walks of life, influencing their decision-making and emotions. For instance, individuals may feel pressured to marry, buy houses, or have children because they see their peers doing so, despite not being ready themselves. This often leads to rushing into relationships or making hasty decisions driven by FOMO. Such decisions rarely yield positive outcomes. Instead, it's crucial to take a step back, breathe, and carefully consider your choices without the influence of FOMO.</span>} /> among retail traders, who buy emotionally.
 Manipulators then gradually sell their shares, maintaining the illusion of a continuing rally.
 Once the price reaches a significant high, they dump large quantities of shares, causing the price to plummet.
 This method is reminiscent of the <Textlink href='https://www.timothysykes.com/blog/7-step-pennystocking-framework/' text='7-step pennystocking framework'/> by <Twitterlink href='https://twitter.com/timothysykes'>Timothy Sykes</Twitterlink>, which visualizes how emotional responses shape chart patterns.
@@ -321,15 +321,18 @@ commodities, and even forex. Mastering the interpretation of volume and its inte
 governed by the laws of demand and supply, equips one with the ability to navigate any market.
 These fundamental laws are ubiquitous, explaining the recurring patterns seen in different trading arenas.
 
-Charles Dow’s theory is indispensable for anyone serious about trading.
-He introduced the concept of volume-price confirmation and anomalies.
-According to Dow, a price move backed by rising volume is considered valid.
-Conversely, a price move on low volume is deemed an anomaly, indicating underlying issues.
-Comparing volume candles with price candles in terms of their size and length is beneficial.
-Ideally, the largest price candle should align with the largest volume candle, reflecting the strength of the move.
-This idea resonates with Richard Wyckoff’s “law of cause and effect,” which asserts that
-the magnitude of the effect is proportional to the cause.
-Thus, significant causes yield substantial effects, while minor causes result in minor effects.
+<Textlink
+  text="Charles Dow’s"
+  href="https://en.wikipedia.org/wiki/Charles_Dow"
+/> theory is indispensable for anyone serious about trading. He introduced the concept
+of volume-price confirmation and anomalies. According to Dow, a price move backed
+by rising volume is considered valid. Conversely, a price move on low volume is deemed
+an anomaly, indicating underlying issues. Comparing volume candles with price candles
+in terms of their size and length is beneficial. Ideally, the largest price candle
+should align with the largest volume candle, reflecting the strength of the move.
+This idea resonates with Richard Wyckoff’s “law of cause and effect,” which asserts
+that the magnitude of the effect is proportional to the cause. Thus, significant
+causes yield substantial effects, while minor causes result in minor effects.
 
 <AlertText
 variant="info"
@@ -485,7 +488,7 @@ The concept of time, when added to the variables of volume and price, transforms
 For me, studying time in this context is both the most exhilarating and the most challenging aspect.
 Like with the volume chapter, I found it necessary to be selective to maintain the focus of this article.
 
-Time, one of the seven SI base units, is universally experienced. Everyone has 24 hours a day and seven days a week,
+Time, one of the seven SI base units <TooltipWrapper trigger={'\*'} content={<Listcomponent type='unordered' items={['time in second','length in metre','mass in kilogram','electric current in ampere','thermodynamic temperature in kelvin', 'amount of substance in mole', 'luminous intensity in candela' ]} />} />, is universally experienced. Everyone has 24 hours a day and seven days a week,
 moving at a constant pace. Yet, our perception of time can vary significantly depending on our emotions and circumstances.
 When entertained or challenged, time may seem to fly, while in moments of boredom or distress, it can drag interminably.
 
@@ -495,10 +498,10 @@ Larger timeframes provide a broader perspective, revealing overall trends and cr
 Smaller timeframes are used to implement detailed analyses derived from these broader views.
 However, shorter timeframes have a higher noise-to-signal ratio, making it easy to be misled without the context of longer timeframes.
 
-Experienced traders have witnessed and navigated multiple market cycles.
-Ralph Nelson Elliott's wave theory, which posits that markets move in patterns of five and three waves within a trend,
-underscores the cyclical nature of market psychology, swinging between optimism and pessimism.
-Elliott's theory, incorporating the Fibonacci sequence and the golden ratio, describes these waves as fractal and multi-periodic.
+Experienced traders have witnessed and navigated multiple market cycles. <Textlink text="Ralph Nelson Elliott's" href="https://en.wikipedia.org/wiki/Ralph_Nelson_Elliott"/> wave theory, which posits that markets move in patterns of five and three waves
+within a trend, underscores the cyclical nature of market psychology, swinging between
+optimism and pessimism. Elliott's theory, incorporating the Fibonacci sequence and
+the golden ratio, describes these waves as fractal and multi-periodic.
 
 <Table>
   <TableCaption>
@@ -572,7 +575,7 @@ Small-cap stocks thrive in a strong overall market, where gains from big caps ar
 However, small caps have distinct cycles influenced by news-driven "runners" that tend to spike and fade
 throughout the day. This pattern has led many traders to adopt a short bias, anticipating declines post-peak. Over time,
 aggressive shorting can lead to dramatic short squeezes, where the stock price skyrockets as short sellers rush to cover their positions.
-This, in turn, fuels FOMO (fear of missing out) among traders, who then chase rising stocks,
+This, in turn, fuels FOMO among traders, who then chase rising stocks,
 often resulting in rapid gains followed by swift declines.
 This cycle repeats as traders recalibrate their strategies.
 
@@ -596,7 +599,9 @@ This cycle repeats as traders recalibrate their strategies.
 />
 
 Some traders make decisions based on daily time-specific patterns. Here is an interactive widget I prepared:
-by pressing the times on the clock, you can explore the different trading activities throughout the day.
+by pressing the times on the clock, you can explore the different trading activities throughout the day.<TooltipWrapper trigger={"\*"} content={<span>Every trader has their own specific observations and time slots. These given time slots may not match yours, or you might have additional time slots to consider. Your experiences during these times might also differ from mine. I'd love to hear about what you look for at specific times throughout the day. Please share your insights!<br></br><br></br>Note that the given times are in Eastern Standard Time (EST), which is 5 hours behind Greenwich Mean Time (GMT-5).</span>} />
+
+<AnalogClock />
 
 Additionally, there are several seasonal trends that savvy investors track and trade,
 offering significant advantages when understood and leveraged effectively.
