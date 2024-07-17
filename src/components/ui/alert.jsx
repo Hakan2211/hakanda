@@ -47,6 +47,8 @@ const AlertIcon = React.forwardRef(({ children, className, ...props }, ref) => {
     </div>
   );
 });
+
+AlertIcon.displayName = 'AlertIcon';
 const AlertLabel = React.forwardRef(
   ({ children, className, ...props }, ref) => {
     return (
@@ -61,6 +63,8 @@ const AlertLabel = React.forwardRef(
     );
   }
 );
+
+AlertLabel.displayName = 'AlertLabel';
 
 const AlertTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h5

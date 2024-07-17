@@ -12,5 +12,7 @@ export default async function Image({ params }) {
 
   console.log('frontmatter.title', frontmatter.title);
 
-  return new ImageResponse(<img src={frontmatter.image} />, { ...size });
+  return new ImageResponse(<img alt="og-image" src={frontmatter.image} />, {
+    ...size,
+  });
 }
