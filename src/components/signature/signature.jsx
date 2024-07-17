@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { useInView } from 'react-intersection-observer';
 import Textlink from '../textlink/textlink';
 import Twitterlink from '../textlink/twitterlink';
+import Link from 'next/link';
 
 function Signature({ className, shareLink, shareTitle }) {
   const ref = useRef(null);
@@ -50,6 +51,15 @@ function Signature({ className, shareLink, shareTitle }) {
             // href={`https://twitter.com/intent/tweet?text=${shareTitle} https://www.hakanda.com/articles/${shareLink} by @hakanbilgo`}
             href={`http://twitter.com/share?text=hello&url=${shareLink}`}
           />
+          <Textlink
+            classname="no-underline hover:text-[var(--text-color-primary-800)] duration-300"
+            text="Share it with a friend on Twitter."
+            // href={`https://twitter.com/intent/tweet?text=${shareTitle} https://www.hakanda.com/articles/${shareLink} by @hakanbilgo`}
+            href={`https://twitter.com/intent/tweet?text=${shareTitle} https://www.hakanda.com/articles/${shareLink} by @hakanbilgo`}
+          />
+          <Link href="https://twitter.com/intent/tweet?text=Hello%20world!&url=https%3A%2F%2Fhakanda.com%2Farticles%2Fmastering-small-cap-equities">
+            <p>Hello</p>
+          </Link>
         </div>
         <div>
           If you have a question or you want to give feedback - shoot me a{' '}
