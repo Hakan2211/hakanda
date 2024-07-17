@@ -31,20 +31,11 @@ export async function generateMetadata({ params }) {
       title: frontmatter.title,
       description: frontmatter.description,
       url: `https://www.hakanda.com/articles/${params.postSlug}`,
-      images: [
-        {
-          url: frontmatter.image,
-          width: 1200,
-          height: 630,
-          alt: frontmatter.title,
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: frontmatter.title,
       description: frontmatter.description,
-      images: [frontmatter.image],
     },
   };
 }
