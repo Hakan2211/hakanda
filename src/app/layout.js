@@ -1,7 +1,7 @@
 import './globals.css';
 import { GeistSans } from 'geist/font/sans';
 import Header from '@/components/header/header';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import {
   COLOR_THEME_COOKIE_NAME,
   DARK_TOKENS,
