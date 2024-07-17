@@ -10,7 +10,7 @@ import Header from '@/components/header/header';
 import TableOfContents from '@/components/sidenav/sidenav';
 import { sora } from '@/components/fonts/fonts';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { COLOR_THEME_COOKIE_NAME } from '@/lib/constants';
 import Head from 'next/head';
 
@@ -22,14 +22,12 @@ export async function generateMetadata({ params }) {
   }
 
   const { frontmatter } = blogPostData;
+  console.log('url', `https://${headers().get('host')}`);
 
   return {
     title: `${frontmatter.title} • ${BLOG_TITLE}`,
     description: frontmatter.description,
-    metadataBase:
-      process.env.basePath ||
-      process.env.BASE_PATH ||
-      'https://www.hakanda.com',
+    metadataBase: new URL(`https://${headers().get('host')}`),
     openGraph: {
       type: 'article',
       title: frontmatter.title,
