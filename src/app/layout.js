@@ -1,7 +1,7 @@
 import './globals.css';
 import { GeistSans } from 'geist/font/sans';
 import Header from '@/components/header/header';
-import { cookies, headers } from 'next/headers';
+import { cookies } from 'next/headers';
 import {
   COLOR_THEME_COOKIE_NAME,
   DARK_TOKENS,
@@ -14,7 +14,7 @@ import { Toaster } from '@/components/ui/sonner';
 export const metadata = {
   title: `${BLOG_TITLE}`,
   description: `${BLOG_DESCRIPTION}`,
-  metadataBase: new URL(`https://hakanda.com`),
+  metadataBase: new URL(`https://www.hakanda.com`),
 };
 
 export default function RootLayout({ children }) {

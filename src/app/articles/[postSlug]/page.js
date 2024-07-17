@@ -10,7 +10,7 @@ import Header from '@/components/header/header';
 import TableOfContents from '@/components/sidenav/sidenav';
 import { sora } from '@/components/fonts/fonts';
 import { notFound } from 'next/navigation';
-import { cookies, headers } from 'next/headers';
+import { cookies } from 'next/headers';
 import { COLOR_THEME_COOKIE_NAME } from '@/lib/constants';
 import Head from 'next/head';
 
