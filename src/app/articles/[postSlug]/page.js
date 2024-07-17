@@ -26,9 +26,10 @@ export async function generateMetadata({ params }) {
   return {
     title: `${frontmatter.title} • ${BLOG_TITLE}`,
     description: frontmatter.description,
-    metadataBase: new URL(
-      'https://hakando-m3etttkn6-hakans-projects-e7b004a2.vercel.app'
-    ),
+    metadataBase:
+      process.env.basePath ||
+      process.env.BASE_PATH ||
+      'https://www.hakanda.com',
     openGraph: {
       type: 'article',
       title: frontmatter.title,
