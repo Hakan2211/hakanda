@@ -22,12 +22,10 @@ export async function generateMetadata({ params }) {
   }
 
   const { frontmatter } = blogPostData;
-  console.log('url', `https://${headers().get('host')}`);
 
   return {
     title: `${frontmatter.title} • ${BLOG_TITLE}`,
     description: frontmatter.description,
-    metadataBase: new URL(`https://${headers().get('host')}`),
     openGraph: {
       type: 'article',
       title: frontmatter.title,
