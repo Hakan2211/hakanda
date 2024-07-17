@@ -41,7 +41,7 @@ const CyclesPlot = dynamic(
 );
 
 const InteractiveFloat = dynamic(
-  () => import('@/components/interactiveFloat/interactiveFloat'),
+  () => import('@/components/Interactivefloat/Interactivefloat'),
   { ssr: false }
 );
 
