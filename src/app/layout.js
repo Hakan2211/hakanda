@@ -14,6 +14,7 @@ import { Toaster } from '@/components/ui/sonner';
 export const metadata = {
   title: `${BLOG_TITLE}`,
   description: `${BLOG_DESCRIPTION}`,
+  metadataBase: new URL(`https://${headers().get('host')}`),
 };
 
 export default function RootLayout({ children }) {
