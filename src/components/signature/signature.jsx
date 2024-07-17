@@ -49,7 +49,7 @@ function Signature({ className, shareLink, shareTitle }) {
             text="Share it with a friend on Twitter."
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
               shareTitle
-            )}&url=https://www.hakanda.com/articles/${encodeURIComponent(
+            )}&url=https://hakanda.com/articles/${encodeURIComponent(
               shareLink
             )}`}
           />
