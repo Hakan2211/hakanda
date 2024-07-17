@@ -4,6 +4,7 @@ const nextConfig = {
     outputFileTracingIncludes: {
       '/*': ['./content/**/*'],
     },
+    metadataBase: new URL('https://www.hakanda.com'),
   },
 };
 
