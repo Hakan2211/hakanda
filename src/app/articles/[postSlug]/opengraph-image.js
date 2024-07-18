@@ -10,7 +10,16 @@ export default async function Image({ params }) {
   const blogPostData = await loadBlogPost(params.postSlug);
   const { frontmatter } = blogPostData;
 
-  return new ImageResponse(<img alt="og-image" src={frontmatter.image} />, {
-    ...size,
-  });
+  return new ImageResponse(
+    (
+      <img
+        alt="og-image"
+        src={frontmatter.image}
+        style={{ width: '100%', height: '100%' }}
+      />
+    ),
+    {
+      ...size,
+    }
+  );
 }

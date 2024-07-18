@@ -29,13 +29,22 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'article',
       title: frontmatter.title,
-      description: frontmatter.description,
+      description: frontmatter.abstract,
+      images: [
+        {
+          url: frontmatter.image,
+          width: 1200,
+          height: 630,
+          alt: frontmatter.title,
+        },
+      ],
       url: `https://www.hakanda.com/articles/${params.postSlug}`,
     },
     twitter: {
       card: 'summary_large_image',
       title: frontmatter.title,
-      description: frontmatter.description,
+      description: frontmatter.abstract,
+      image: frontmatter.image,
     },
   };
 }
@@ -60,7 +69,16 @@ async function BlogPost({ params }) {
         </title>
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:image" content={frontmatter.image} />
+        <meta property="og:description" content={frontmatter.abstract} />
+        <meta
+          property="og:url"
+          content={`https://hakanda.com/articles/${params.postSlug}`}
+        />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.abstract} />
+        <meta name="twitter:image" content={frontmatter.image} />
       </Head>
       <Header initialTheme={theme} title={frontmatter.title} />
       <TableOfContents headings={headings} />
