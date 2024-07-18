@@ -101,8 +101,8 @@ const AnalogClock = () => {
   return (
     <div className="my-10 flex flex-col items-center">
       <svg
-        width="400"
-        height="400"
+        width="350"
+        height="350"
         viewBox="0 0 300 300"
         className="cursor-pointer"
       >

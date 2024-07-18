@@ -1,5 +1,6 @@
 'use client';
 
+import useViewport from '@/hooks/useViewport';
 import { OrbitControls, Text, SoftShadows } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion-3d';
@@ -8,6 +9,7 @@ import { useRef, useState, useEffect } from 'react';
 function Interactivefloat() {
   const [clicked, setClicked] = useState([false, false, false]);
   const [hovered, setHovered] = useState(false);
+  const viewport = useViewport();
 
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto';
@@ -29,7 +31,7 @@ function Interactivefloat() {
           background: 'var(--canvas-bg-color)',
         }}
         shadows
-        camera={{ position: [0, 1, 17] }}
+        camera={{ position: viewport === 'mobile' ? [3, 1, 22] : [0, 1, 17] }}
       >
         {/* <color attach="background" args={[]} /> */}
         {/* <SoftShadows /> */}

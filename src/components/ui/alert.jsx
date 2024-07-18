@@ -39,7 +39,7 @@ const AlertIcon = React.forwardRef(({ children, className, ...props }, ref) => {
   return (
     <div
       ref={ref}
-      className={cn('absolute -top-5 -right-5', className)}
+      className={cn('absolute -top-5 -right-2 md:-right-5', className)}
       aria-hidden="true"
       {...props}
     >
