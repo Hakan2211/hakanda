@@ -81,7 +81,7 @@ async function BlogPost({ params }) {
         <meta name="twitter:image" content={frontmatter.image} />
       </Head>
       <Header initialTheme={theme} title={frontmatter.title} />
-      <TableOfContents headings={headings} />
+      <TableOfContents headings={headings} slug={frontmatter.slug} />
       <article>
         <div className={styles.wrapper}>
           <div className={styles.articles_wrapper}>

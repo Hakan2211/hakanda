@@ -7,7 +7,7 @@ import ScrollProgress from './scrollprogress/scrollProgressIndicator';
 import useScrollSpy from '@/hooks/useScrollSpy';
 import LikeButton from '../likeButton/likeButton';
 
-function TableOfContents({ headings }) {
+function TableOfContents({ headings, slug }) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRefs = useRef(headings.map(() => React.createRef()));
   // const activeIndex = useScrollSpy(
@@ -103,7 +103,7 @@ function TableOfContents({ headings }) {
           </ul>
         </nav>
         <div className="flex items-center justify-center mr-20">
-          <LikeButton />
+          <LikeButton slug={slug} />
         </div>
       </div>
     </aside>

@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
+import CryptoJS from 'crypto-js';
 
-const LikeButton = () => {
+const LikeButton = ({ slug }) => {
   const [fillPercentage, setFillPercentage] = useState(20);
   const [animateScale, setAnimateScale] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(0.8);
@@ -26,8 +27,42 @@ const LikeButton = () => {
     }
   }, [fillPercentage]);
 
-  const handleClick = () => {
+  useEffect(() => {
+    if (!slug) return;
+    const fetchLikes = async () => {
+      const response = await fetch(`/api/likes/${slug}`);
+      const data = await response.json();
+      setCountLikes(data.totalLikes);
+      setFillPercentage((data.totalLikes / 9) * 100);
+    };
+
+    fetchLikes();
+  }, [slug]);
+
+  //   const handleClick = () => {
+  //     if (fillPercentage < 100) {
+  //       setCountLikes((prev) => prev + 1);
+  //       setFillPercentage((prev) => (prev < 100 ? prev + 10 : 100));
+  //       setPlaybackRate(playbackRate + 0.1);
+  //       play();
+  //     }
+  //   };
+
+  const handleClick = async () => {
     if (fillPercentage < 100) {
+      const res = await fetch('/api/get-ip');
+      const { ip } = await res.json();
+      const hashedIp = CryptoJS.SHA256(ip).toString();
+
+      const response = await fetch(`/api/likes/${slug}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ip }),
+      });
+
+      const data = await response.json();
       setCountLikes((prev) => prev + 1);
       setFillPercentage((prev) => (prev < 100 ? prev + 10 : 100));
       setPlaybackRate(playbackRate + 0.1);
