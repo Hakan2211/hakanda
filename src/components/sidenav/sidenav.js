@@ -5,6 +5,7 @@ import styles from './sidenav.module.css';
 import { slugify } from '@/lib/utils';
 import ScrollProgress from './scrollprogress/scrollProgressIndicator';
 import useScrollSpy from '@/hooks/useScrollSpy';
+import LikeButton from '../likeButton/likeButton';
 
 function TableOfContents({ headings }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -101,6 +102,9 @@ function TableOfContents({ headings }) {
             ))}
           </ul>
         </nav>
+        <div className="flex items-center justify-center mr-20">
+          <LikeButton />
+        </div>
       </div>
     </aside>
   );

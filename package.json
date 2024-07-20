@@ -50,6 +50,7 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.161.0",
     "unist-util-visit": "^5.0.0",
+    "use-sound": "^4.0.3",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
