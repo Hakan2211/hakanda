@@ -27,7 +27,7 @@ function Contact() {
               Contact me by filling the form below or{' '}
               <a
                 target="_blank"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=hakando3d@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hakanda3d@gmail.com"
                 className="underline underline-offset-2 cursor-pointer hover:text-yellow-600 transition-colors duration-300 ease-in-out"
               >
                 click here
