@@ -45,7 +45,10 @@ const LikeButton = ({ slug }) => {
   useEffect(() => {
     if (!slug) return;
     const fetchLikes = async () => {
-      const response = await fetch(`/api/likes/${slug}`);
+      const deviceIdentifier = getDeviceIdentifier();
+      const response = await fetch(
+        `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
+      );
       const data = await response.json();
       setCountLikes(data.totalLikes);
     };

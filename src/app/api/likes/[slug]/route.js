@@ -44,7 +44,8 @@ export async function POST(request, { params }) {
     const { data, error } = await supabase
       .from('Likes')
       .update({ likes: newLikes })
-      .eq('id', existingLike.id);
+      .eq('id', existingLike.id)
+      .select();
 
     if (error) {
       return new Response(JSON.stringify({ error: error.message }), {
@@ -60,7 +61,8 @@ export async function POST(request, { params }) {
   } else {
     const { data, error } = await supabase
       .from('Likes')
-      .insert([{ slug, deviceIdentifier, likes: 1 }]);
+      .insert([{ slug, deviceIdentifier, likes: 1 }])
+      .select();
 
     if (error) {
       return new Response(JSON.stringify({ error: error.message }), {
