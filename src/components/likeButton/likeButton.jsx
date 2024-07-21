@@ -80,16 +80,20 @@ const LikeButton = ({ slug }) => {
 
       const data = await response.json();
       // update totallikes if the request is successful
-      if (response.ok) {
-        const fetchLikes = async () => {
-          const response = await fetch(
-            `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
-          );
-          const data = await response.json();
-          setTotalLikes(data.totalLikesAllUsers);
-        };
+      // if (response.ok) {
+      //   const fetchLikes = async () => {
+      //     const response = await fetch(
+      //       `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
+      //     );
+      //     const data = await response.json();
+      //     setTotalLikes(data.totalLikesAllUsers);
+      //   };
 
-        fetchLikes();
+      //   fetchLikes();
+      // }
+      if (response.ok) {
+        const data = await response.json();
+        setTotalLikes(data.totalLikesAllUsers);
       }
     }
   };
