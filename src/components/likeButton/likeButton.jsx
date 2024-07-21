@@ -33,7 +33,7 @@ const LikeButton = ({ slug }) => {
   };
 
   useEffect(() => {
-    countRef.current = count;
+    countRef.current = countLikes;
     if (countLikes === MAX_LIKES) {
       setAnimateScale(true);
       play2();
