@@ -46,9 +46,11 @@ const LikeButton = ({ slug }) => {
     if (!slug) return;
     const fetchLikes = async () => {
       const deviceIdentifier = getDeviceIdentifier();
-      const response = await fetch(
-        `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
-      );
+      const response = await fetch(`/api/likes/${slug}`, {
+        headers: {
+          deviceIdentifier: deviceIdentifier,
+        },
+      });
       const data = await response.json();
       setCountLikes(data.totalLikes);
     };
@@ -74,6 +76,9 @@ const LikeButton = ({ slug }) => {
       });
 
       const data = await response.json();
+      if (data.success) {
+        setCountLikes(data.totalLikes);
+      }
     }
   };
 

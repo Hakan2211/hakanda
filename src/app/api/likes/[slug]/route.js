@@ -6,7 +6,9 @@ export async function GET(request, { params }) {
   const { data: likes, error } = await supabase
     .from('Likes')
     .select('likes')
-    .eq('slug', slug);
+    .eq('slug', slug)
+    .eq('deviceIdentifier', deviceIdentifier)
+    .single();
 
   if (error) {
     return new Response(JSON.stringify({ error: error.message }), {
@@ -14,7 +16,7 @@ export async function GET(request, { params }) {
       headers: { 'Content-Type': 'application/json' },
     });
   } else {
-    const totalLikes = likes.reduce((sum, like) => sum + like.likes, 0);
+    const totalLikes = likes ? likes.likes : 0;
     return new Response(JSON.stringify({ totalLikes }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
