@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
 import { v4 as uuidv4 } from 'uuid';
@@ -13,6 +13,7 @@ const LikeButton = ({ slug }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [countLikes, setCountLikes] = useState(0);
   const [subtleAnimate, setSubtleAnimate] = useState(false);
+  const countRef = useRef(countLikes);
 
   const [play] = useSound('/sounds/drumkick.wav', {
     playbackRate,
@@ -32,6 +33,7 @@ const LikeButton = ({ slug }) => {
   };
 
   useEffect(() => {
+    countRef.current = count;
     if (countLikes === MAX_LIKES) {
       setAnimateScale(true);
       play2();
@@ -60,7 +62,8 @@ const LikeButton = ({ slug }) => {
 
   const handleClick = async () => {
     if (countLikes < MAX_LIKES) {
-      setCountLikes((prev) => prev + 1);
+      // setCountLikes((prev) => prev + 1);
+      countRef.current += 1;
 
       setPlaybackRate(playbackRate + 0.1);
       play();
@@ -76,9 +79,9 @@ const LikeButton = ({ slug }) => {
       });
 
       const data = await response.json();
-      if (data.success) {
-        setCountLikes(data.totalLikes);
-      }
+      // if (data.success) {
+      //   setCountLikes(data.totalLikes);
+      // }
     }
   };
 
