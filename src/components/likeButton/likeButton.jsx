@@ -63,6 +63,7 @@ const LikeButton = ({ slug }) => {
   const handleClick = async () => {
     if (countLikes < MAX_LIKES) {
       setCountLikes((prev) => prev + 1);
+      setTotalLikes((prev) => prev + 1);
       // countRef.current += 1;
 
       setPlaybackRate(playbackRate + 0.1);
@@ -78,22 +79,17 @@ const LikeButton = ({ slug }) => {
         body: JSON.stringify({ deviceIdentifier, maxLikes: MAX_LIKES }),
       });
 
-      const data = await response.json();
       // update totallikes if the request is successful
-      // if (response.ok) {
-      //   const fetchLikes = async () => {
-      //     const response = await fetch(
-      //       `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
-      //     );
-      //     const data = await response.json();
-      //     setTotalLikes(data.totalLikesAllUsers);
-      //   };
-
-      //   fetchLikes();
-      // }
       if (response.ok) {
-        const data = await response.json();
-        setTotalLikes(data.totalLikesAllUsers);
+        const fetchLikes = async () => {
+          const response = await fetch(
+            `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
+          );
+          const data = await response.json();
+          setTotalLikes(data.totalLikesAllUsers);
+        };
+
+        fetchLikes();
       }
     }
   };
