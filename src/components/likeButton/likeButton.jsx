@@ -13,7 +13,7 @@ const LikeButton = ({ slug }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [countLikes, setCountLikes] = useState(0);
   const [subtleAnimate, setSubtleAnimate] = useState(false);
-  const countRef = useRef(countLikes);
+  // const countRef = useRef(countLikes);
 
   const [play] = useSound('/sounds/drumkick.wav', {
     playbackRate,
@@ -33,7 +33,7 @@ const LikeButton = ({ slug }) => {
   };
 
   useEffect(() => {
-    countRef.current = countLikes;
+    // countRef.current = countLikes;
     if (countLikes === MAX_LIKES) {
       setAnimateScale(true);
       play2();
@@ -62,8 +62,8 @@ const LikeButton = ({ slug }) => {
 
   const handleClick = async () => {
     if (countLikes < MAX_LIKES) {
-      // setCountLikes((prev) => prev + 1);
-      countRef.current += 1;
+      setCountLikes((prev) => prev + 1);
+      // countRef.current += 1;
 
       setPlaybackRate(playbackRate + 0.1);
       play();
