@@ -1,5 +1,4 @@
 import { supabase } from '../../../../lib/supabaseClient';
-import CryptoJS from 'crypto-js';
 
 export async function GET(request, { params }) {
   const { slug } = params;
@@ -25,14 +24,13 @@ export async function GET(request, { params }) {
 
 export async function POST(request, { params }) {
   const { slug } = params;
-  const { ip } = await request.json();
-  const hashedIp = CryptoJS.SHA256(ip).toString();
+  const { deviceIdentifier, maxLikes } = await request.json();
 
   const { data: existingLike, error: findError } = await supabase
     .from('Likes')
     .select('id, likes')
     .eq('slug', slug)
-    .eq('ip_address', hashedIp)
+    .eq('deviceIdentifier', deviceIdentifier)
     .single();
 
   if (findError && findError.code !== 'PGRST116') {
@@ -41,7 +39,7 @@ export async function POST(request, { params }) {
       headers: { 'Content-Type': 'application/json' },
     });
   } else if (existingLike) {
-    const newLikes = Math.min(existingLike.likes + 1, 8);
+    const newLikes = Math.min(existingLike.likes + 1, maxLikes);
 
     const { data, error } = await supabase
       .from('Likes')
@@ -62,7 +60,7 @@ export async function POST(request, { params }) {
   } else {
     const { data, error } = await supabase
       .from('Likes')
-      .insert([{ slug, ip_address: hashedIp, likes: 1 }]);
+      .insert([{ slug, deviceIdentifier, likes: 1 }]);
 
     if (error) {
       return new Response(JSON.stringify({ error: error.message }), {
