@@ -12,6 +12,7 @@ const LikeButton = ({ slug }) => {
   const [playbackRate, setPlaybackRate] = useState(0.8);
   const [isVisible, setIsVisible] = useState(false);
   const [countLikes, setCountLikes] = useState(0);
+  const [totalLikes, setTotalLikes] = useState(0);
   const [subtleAnimate, setSubtleAnimate] = useState(false);
   // const countRef = useRef(countLikes);
 
@@ -48,13 +49,12 @@ const LikeButton = ({ slug }) => {
     if (!slug) return;
     const fetchLikes = async () => {
       const deviceIdentifier = getDeviceIdentifier();
-      const response = await fetch(`/api/likes/${slug}`, {
-        headers: {
-          deviceIdentifier: deviceIdentifier,
-        },
-      });
+      const response = await fetch(
+        `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
+      );
       const data = await response.json();
       setCountLikes(data.totalLikes);
+      setTotalLikes(data.totalLikesAllUsers);
     };
 
     fetchLikes();
@@ -258,7 +258,8 @@ const LikeButton = ({ slug }) => {
             </g>
           </motion.svg>
         </motion.div>
-        <div className="text-[var(--text-color-primary-800)]">{countLikes}</div>
+        {/* <div className="text-[var(--text-color-primary-800)]">{countLikes}</div> */}
+        <div className="text-[var(--text-color-primary-800)]">{totalLikes}</div>
       </>
     )
   );

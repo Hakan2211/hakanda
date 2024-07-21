@@ -2,13 +2,25 @@ import { supabase } from '../../../../lib/supabaseClient';
 
 export async function GET(request, { params }) {
   const { slug } = params;
+  const deviceIdentifier = request.nextUrl.searchParams.get('deviceIdentifier');
 
   const { data: likes, error } = await supabase
     .from('Likes')
-    .select('likes')
-    .eq('slug', slug)
-    .eq('deviceIdentifier', deviceIdentifier)
-    .single();
+    // Select both likes and deviceIdentifier
+    .select('likes, deviceIdentifier')
+    .eq('slug', slug);
+  // .eq('deviceIdentifier', deviceIdentifier)
+  // .single();
+
+  if (error?.details === 'The result contains 0 rows') {
+    return new Response(
+      JSON.stringify({ totalLikes: 0, totalLikesAllUsers: 0 }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
 
   if (error) {
     return new Response(JSON.stringify({ error: error.message }), {
@@ -16,11 +28,20 @@ export async function GET(request, { params }) {
       headers: { 'Content-Type': 'application/json' },
     });
   } else {
-    const totalLikes = likes.reduce((sum, like) => sum + like.likes, 0);
-    return new Response(JSON.stringify({ totalLikes }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    const currentUserLikes = likes.find(
+      (like) => like.deviceIdentifier === deviceIdentifier
+    );
+
+    return new Response(
+      JSON.stringify({
+        totalLikes: currentUserLikes?.likes || 0,
+        totalLikesAllUsers: likes.reduce((acc, like) => acc + like.likes, 0),
+      }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
   }
 }
 
