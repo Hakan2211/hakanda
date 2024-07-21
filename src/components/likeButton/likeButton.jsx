@@ -3,14 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
-import CryptoJS from 'crypto-js';
+import { v4 as uuidv4 } from 'uuid';
+
+const MAX_LIKES = 10;
 
 const LikeButton = ({ slug }) => {
-  const [fillPercentage, setFillPercentage] = useState(20);
   const [animateScale, setAnimateScale] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(0.8);
   const [isVisible, setIsVisible] = useState(false);
   const [countLikes, setCountLikes] = useState(0);
+  const [subtleAnimate, setSubtleAnimate] = useState(false);
 
   const [play] = useSound('/sounds/drumkick.wav', {
     playbackRate,
@@ -19,13 +21,26 @@ const LikeButton = ({ slug }) => {
 
   const [play2] = useSound('/sounds/balloon_pop.wav', {});
 
-  useEffect(() => {
-    if (fillPercentage === 100) {
-      setAnimateScale(true);
-      setTimeout(() => setAnimateScale(false), 500);
-      play2();
+  // get a uniquce device_identifier to track the gadget instead of the IP
+  const getDeviceIdentifier = () => {
+    let deviceIdentifier = localStorage.getItem('deviceIdentifier');
+    if (!deviceIdentifier) {
+      deviceIdentifier = uuidv4();
+      localStorage.setItem('deviceIdentifier', deviceIdentifier);
     }
-  }, [fillPercentage]);
+    return deviceIdentifier;
+  };
+
+  useEffect(() => {
+    if (countLikes === MAX_LIKES) {
+      setAnimateScale(true);
+      play2();
+      setTimeout(() => {
+        setAnimateScale(false);
+        setSubtleAnimate(true);
+      }, 500);
+    }
+  }, [countLikes]);
 
   useEffect(() => {
     if (!slug) return;
@@ -33,40 +48,29 @@ const LikeButton = ({ slug }) => {
       const response = await fetch(`/api/likes/${slug}`);
       const data = await response.json();
       setCountLikes(data.totalLikes);
-      setFillPercentage((data.totalLikes / 9) * 100);
     };
 
     fetchLikes();
   }, [slug]);
 
-  //   const handleClick = () => {
-  //     if (fillPercentage < 100) {
-  //       setCountLikes((prev) => prev + 1);
-  //       setFillPercentage((prev) => (prev < 100 ? prev + 10 : 100));
-  //       setPlaybackRate(playbackRate + 0.1);
-  //       play();
-  //     }
-  //   };
-
   const handleClick = async () => {
-    if (fillPercentage < 100) {
-      const res = await fetch('/api/get-ip');
-      const { ip } = await res.json();
-      const hashedIp = CryptoJS.SHA256(ip).toString();
+    if (countLikes < MAX_LIKES) {
+      setCountLikes((prev) => prev + 1);
+
+      setPlaybackRate(playbackRate + 0.1);
+      play();
+
+      const deviceIdentifier = getDeviceIdentifier();
 
       const response = await fetch(`/api/likes/${slug}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ip }),
+        body: JSON.stringify({ deviceIdentifier, maxLikes: MAX_LIKES }),
       });
 
       const data = await response.json();
-      setCountLikes((prev) => prev + 1);
-      setFillPercentage((prev) => (prev < 100 ? prev + 10 : 100));
-      setPlaybackRate(playbackRate + 0.1);
-      play();
     }
   };
 
@@ -112,6 +116,21 @@ const LikeButton = ({ slug }) => {
           whileHover={{ rotateY: 20 }}
         >
           <motion.svg
+            initial={{ scale: 1 }}
+            animate={subtleAnimate ? { scale: 1.1, rotateY: 20 } : {}}
+            transition={
+              subtleAnimate
+                ? {
+                    duration: 1,
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                    type: 'spring',
+                    stiffness: 150,
+                    damping: 20,
+                    mass: 3,
+                  }
+                : {}
+            }
             width="65"
             height="65"
             viewBox="-5.0 -10.0 110.0 135.0"
@@ -126,7 +145,7 @@ const LikeButton = ({ slug }) => {
               <clipPath id="heartClip">
                 <rect
                   x="0"
-                  y={`${100 - fillPercentage}%`}
+                  y={((MAX_LIKES - countLikes) / MAX_LIKES) * 100}
                   width="100%"
                   height="100%"
                 />
