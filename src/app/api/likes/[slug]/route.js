@@ -16,7 +16,7 @@ export async function GET(request, { params }) {
       headers: { 'Content-Type': 'application/json' },
     });
   } else {
-    const totalLikes = likes ? likes.likes : 0;
+    const totalLikes = likes.reduce((sum, like) => sum + like.likes, 0);
     return new Response(JSON.stringify({ totalLikes }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
