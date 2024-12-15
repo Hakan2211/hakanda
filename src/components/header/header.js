@@ -90,7 +90,7 @@ function Header({ title, className, initialTheme }) {
                   : styles.titleTransition
               } ${
                 sora.className
-              } p-4 text-lg md:text-xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
+              } p-2 md:p-4 text-base md:text-xl font-bold bg-gradient-to-r from-[var(--text-color-primary-900)] to-[var(--text-color-primary-500)] text-transparent bg-clip-text`}
             >
               {title}
             </h1>
