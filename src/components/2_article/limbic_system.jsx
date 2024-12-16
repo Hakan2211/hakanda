@@ -2,8 +2,20 @@
 import { OrbitControls, Text } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { BrainModel } from './brain_model';
+import { color } from 'framer-motion';
 
 function LimbicSystem() {
+  const annotations = [
+    { name: 'Amygdala', position: [-10, -10, 0], color: '#8e151f' },
+    { name: 'Hippocampus', position: [25, -10, 0], color: '#4C8830' },
+    {
+      name: 'Anterior cingulate cortex',
+      position: [7, -15, 20],
+      color: '#E2505C',
+    },
+    { name: 'Hypothalamus', position: [5, -20, 5], color: '#8f686a' },
+    { name: 'Pituitary Gland', position: [5, -20, -5], color: '#8f686a' },
+  ];
   return (
     <div className="my-10" style={{ height: '600px', borderRadius: '8px' }}>
       <Canvas
@@ -24,7 +36,11 @@ function LimbicSystem() {
           castShadow
           color={'white'}
         />
-        <BrainModel position={[0, -0.75, 0]} scale={1.2} />
+        <BrainModel
+          annotations={annotations}
+          position={[0, -0.75, 0]}
+          scale={1.2}
+        />
       </Canvas>
     </div>
   );

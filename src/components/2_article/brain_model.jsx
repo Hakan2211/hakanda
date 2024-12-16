@@ -1,15 +1,50 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
+import { useGLTF, Text } from '@react-three/drei';
 
-export function BrainModel(props) {
+export function BrainModel({ annotations, onAnnotationClick, ...props }) {
   const { nodes, materials } = useGLTF('/models/compressed_brain.glb');
+
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
         <group scale={3.782}>
           <group rotation={[-Math.PI / 2, Math.PI * 2, Math.PI / 2 - 90]}>
+            {annotations.map((ann, index) => (
+              <group
+                key={index}
+                position={[ann.position[0], ann.position[1], ann.position[2]]}
+              >
+                <mesh
+                  key={index}
+                  position={ann.position}
+                  onClick={() => onAnnotationClick(ann.position)}
+                >
+                  <sphereGeometry args={[2, 16, 16]} />
+                  <meshBasicMaterial
+                    color={ann.color}
+                    transparent
+                    opacity={0.65}
+                  />
+                </mesh>
+                <Text
+                  rotation={[Math.PI / 2, 0, 0]}
+                  position={[
+                    ann.position[0],
+                    ann.position[1],
+                    ann.position[2] + 5,
+                  ]} // Offset text slightly above the sphere
+                  fontSize={3}
+                  color="#f5f0f6"
+                  //anchorX="center" // Centers the text horizontally
+                  // anchorY="middle" // Centers the text vertically
+                >
+                  {ann.name}
+                </Text>{' '}
+              </group>
+            ))}
+
             <mesh
               castShadow
               receiveShadow
