@@ -50,6 +50,11 @@ const AnalogClock = dynamic(
   { ssr: false }
 );
 
+const LimbicSystem = dynamic(
+  () => import('@/components/2_article/limbic_system'),
+  { ssr: false }
+);
+
 const COMPONENT_MAP = {
   pre: CodeSnippet,
 
@@ -79,6 +84,7 @@ const COMPONENT_MAP = {
   YouTubeEmbed,
   TwitterEmbed,
   AnalogClock,
+  LimbicSystem,
 };
 
 export default COMPONENT_MAP;
