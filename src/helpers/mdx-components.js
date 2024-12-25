@@ -1,19 +1,19 @@
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-import AlertText from '@/components/AlertText/alertText';
-import CodeSnippet from '@/components/CodeSnippet';
-import BlogHeading from '@/components/blogheading/blogheading';
-import Signature from '@/components/signature/signature';
-import Textlink from '@/components/textlink/textlink';
-import Twitterlink from '@/components/textlink/twitterlink';
-import Listcomponent from '@/components/listcomponent/listcomponent';
+import AlertText from "@/components/AlertText/alertText";
+import CodeSnippet from "@/components/CodeSnippet";
+import BlogHeading from "@/components/blogheading/blogheading";
+import Signature from "@/components/signature/signature";
+import Textlink from "@/components/textlink/textlink";
+import Twitterlink from "@/components/textlink/twitterlink";
+import Listcomponent from "@/components/listcomponent/listcomponent";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from '@/components/ui/hover-card';
-import HoverCardWrapper from '@/components/hoverCardWrapper/hoverCardWrapper';
-import TooltipWrapper from '@/components/tooltipWrapper/tooltipWrapper';
+} from "@/components/ui/hover-card";
+import HoverCardWrapper from "@/components/hoverCardWrapper/hoverCardWrapper";
+import TooltipWrapper from "@/components/tooltipWrapper/tooltipWrapper";
 
 import {
   Table,
@@ -23,35 +23,44 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import YouTubeEmbed from '@/components/thirdPartyEmbed/YouTubeEmbed';
-import TwitterEmbed from '@/components/thirdPartyEmbed/TwitterEmbed';
+} from "@/components/ui/table";
+import YouTubeEmbed from "@/components/thirdPartyEmbed/YouTubeEmbed";
+import TwitterEmbed from "@/components/thirdPartyEmbed/TwitterEmbed";
 
 const FloatVolatilityCorrelation = dynamic(
   () =>
     import(
-      '@/components/functionPlots/floatVolatilityCorrelation/floatVolatilityCorrelation'
+      "@/components/functionPlots/floatVolatilityCorrelation/floatVolatilityCorrelation"
     ),
   { ssr: false }
 );
 
 const CyclesPlot = dynamic(
-  () => import('@/components/functionPlots/cyclesPlot/cyclesPlot'),
+  () => import("@/components/functionPlots/cyclesPlot/cyclesPlot"),
   { ssr: false }
 );
 
 const InteractiveFloat = dynamic(
-  () => import('@/components/Interactivefloat/Interactivefloat'),
+  () => import("@/components/Interactivefloat/Interactivefloat"),
   { ssr: false }
 );
 
 const AnalogClock = dynamic(
-  () => import('@/components/analogClock/analogClock'),
+  () => import("@/components/analogClock/analogClock"),
   { ssr: false }
 );
 
 const LimbicSystem = dynamic(
-  () => import('@/components/2_article/limbic_system'),
+  () => import("@/components/2_article/limbic_system"),
+  { ssr: false }
+);
+
+const BrainBiasFramework = dynamic(
+  () => import("@/components/2_article/3d_framework"),
+  { ssr: false }
+);
+const BrainBiasFrameworkDepth = dynamic(
+  () => import("@/components/2_article/3d_frameworkWithDepth"),
   { ssr: false }
 );
 
@@ -85,6 +94,8 @@ const COMPONENT_MAP = {
   TwitterEmbed,
   AnalogClock,
   LimbicSystem,
+  BrainBiasFramework,
+  BrainBiasFrameworkDepth,
 };
 
 export default COMPONENT_MAP;
