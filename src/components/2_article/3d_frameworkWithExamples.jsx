@@ -211,7 +211,84 @@ function GridWithAxes() {
   );
 }
 
-function BrainBiasFramework() {
+function BiasesExamples() {
+  return (
+    <>
+      <mesh position={[4, 4, 6]}>
+        <boxGeometry args={[1, 4, 2]} />
+        <meshStandardMaterial color="#16a34a" />
+        <Text fontSize={0.5} position={[0, 3, 0]}>
+          Confirmation Bias
+        </Text>
+      </mesh>
+      <mesh position={[5.5, 6, 11]}>
+        <boxGeometry args={[1, 1, 11]} />
+        <meshStandardMaterial color="#6d28d9" />
+        <Text fontSize={0.5} position={[0, 1, 0]}>
+          Endowment Effect
+        </Text>
+      </mesh>
+      <mesh position={[3, 10, 16]}>
+        <boxGeometry args={[3.5, 1, 3]} />
+        <meshStandardMaterial color="#44403c" />
+        <Text fontSize={0.5} position={[0, 1, 0]}>
+          Hindsight Bias
+        </Text>
+      </mesh>
+      <mesh position={[3, 7, 10]}>
+        <boxGeometry args={[3.5, 4, 6]} />
+        <meshStandardMaterial color="#7dd3fc" />
+        <Text fontSize={0.5} position={[0, 3, 0]}>
+          Cognitive Dissonance
+        </Text>
+      </mesh>
+      <mesh position={[5, 3, -3]}>
+        <boxGeometry args={[3, 5, 9]} />
+        <meshStandardMaterial color="#92400e" />
+        <Text fontSize={0.5} position={[0, 3, 0]}>
+          Overconfidence Bias
+        </Text>
+      </mesh>
+      <mesh position={[5, 8, 18]}>
+        <boxGeometry args={[2, 3, 5]} />
+        <meshStandardMaterial color="#581c87" />
+        <Text fontSize={0.5} position={[0, 3, 0]}>
+          Sunk-Cost Fallacy
+        </Text>
+      </mesh>
+      <mesh position={[5, 2, 5]}>
+        <boxGeometry args={[2, 3, 5]} />
+        <meshStandardMaterial color="#115e59" />
+        <Text fontSize={0.5} position={[2, 2, 0]}>
+          Anchoring Bias
+        </Text>
+      </mesh>
+      <mesh position={[7, 3, -5]}>
+        <boxGeometry args={[1, 5, 5]} />
+        <meshStandardMaterial color="#57534e" />
+        <Text fontSize={0.5} position={[2, 2, 0]}>
+          Loss Aversion
+        </Text>
+      </mesh>
+      <mesh position={[1, 3, 5]}>
+        <boxGeometry args={[2, 5, 5]} />
+        <meshStandardMaterial color="#a8a29e" />
+        <Text fontSize={0.5} position={[0, 3, 0]}>
+          Framing Effect
+        </Text>
+      </mesh>
+      <mesh position={[2, 3, 8]}>
+        <boxGeometry args={[8, 5, 1]} />
+        <meshStandardMaterial color="#3f3f46" />
+        <Text fontSize={0.5} position={[0, -1, 1]}>
+          Availability Heuristic
+        </Text>
+      </mesh>
+    </>
+  );
+}
+
+function BrainBiasFrameworkExamples() {
   return (
     <div className="my-10" style={{ height: "600px", borderRadius: "8px" }}>
       <Canvas
@@ -233,9 +310,10 @@ function BrainBiasFramework() {
           color={"white"}
         />
         <GridWithAxes />
+        <BiasesExamples />
       </Canvas>
     </div>
   );
 }
 
-export default BrainBiasFramework;
+export default BrainBiasFrameworkExamples;

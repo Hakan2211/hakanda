@@ -97,6 +97,12 @@ h3 {
   margin-top: 1.75em;
   margin-bottom: 0.5em;
 }
+h4 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+}
 
 .dark {
   --background: 222.2 84% 4.9%;

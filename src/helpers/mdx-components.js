@@ -64,12 +64,23 @@ const BrainBiasFrameworkDepth = dynamic(
   { ssr: false }
 );
 
+const BrainBiasFrameworkExamples = dynamic(
+  () => import("@/components/2_article/3d_frameworkWithExamples"),
+  { ssr: false }
+);
+
+const BrainBiasDiagram = dynamic(
+  () => import("@/components/2_article/2d_model"),
+  { ssr: false }
+);
+
 const COMPONENT_MAP = {
   pre: CodeSnippet,
 
   h1: (props) => <BlogHeading level={1} {...props} />,
   h2: (props) => <BlogHeading level={2} {...props} />,
   h3: (props) => <BlogHeading level={3} {...props} />,
+  h4: (props) => <BlogHeading level={4} {...props} />,
   AlertText,
   Signature,
   Textlink,
@@ -96,6 +107,8 @@ const COMPONENT_MAP = {
   LimbicSystem,
   BrainBiasFramework,
   BrainBiasFrameworkDepth,
+  BrainBiasDiagram,
+  BrainBiasFrameworkExamples,
 };
 
 export default COMPONENT_MAP;
