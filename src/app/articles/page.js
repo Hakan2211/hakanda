@@ -1,13 +1,15 @@
-import { getBlogPostList } from '@/helpers/file-helpers';
-import { format } from 'date-fns';
-import Link from 'next/link';
-import styles from './blogpage.module.css';
+import { getBlogPostList } from "@/helpers/file-helpers";
+import { format } from "date-fns";
+import Link from "next/link";
+import styles from "./blogpage.module.css";
 
-import React from 'react';
-import BlogIntro from '@/components/blogintroduction/blogintroduction';
+import React from "react";
+import BlogIntro from "@/components/blogintroduction/blogintroduction";
 
 export const metadata = {
   title: `Hakanda • Hakan Bilgic's articles.`,
+  description:
+    "Hakan Bilgic's articles. Here is a list of articles that Hakan has written.",
 };
 
 let year = 0;
@@ -50,7 +52,7 @@ async function Blog() {
                         <p className="min-w-14 mr-8 mt-[2px] text-sm text-[var(--text-color-primary-600)]">
                           {format(
                             new Date(Date.parse(post.publishedOn)),
-                            'MMM dd'
+                            "MMM dd"
                           )}
                         </p>
 
