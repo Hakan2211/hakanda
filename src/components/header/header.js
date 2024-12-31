@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import styles from './header.module.css';
-import Logo from './logo';
+import Link from "next/link";
+import styles from "./header.module.css";
+import Logo from "./logo";
 
-import { useEffect, useState } from 'react';
-import { sora } from '../fonts/fonts';
-import MoonIcon from '../icons/moonIcon';
-import SunIcon from '../icons/sunIcon';
-import Cookies from 'js-cookie';
+import { useEffect, useState } from "react";
+import { sora } from "../fonts/fonts";
+import MoonIcon from "../icons/moonIcon";
+import SunIcon from "../icons/sunIcon";
+import Cookies from "js-cookie";
 import {
   COLOR_THEME_COOKIE_NAME,
   LIGHT_TOKENS,
   DARK_TOKENS,
-} from '@/lib/constants';
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+} from "@/lib/constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 function Header({ title, className, initialTheme }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
 
-  const [theme, setTheme] = useState(initialTheme || 'light');
+  const [theme, setTheme] = useState(initialTheme || "light");
 
   const pathname = usePathname();
 
@@ -29,19 +29,19 @@ function Header({ title, className, initialTheme }) {
     hover: {
       x: [0, -10, 10, -10, 7, 0], // Move the element along the x-axis
       rotate: [0, -10, 10, -10, 10, 0],
-      transition: { type: 'ease', repeat: Infinity, duration: 1.5 },
+      transition: { type: "ease", repeat: Infinity, duration: 1.5 },
     },
   };
 
   function handleToggleTheme() {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
 
     Cookies.set(COLOR_THEME_COOKIE_NAME, newTheme, {
       expires: 365,
     });
 
-    const newTokens = newTheme === 'light' ? LIGHT_TOKENS : DARK_TOKENS;
+    const newTokens = newTheme === "light" ? LIGHT_TOKENS : DARK_TOKENS;
     const root = document.documentElement;
 
     Object.entries(newTokens).forEach(([key, value]) => {
@@ -55,14 +55,14 @@ function Header({ title, className, initialTheme }) {
       setShowTitle(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
   }, []);
 
   return (
     <header
       className={`${
-        isShrunk ? 'h-[85px] md:h-[60px]' : `h-[120px]`
+        isShrunk ? "h-[85px] md:h-[60px]" : `h-[120px]`
       }  fixed top-0 z-10 w-[100%] border border-transparent border-solid transition-height duration-300 ease-in-out`}
     >
       <div className={`${styles.wrapper} ${className}`}>
@@ -72,10 +72,10 @@ function Header({ title, className, initialTheme }) {
           <div className="absolute top-0 left-0 w-[100%] h-[100%] backdrop-blur-2xl -z-1"></div>
           <div>
             <span>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Logo
                   className={`${
-                    isShrunk ? 'w-12 h-12' : 'w-20 h-20'
+                    isShrunk ? "w-12 h-12" : "w-20 h-20"
                   } transition-all duration-300 ease-in-out relative z-10`}
                 />
               </Link>
@@ -99,19 +99,35 @@ function Header({ title, className, initialTheme }) {
           <div className="flex gap-4">
             <nav className="z-20">
               <ul className="flex items-center justify-between gap-6 w-fit leading-[1.9] tracking-[0.3px] text-xl">
-                {pathname === '/' ? (
-                  <motion.li
-                    variants={shakeVariant}
-                    whileHover="hover"
-                    style={{ display: 'inline-block' }}
-                  >
-                    <Link
-                      className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out  "
-                      href="/articles"
+                {pathname === "/" ? (
+                  <>
+                    <motion.li
+                      variants={shakeVariant}
+                      whileHover="hover"
+                      style={{ display: "inline-block" }}
                     >
-                      Articles
-                    </Link>
-                  </motion.li>
+                      <Link
+                        className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out  "
+                        href="/articles"
+                        aria-label="Navigate to articles page"
+                      >
+                        Articles
+                      </Link>
+                    </motion.li>
+                    <motion.li
+                      variants={shakeVariant}
+                      whileHover="hover"
+                      style={{ display: "inline-block" }}
+                    >
+                      <Link
+                        className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out"
+                        href="/about"
+                        aria-label="Navigate to about page"
+                      >
+                        About
+                      </Link>
+                    </motion.li>
+                  </>
                 ) : null}
               </ul>
             </nav>
@@ -119,13 +135,13 @@ function Header({ title, className, initialTheme }) {
               className="relative z-10"
               onClick={handleToggleTheme}
               aria-label={
-                theme === 'light'
-                  ? 'Switch to dark mode'
-                  : 'Switch to light mode'
+                theme === "light"
+                  ? "Switch to dark mode"
+                  : "Switch to light mode"
               }
             >
               <AnimatePresence>
-                {theme === 'light' ? (
+                {theme === "light" ? (
                   <SunIcon
                     className="text-[var(--text-color-primary-800)]   hover:text-yellow-600
                   duration-500
