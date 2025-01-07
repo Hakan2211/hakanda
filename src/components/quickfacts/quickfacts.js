@@ -1,4 +1,5 @@
 import ArrowRight from '../icons/arrow-right';
+import Textlink from '../textlink/textlink';
 
 function QuickFacts() {
   return (
@@ -11,22 +12,30 @@ function QuickFacts() {
           <li className="flex gap-2">
             <ArrowRight className="w-4 h-4 shrink-0 translate-y-2" />
             <span className="text-balance">
-              I graduated in 2020 with a Master of Science in
+              Graduated in 2020 with a Master of Science in
               <span className="text-nowrap"> Electrical Engineering </span>
-              from the Technical University of Brunswick.
+              from the{' '}
+              <a
+                href="https://www.tu-braunschweig.de/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-color-primary-600)] underline underline-offset-2 hover:text-yellow-600 transition-colors duration-300 ease-in-out"
+              >
+                Technical University of Braunschweig.
+              </a>
             </span>
           </li>
           <li className="flex items-center gap-2">
             <ArrowRight className="w-4 h-4" />
-            <span>My blood type is AB negative.</span>
+            <span>Blood Type: AB negative.</span>
           </li>
           <li className="flex items-center gap-2">
             <ArrowRight className="w-4 h-4" />
-            <span>I am left-handed.</span>
+            <span>Left-handed.</span>
           </li>
           <li className="flex items-center gap-2">
             <ArrowRight className="w-4 h-4" />
-            <span>My zodiac sign is Scorpio.</span>
+            <span>Zodiac Sign: Scorpio.</span>
           </li>
         </ul>
       </div>
