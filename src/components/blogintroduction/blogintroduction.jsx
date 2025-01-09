@@ -15,13 +15,14 @@ function BlogIntro() {
         <ArrowLeft className="w-4 h-4 transition-transform transform group-hover:-translate-x-1 hover:ease-in-out duration-500 " />
         <span className="">Home</span>
       </Link>
-      <div className="leading-relaxed tracking-wider text-[var(--text-color-primary-800)]">
+      <div className="text-balance leading-relaxed tracking-wider text-[var(--text-color-primary-800)]">
         <h1 className="font-medium md:font-normal tracking-wider leading-[1.9] md:leading-loose text-[1.25rem] md:text-[1.5rem]">
           Welcome! I am{' '}
           <span className="font-semibold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-yellow-800 to-yellow-400">
             Hakan
           </span>
-          . This blog serves as a hub for my explorations into
+          , and I'm excited to welcome you to my blog. This is where I dive into
+          topics like{' '}
           <span className="bg-[var(--background-topic-yellow)] rounded-lg p-1 mr-1">
             psychology
           </span>
@@ -29,12 +30,12 @@ function BlogIntro() {
           <span className="bg-[var(--background-topic-red)] rounded-lg p-1 mr-1 ml-1">
             neuroscience
           </span>
-          , the dynamics of the
+          , the{' '}
           <span className="bg-[var(--background-topic-blue)] rounded-lg p-1 mr-1 ml-1">
             stock market
           </span>
-          , and personal reflections on a broad spectrum of topics. Here, we
-          look into complex interplay between{' '}
+          , and share my personal thoughts on a wide range of subjects.
+          Together, we'll explore how{' '}
           <span className="-rotate-6 inline-block bg-clip-text text-transparent bg-gradient-to-r from-emerald-800 to-emerald-400">
             order
           </span>{' '}
@@ -42,24 +43,23 @@ function BlogIntro() {
           <span className="inline-block rotate-6 bg-clip-text text-transparent bg-gradient-to-r from-lime-800 to-lime-400 mr-1 ">
             chaos
           </span>
-          , seeking to understand the mechanisms that underlie our thoughts,
-          actions and the broader economic and social systems.
+          interact, trying to understand what drives our thoughts and actions,
+          as well as the bigger economic and social systems around us.
         </h1>
         <h2 className="font-normal leading-[1.9] tracking-widest text-[1rem] md:text-[1.25rem] text-[var(--text-color-primary-600)]">
-          Reflecting on the nature of our explorations, Friedrich Nietzsche's
-          words resonate deeply:
+          Nietzsche once said,{' '}
           <span className="italic underline-offset-8 underline">
             "One must still have chaos in oneself to be able to give birth to a
-            dancing star."
+            dancing star."{' '}
           </span>
-          This space is dedicated to the pursuit of knowledge and insight,
-          acknowledging the chaos that fuels our quest for clarity and the
-          structures we construct in response.
+          This idea really hits home for me. Here, we're all about seeking
+          knowledge and insights, embracing the chaos that helps us find
+          clarity, and building the structures that support our understanding.
         </h2>
         <h2 className="font-normal leading-[1.9] tracking-widest text-[1rem] md:text-[1.25rem] text-[var(--text-color-primary-600)]">
-          Join me in this exploration, where we strive to discern meaning amidst
-          the tumult, embracing the elegance of structure as we navigate through
-          the uncertainties of life.
+          Join me on this journey as we search for meaning in the midst of
+          life's ups and downs, appreciating the beauty of organized thinking
+          while navigating through the uncertainties we all face.
         </h2>
       </div>
       <div className="flex gap-4">
