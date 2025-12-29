@@ -29,6 +29,26 @@ export async function getBlogPostList() {
   return blogPosts.sort((p1, p2) => (p1.publishedOn < p2.publishedOn ? 1 : -1));
 }
 
+export async function getNoteList() {
+  const fileNames = await readDirectory('/notes');
+
+  const notes = [];
+
+  for (let fileName of fileNames) {
+    const rawContent = await readFile(`/notes/${fileName}`);
+
+    const { data: frontmatter, content } = matter(rawContent);
+
+    notes.push({
+      slug: fileName.replace('.mdx', ''),
+      content,
+      ...frontmatter,
+    });
+  }
+
+  return notes.sort((p1, p2) => (p1.date < p2.date ? 1 : -1));
+}
+
 export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
   let rawContent;
   try {

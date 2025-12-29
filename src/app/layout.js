@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      // data-color-theme={theme}
+      className={theme === 'dark' ? 'dark' : ''}
       style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
     >
       <body className={GeistSans.className}>

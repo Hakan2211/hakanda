@@ -1,0 +1,21 @@
+---
+slug: rust-adventures
+date: '2023-12-10'
+title: Rust Adventures
+topics: ['Rust', 'Systems Programming']
+---
+
+Started learning Rust. The borrow checker is strict but fair. It forces you to think about memory ownership in a way that higher-level languages abstract away.
+
+I'm building a small CLI tool to help with file organization. The syntax is expressive, and `match` statements are a joy to use.
+
+```rust
+match input {
+    Some(val) => println!("Value: {}", val),
+    None => println!("No value"),
+}
+```
+
+The error messages in the Rust compiler are the best I've ever seen. They actually explain what's wrong and often suggest the fix.
+
+Performance is obviously great, but the tooling (Cargo) is what really stands out compared to the C++ ecosystem.

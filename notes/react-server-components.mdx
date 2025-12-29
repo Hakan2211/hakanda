@@ -1,0 +1,17 @@
+---
+slug: react-server-components
+date: '2023-12-20'
+title: Thoughts on RSC
+topics: ['React', 'Next.js', 'Performance']
+---
+
+React Server Components (RSC) are a paradigm shift. Moving logic to the server reduces the client bundle size significantly.
+
+The mental model shift is the hardest part. Thinking in terms of "Server Component" vs "Client Component" boundaries takes some getting used to.
+
+### Key Benefits:
+- **Zero Bundle Size**: Server components don't add to the JS bundle.
+- **Direct Database Access**: You can query your DB directly in your component.
+- **Automatic Code Splitting**: Client components imported by server components are automatically code-split.
+
+I'm experimenting with moving our heavy charting library to be server-rendered where possible, or at least lazy-loaded more effectively.

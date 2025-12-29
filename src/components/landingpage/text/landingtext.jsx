@@ -174,7 +174,7 @@ function LandingText() {
           rotation={[0, 0, 0]}
           material={MyShaderMaterial}
         >
-          ideas and creations
+          Digital Garden
         </Text>
       </Float>
     </>

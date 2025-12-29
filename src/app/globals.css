@@ -9,50 +9,136 @@
 }
 
 @layer base {
+  :root {
+    /* Custom Theme Colors: Light Mode (Slate-based) */
+    /* Background: #f8fafc (Slate 50) */
+    --background: 210 40% 98%;
+    /* Foreground: #1e2936 (Slate 800ish) */
+    --foreground: 215 28% 17%;
+
+    /* Card: White or slightly off-white to pop against Slate 50 */
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    /* Popover: Match Card */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    /* Primary: Dark Slate for strong actions */
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary: Light Slate for subtle actions */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted: Slate 100 */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent: Hover states */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive: Red */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders: Slate 200 */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Custom Scrollbar Variables (Inherited from original css) */
+    --scroll-fill: #a3a3a3;
+    --scroll-container: #e5e7eb;
+    
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+    scroll-behavior: smooth;
+  }
+
+  .dark {
+    /* Custom Theme Colors: Dark Mode (Slate-based) */
+    /* Background: #1a202c (Slate 900) */
+    --background: 220 26% 14%;
+    /* Foreground: #e2e8f0 (Slate 200) */
+    --foreground: 210 40% 96%;
+
+    /* Card: Slightly lighter than BG -> Slate 800 #1e293b */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 96%;
+
+    /* Popover: Match Card */
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Primary: Light Slate/White for strong actions */
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* Secondary: Darker Slate */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted: Slate 800 */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent: Hover states */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive: Red */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders: Slate 700 */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    /* Custom Scrollbar Variables (Inherited from original css) */
+    --scroll-fill: #475569;
+    --scroll-container: #020617;
+  }
 }
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-
-  --radius: 0.5rem;
-
-  --background: hsl(210, 17%, 2%);
-  --text: hsl(210deg, 10%, 90%);
-  --gray-300: hsl(209, 18%, 37%);
-  --gray-500: hsl(210deg, 8%, 50%);
-
-  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
-  scroll-behavior: smooth;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 1.75em;
+    margin-bottom: 0.5em;
+  }
+  h4 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-top: 1.75em;
+    margin-bottom: 0.5em;
+  }
 }
 
 @media (min-width: 500px) {
@@ -64,102 +150,13 @@
   ::-webkit-scrollbar {
     width: 10px;
     background-color: var(--scroll-container);
-    /* ... */
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 1000px;
-    /* background-color: var(--gray-300); */
-    background-color: red;
+    background-color: red; /* Kept from original, might want to change? */
     border: 2px solid var(--scroll-container);
-    /* ... */
   }
   ::-webkit-scrollbar-thumb:hover {
     background-color: var(--scroll-fill);
   }
-}
-
-h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  /* color: '#334155' !important; */
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-top: 1.75em;
-  margin-bottom: 0.5em;
-}
-h4 {
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin-top: 1.75em;
-  margin-bottom: 0.5em;
-}
-
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
-}
-
-.light {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
 }

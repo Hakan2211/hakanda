@@ -1,0 +1,18 @@
+---
+slug: framer-motion-magic
+date: '2023-12-15'
+title: Framer Motion Magic
+topics: ['Animation', 'Framer Motion']
+---
+
+Layout animations in Framer Motion are incredibly powerful. The `layout` prop makes list reordering and expansion animations trivial.
+
+Today's experiment was creating a shared layout animation between two different components on different pages. The `layoutId` prop handles the cross-component transition seamlessly.
+
+```javascript
+<motion.div layoutId="underline" className="absolute bottom-0 w-full h-1 bg-blue-500" />
+```
+
+This simple line of code creates a morphing underline that follows the active navigation item. Top-tier UX with minimal effort.
+
+Remember to set `layout` on the parent container as well if you want the surrounding content to animate smoothly when an element changes size.
