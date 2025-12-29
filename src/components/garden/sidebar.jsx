@@ -1,9 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { BookOpen, Camera, PenTool, Layers, Sprout } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState, useTransition } from 'react';
+import { Loader } from '@/components/ui/loader';
 
 const items = [
   { title: 'Garden', href: '/garden', icon: Sprout },
@@ -15,6 +17,18 @@ const items = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const [navigatingTo, setNavigatingTo] = useState(null);
+
+  const handleLinkClick = (e, href) => {
+    if (pathname === href) return;
+    e.preventDefault();
+    setNavigatingTo(href);
+    startTransition(() => {
+      router.push(href);
+    });
+  };
 
   return (
     <div className="flex flex-col gap-4 py-6">
@@ -24,17 +38,25 @@ export function Sidebar() {
         </h2>
         <div className="space-y-1">
           {items.map((item) => {
-            const isActive = item.href === '/garden' ? pathname === item.href : pathname?.startsWith(item.href);
+            const isActive =
+              item.href === '/garden'
+                ? pathname === item.href
+                : pathname?.startsWith(item.href);
+            const isLoading = isPending && navigatingTo === item.href;
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleLinkClick(e, item.href)}
                 className={cn(
-                  "relative group flex items-center gap-3 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200",
-                  isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  'relative group flex items-center gap-3 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200',
+                  isActive
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
                 )}
               >
-                 {isActive && (
+                {isActive && (
                   <motion.div
                     layoutId="activeSidebarItem"
                     className="absolute inset-0 rounded-md bg-secondary shadow-sm"
@@ -46,14 +68,22 @@ export function Sidebar() {
                     }}
                   />
                 )}
-                
-                <span className="relative z-10 flex items-center gap-3">
-                  <item.icon className={cn("h-4 w-4", isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground")} />
+
+                <span className="relative z-10 flex items-center gap-3 w-full">
+                  <item.icon
+                    className={cn(
+                      'h-4 w-4',
+                      isActive
+                        ? 'text-foreground'
+                        : 'text-muted-foreground group-hover:text-foreground'
+                    )}
+                  />
                   {item.title}
+                  {isLoading && <Loader className="ml-auto" />}
                 </span>
 
                 {!isActive && (
-                   <motion.div
+                  <motion.div
                     className="absolute inset-0 rounded-md bg-accent/50 opacity-0 group-hover:opacity-100"
                     initial={false}
                     transition={{ duration: 0.2 }}

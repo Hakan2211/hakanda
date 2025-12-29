@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 
 export default function DashboardHero() {
-  const currentDate = new Date().toLocaleDateString('en-US', { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   });
 
   return (
@@ -23,7 +23,7 @@ export default function DashboardHero() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-3 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-500 dark:from-white dark:via-white dark:to-zinc-500 bg-clip-text text-transparent"
       >
-        Welcome to Your Garden
+        Hakan's Digital Garden
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}

@@ -15,7 +15,9 @@ import {
   DARK_TOKENS,
 } from '@/lib/constants';
 import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { useTransition } from 'react';
+import { Loader } from '@/components/ui/loader';
 
 function Header({ title, className, initialTheme }) {
   const [isShrunk, setIsShrunk] = useState(false);
@@ -24,14 +26,56 @@ function Header({ title, className, initialTheme }) {
   const [theme, setTheme] = useState(initialTheme || 'light');
 
   const pathname = usePathname();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const [navigatingTo, setNavigatingTo] = useState(null);
 
-  const shakeVariant = {
+  const handleLinkClick = (e, href) => {
+    if (pathname === href) return;
+    e.preventDefault();
+    setNavigatingTo(href);
+    startTransition(() => {
+      router.push(href);
+    });
+  };
+
+  const playfulHoverVariant = {
     hover: {
-      x: [0, -10, 10, -10, 7, 0], // Move the element along the x-axis
-      rotate: [0, -10, 10, -10, 10, 0],
-      transition: { type: 'ease', repeat: Infinity, duration: 1.5 },
+      y: -2,
+      rotate: 3,
+      scale: 1.05,
+      transition: {
+        type: 'spring',
+        stiffness: 400,
+        damping: 17,
+      },
     },
   };
+
+  const CurlyUnderline = () => (
+    <svg
+      className="absolute -bottom-2 left-0 w-full h-[12px] text-yellow-500 pointer-events-none"
+      viewBox="0 0 100 15"
+      preserveAspectRatio="none"
+      style={{ overflow: 'visible' }}
+    >
+      <motion.path
+        d="M0,5 C20,15 80,-5 100,5"
+        fill="transparent"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        variants={{
+          hover: {
+            pathLength: 1,
+            opacity: 1,
+            transition: { duration: 0.4, ease: 'easeInOut' },
+          },
+          initial: { pathLength: 0, opacity: 0 },
+        }}
+      />
+    </svg>
+  );
 
   function handleToggleTheme() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -101,46 +145,70 @@ function Header({ title, className, initialTheme }) {
           <div className="flex gap-4">
             <nav className="z-20">
               <ul className="flex items-center justify-between gap-6 w-fit leading-[1.9] tracking-[0.3px] text-xl">
-                {pathname === '/' ? (
+                {pathname === '/' ||
+                pathname.startsWith('/garden') ||
+                pathname === '/articles' ||
+                pathname === '/about' ? (
                   <>
                     <motion.li
-                      variants={shakeVariant}
+                      className="relative flex items-center gap-2"
+                      variants={playfulHoverVariant}
+                      initial="initial"
                       whileHover="hover"
-                      style={{ display: 'inline-block' }}
-                    >
-                      <Link
-                        className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out  "
-                        href="/articles"
-                        aria-label="Navigate to articles page"
-                      >
-                        Articles
-                      </Link>
-                    </motion.li>
-                    <motion.li
-                      variants={shakeVariant}
-                      whileHover="hover"
-                      style={{ display: 'inline-block' }}
-                    >
-                      <Link
-                        className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out"
-                        href="/about"
-                        aria-label="Navigate to about page"
-                      >
-                        About
-                      </Link>
-                    </motion.li>
-                    <motion.li
-                      variants={shakeVariant}
-                      whileHover="hover"
-                      style={{ display: 'inline-block' }}
+                      style={{ display: 'inline-flex' }}
                     >
                       <Link
                         className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out"
                         href="/garden"
+                        onClick={(e) => handleLinkClick(e, '/garden')}
                         aria-label="Navigate to garden page"
                       >
                         Garden
                       </Link>
+                      {isPending && navigatingTo === '/garden' && (
+                        <Loader className="h-3 w-3" />
+                      )}
+                      <CurlyUnderline />
+                    </motion.li>
+                    <motion.li
+                      className="relative flex items-center gap-2"
+                      variants={playfulHoverVariant}
+                      initial="initial"
+                      whileHover="hover"
+                      style={{ display: 'inline-flex' }}
+                    >
+                      <Link
+                        className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out  "
+                        href="/articles"
+                        onClick={(e) => handleLinkClick(e, '/articles')}
+                        aria-label="Navigate to articles page"
+                      >
+                        Articles
+                      </Link>
+                      {isPending && navigatingTo === '/articles' && (
+                        <Loader className="h-3 w-3" />
+                      )}
+                      <CurlyUnderline />
+                    </motion.li>
+                    <motion.li
+                      className="relative flex items-center gap-2"
+                      variants={playfulHoverVariant}
+                      initial="initial"
+                      whileHover="hover"
+                      style={{ display: 'inline-flex' }}
+                    >
+                      <Link
+                        className="text-[var(--text-color-primary-800)] hover:text-yellow-600 duration-500 transition-colors ease-in-out"
+                        href="/about"
+                        onClick={(e) => handleLinkClick(e, '/about')}
+                        aria-label="Navigate to about page"
+                      >
+                        About
+                      </Link>
+                      {isPending && navigatingTo === '/about' && (
+                        <Loader className="h-3 w-3" />
+                      )}
+                      <CurlyUnderline />
                     </motion.li>
                   </>
                 ) : null}
