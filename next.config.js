@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'pub-959c2c75a66348369e3f366689d43899.r2.dev',
       },
+      {
+        protocol: 'https',
+        hostname: 'books.google.ro',
+      },
     ],
   },
 };

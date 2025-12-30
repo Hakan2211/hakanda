@@ -1,4 +1,3 @@
-
 import Gallery from '@/components/garden/gallery/Gallery';
 
 export default function GalleryPage() {
@@ -9,10 +8,12 @@ export default function GalleryPage() {
           Garden Gallery
         </h1>
         <p className="text-muted-foreground text-lg">
-            A curated collection of digital explorations and artifacts.
+          Art I've created with generative AI. What started as curiosity turned
+          into a new creative outlet. One that lets me experiment faster and
+          explore ideas beyond my own drawing abilities.
         </p>
       </div>
-      
+
       <Gallery />
     </div>
   );

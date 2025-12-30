@@ -11,8 +11,8 @@ export default function LatestGallery({ items }) {
     return null;
   }
 
-  // Get the latest 3 items
-  const latestItems = items.slice(0, 3);
+  // Get the latest 3 items (reverse to show newest first)
+  const latestItems = [...items].reverse().slice(0, 3);
 
   return (
     <motion.div
@@ -24,7 +24,9 @@ export default function LatestGallery({ items }) {
     >
       <div className="mb-4 flex items-baseline gap-2">
         <Sparkles className="w-5 h-5 text-[#a58512]" />
-        <h2 className="text-xl md:text-2xl font-bold tracking-tight">Latest Creations</h2>
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight">
+          Latest Creations
+        </h2>
       </div>
 
       <Link href="/garden/gallery">
@@ -35,7 +37,7 @@ export default function LatestGallery({ items }) {
         >
           {/* Gradient overlay */}
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#a58512]/30 via-transparent to-transparent pointer-events-none" />
-          
+
           {/* Glow effect on hover */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -63,16 +65,18 @@ export default function LatestGallery({ items }) {
                     className="object-cover"
                     sizes="(max-width: 768px) 33vw, 200px"
                   />
-                  
+
                   {/* Hover overlay with info */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                     className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent flex flex-col justify-end p-3"
                   >
-                    <p className="text-white text-xs font-medium line-clamp-1">{item.title}</p>
-                    <Badge 
-                      variant="outline" 
+                    <p className="text-white text-xs font-medium line-clamp-1">
+                      {item.title}
+                    </p>
+                    <Badge
+                      variant="outline"
                       className="border-[#a58512]/50 text-[#a58512] bg-[#a58512]/10 backdrop-blur-sm text-[10px] px-1.5 py-0 w-fit mt-1"
                     >
                       {item.style}
@@ -90,7 +94,11 @@ export default function LatestGallery({ items }) {
               <span className="text-xs font-medium">View Full Gallery</span>
               <motion.div
                 animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
               >
                 <ArrowRight className="w-3.5 h-3.5" />
               </motion.div>

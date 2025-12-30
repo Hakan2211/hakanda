@@ -31,47 +31,47 @@ export default function NoteCard({ note, children }) {
       </div>
 
       <div className="relative pb-6">
-        <motion.div 
+        <motion.div
           className="prose dark:prose-invert max-w-none overflow-hidden"
           initial={false}
           animate={{ height: isExpanded ? 'auto' : '120px' }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {children}
         </motion.div>
-        
+
         <AnimatePresence>
           {!isExpanded && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute bottom-6 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" 
+              className="absolute bottom-6 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none"
             />
           )}
         </AnimatePresence>
-        
-        <motion.div 
-          className="absolute bottom-0 left-0 right-0 flex justify-center items-center gap-2 opacity-0 transition-opacity group-hover:opacity-100 py-2"
+
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 flex justify-center items-center gap-2 py-2"
           animate={{ y: [0, 4] }}
           transition={{
             repeat: Infinity,
-            repeatType: "reverse",
-            type: "spring",
+            repeatType: 'reverse',
+            type: 'spring',
             stiffness: 200,
             damping: 10,
             mass: 1,
           }}
         >
-             <span className="text-xs font-medium text-[#a58512]">
-                {isExpanded ? 'Show less' : 'Read more'}
-             </span>
-             <motion.div
-               animate={{ rotate: isExpanded ? 180 : 0 }}
-               transition={{ duration: 0.3 }}
-             >
-                <ChevronDown className="w-4 h-4 text-[#a58512]" />
-             </motion.div>
+          <span className="text-xs font-medium text-[#a58512]">
+            {isExpanded ? 'Show less' : 'Read more'}
+          </span>
+          <motion.div
+            animate={{ rotate: isExpanded ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronDown className="w-4 h-4 text-[#a58512]" />
+          </motion.div>
         </motion.div>
       </div>
     </motion.div>

@@ -1,4 +1,3 @@
-
 import Library from '@/components/garden/library/Library';
 
 export default function LibraryPage() {
@@ -9,10 +8,13 @@ export default function LibraryPage() {
           Garden Library
         </h1>
         <p className="text-muted-foreground text-lg">
-          Books that shaped my thinking and expanded my perspective.
+          Been reading since I was nine. Started with Alfred Hitchcock and the
+          Three Investigators, never stopped. Now I'm deep into non-fiction.
+          This is my reading list: past and present, with plans to highlight the
+          top 10 books each year that actually made a difference.
         </p>
       </div>
-      
+
       <Library />
     </div>
   );
