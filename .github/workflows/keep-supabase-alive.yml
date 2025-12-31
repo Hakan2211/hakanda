@@ -1,0 +1,32 @@
+name: Keep Supabase Active
+
+on:
+  schedule:
+    # Run at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Keep-Alive Endpoint
+        env:
+          # You should add WEBSITE_URL to your repository secrets
+          # Example: https://your-domain.com
+          URL: ${{ secrets.WEBSITE_URL }}
+        run: |
+          if [ -z "$URL" ]; then
+            echo "Error: WEBSITE_URL secret is not set."
+            exit 1
+          fi
+
+          echo "Pinging $URL/api/keep-alive..."
+          response=$(curl -s -w "%{http_code}" -o /dev/null "$URL/api/keep-alive")
+
+          if [ "$response" -eq 200 ]; then
+            echo "Success: Endpoint returned 200 OK"
+          else
+            echo "Failed: Endpoint returned $response"
+            exit 1
+          fi

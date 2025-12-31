@@ -25,6 +25,7 @@ const LikeButton = ({ slug }) => {
 
   // get a uniquce device_identifier to track the gadget instead of the IP
   const getDeviceIdentifier = () => {
+    if (typeof window === 'undefined') return null; // Handle SSR
     let deviceIdentifier = localStorage.getItem('deviceIdentifier');
     if (!deviceIdentifier) {
       deviceIdentifier = uuidv4();
@@ -34,27 +35,27 @@ const LikeButton = ({ slug }) => {
   };
 
   useEffect(() => {
-    // countRef.current = countLikes;
-    if (countLikes === MAX_LIKES) {
-      setAnimateScale(true);
-      play2();
-      setTimeout(() => {
-        setAnimateScale(false);
-        setSubtleAnimate(true);
-      }, 500);
-    }
-  }, [countLikes]);
-
-  useEffect(() => {
     if (!slug) return;
     const fetchLikes = async () => {
       const deviceIdentifier = getDeviceIdentifier();
-      const response = await fetch(
-        `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
-      );
-      const data = await response.json();
-      setCountLikes(data.totalLikes);
-      setTotalLikes(data.totalLikesAllUsers);
+      if (!deviceIdentifier) return;
+
+      try {
+        const response = await fetch(
+          `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setCountLikes(data.totalLikes);
+          setTotalLikes(data.totalLikesAllUsers);
+
+          if (data.totalLikes === MAX_LIKES) {
+            setSubtleAnimate(true);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch likes:', error);
+      }
     };
 
     fetchLikes();
@@ -62,35 +63,32 @@ const LikeButton = ({ slug }) => {
 
   const handleClick = async () => {
     if (countLikes < MAX_LIKES) {
-      setCountLikes((prev) => prev + 1);
+      const newCount = countLikes + 1;
+      setCountLikes(newCount);
       setTotalLikes((prev) => prev + 1);
       // countRef.current += 1;
 
       setPlaybackRate(playbackRate + 0.1);
       play();
 
+      if (newCount === MAX_LIKES) {
+        setAnimateScale(true);
+        play2();
+        setTimeout(() => {
+          setAnimateScale(false);
+          setSubtleAnimate(true);
+        }, 500);
+      }
+
       const deviceIdentifier = getDeviceIdentifier();
 
-      const response = await fetch(`/api/likes/${slug}`, {
+      await fetch(`/api/likes/${slug}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ deviceIdentifier, maxLikes: MAX_LIKES }),
       });
-
-      // update totallikes if the request is successful
-      if (response.ok) {
-        const fetchLikes = async () => {
-          const response = await fetch(
-            `/api/likes/${slug}?deviceIdentifier=${deviceIdentifier}`
-          );
-          const data = await response.json();
-          setTotalLikes(data.totalLikesAllUsers);
-        };
-
-        fetchLikes();
-      }
     }
   };
 

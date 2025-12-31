@@ -16,16 +16,16 @@ export default function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="group mb-24 last:mb-0 w-full flex items-center justify-center px-4"
+      className="group mb-12 md:mb-24 last:mb-0 w-full flex items-center justify-center px-4"
     >
-      <div className="relative w-full max-w-5xl aspect-[16/9] rounded-3xl overflow-hidden bg-white/50 dark:bg-slate-800/40 border border-slate-200 dark:border-white/5 shadow-2xl backdrop-blur-sm">
+      <div className="relative w-full max-w-5xl aspect-auto md:aspect-[16/9] rounded-3xl overflow-hidden bg-white/50 dark:bg-slate-800/40 border border-slate-200 dark:border-white/5 shadow-2xl backdrop-blur-sm">
         {/* Abstract/Placeholder Backend Graphic */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900/50 dark:to-slate-950 group-hover:scale-105 transition-transform duration-700 ease-out">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#a58512]/20 via-transparent to-transparent" />
         </div>
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 bg-gradient-to-t from-white/95 via-white/50 dark:from-slate-950/95 dark:via-slate-950/50 to-transparent">
+        <div className="relative md:absolute md:inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-white/95 via-white/50 dark:from-slate-950/95 dark:via-slate-950/50 to-transparent">
           <div className="flex justify-between items-start md:items-end flex-col md:flex-row gap-8">
             <div className="flex-1 space-y-5">
               <div className="flex items-center gap-3 mb-2">
@@ -56,11 +56,11 @@ export default function ProjectCard({ project, index }) {
                 </div>
               )}
 
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
                 {project.title}
               </h2>
 
-              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-light">
+              <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-light">
                 {project.description}
               </p>
 
@@ -77,7 +77,7 @@ export default function ProjectCard({ project, index }) {
               </div>
             </div>
 
-            <div className="relative group/btn">
+            <div className="relative group/btn w-full md:w-auto">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#B0811C] to-yellow-600 rounded-full blur opacity-20 group-hover/btn:opacity-50 transition duration-500"></div>
               <div className="relative p-px overflow-hidden rounded-full">
                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#000000_0%,#B0811C_50%,#000000_100%)]" />
