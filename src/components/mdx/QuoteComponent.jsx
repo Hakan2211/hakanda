@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 const quoteVariants = {
   hidden: { opacity: 0, translateY: '40px' },
@@ -46,9 +47,10 @@ export default function QuoteComponent({ quote, author }) {
           setIsViewAnimationComplete(true);
         }
       }}
-      className="relative max-w-2xl my-16 px-10 py-12 bg-gradient-to-br from-gray-900/90 to-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden"
+      className="relative max-w-2xl my-16 px-10 py-12 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900/90 dark:to-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden"
       style={{ willChange: 'transform, opacity' }}
     >
+      {/* Border Div */}
       <motion.div
         className="absolute inset-0 rounded-3xl -z-10"
         variants={borderVariants}
@@ -64,18 +66,12 @@ export default function QuoteComponent({ quote, author }) {
           WebkitMaskComposite: 'xor',
         }}
       />
-      <div
-        className="absolute inset-0 rounded-3xl z-0"
-        style={{
-          background:
-            'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) 30%, rgba(0, 0, 0, 0.2))',
-          backdropFilter: 'blur(16px)',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
-        }}
-      />
+      {/* Glossy Inner Glass Layer */}
+      <div className="absolute inset-0 rounded-3xl z-0 bg-gradient-to-br from-black/5 via-transparent to-black/5 dark:from-white/10 dark:via-white/5 dark:to-black/20 backdrop-blur-lg border border-black/10 dark:border-white/15" />
 
+      {/* Quotation Mark */}
       <motion.span
-        className="absolute top-4 left-6 text-7xl text-white/20 select-none"
+        className="absolute top-4 left-6 text-7xl text-gray-300 dark:text-white/20 select-none"
         initial={{ opacity: 0, rotate: -10 }}
         animate={{ opacity: 1, rotate: 0 }}
         transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
@@ -84,13 +80,14 @@ export default function QuoteComponent({ quote, author }) {
         “
       </motion.span>
 
+      {/* Content */}
       <blockquote className="relative z-10">
-        <p className="font-sans text-2xl font-light italic text-gray-200 leading-snug tracking-tight text-balance">
+        <p className="font-sans text-2xl font-light italic text-gray-700 dark:text-gray-200 leading-snug tracking-tight text-balance">
           {quote}
         </p>
       </blockquote>
       <figcaption className="mt-6 text-right">
-        <cite className="block font-sans  text-white/80 text-base not-italic font-medium tracking-normal drop-shadow-sm">
+        <cite className="block font-sans text-gray-500 dark:text-white/80 text-base not-italic font-medium tracking-normal drop-shadow-sm">
           — {author}
         </cite>
       </figcaption>
