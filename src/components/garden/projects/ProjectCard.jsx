@@ -8,6 +8,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import BullbearzLogo from '@/app/garden/projects/bullbearz-logo';
 import MarketMagicBoxLogo from '@/app/garden/projects/marketmagicbox-logo';
+import MemdiaLogo from '@/app/garden/projects/memdia-logo';
 
 export default function ProjectCard({ project, index }) {
   return (
@@ -43,6 +44,10 @@ export default function ProjectCard({ project, index }) {
                       <BullbearzLogo className="w-full h-full p-1" />
                     ) : project.logo === 'marketmagicbox' ? (
                       <MarketMagicBoxLogo className="w-full h-full p-1" />
+                    ) : project.logo === 'memdia' ? (
+                      <div className="w-full h-full rounded-lg bg-gradient-to-br from-[#7e9ec9] to-[#5a7ba6] flex items-center justify-center">
+                        <MemdiaLogo className="w-3/5 h-3/5 text-white" />
+                      </div>
                     ) : (
                       <Image
                         src={project.logo}

@@ -13,6 +13,15 @@ export const currentProject = {
 // Completed/showcase projects (shown on projects page)
 export const projects = [
   {
+    title: 'Memdia',
+    description:
+      'An AI voice journal companion that listens, asks questions, and speaks with you to help you grow through daily reflection. Capture moments in 3-minute voice sessions, have 10-minute therapeutic conversations, and gain insights over time.',
+    tags: ['WebApp', 'AI', 'Speech-To-Text', 'Text-To-Speech'],
+    link: 'https://memdia.com',
+    year: '2026',
+    logo: 'memdia', // identifier for the component logo
+  },
+  {
     title: 'Market Magic Box',
     description:
       'An immersive, gamified trading course that makes learning feel like playing a high-end game. Instead of boring lectures, students interact with 3D particle physics simulations.',
