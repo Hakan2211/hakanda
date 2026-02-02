@@ -11,7 +11,7 @@ function QuickFacts() {
         <ul>
           <li className="flex items-center gap-2">
             <ArrowRight className="w-4 h-4" />
-            <span>Trading and Creating WebApps</span>
+            <span>US Equities Trader and Software Engineer</span>
           </li>
           <li className="flex gap-2">
             <ArrowRight className="w-4 h-4 shrink-0 translate-y-2" />
