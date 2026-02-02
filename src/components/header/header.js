@@ -33,15 +33,20 @@ const CurlyUnderline = ({ isActive }) => {
         stroke="currentColor"
         strokeWidth="4"
         strokeLinecap="round"
+        initial="initial"
         variants={{
           hover: {
             pathLength: 1,
             opacity: 1,
             transition: { duration: 0.4, ease: 'easeInOut' },
           },
-          initial: { pathLength: 0, opacity: 0 },
+          initial: { 
+            pathLength: 0, 
+            opacity: 0,
+            transition: { duration: 0.3, ease: 'easeInOut' },
+          },
         }}
-        animate={isActive ? 'hover' : undefined}
+        animate={isActive ? 'hover' : 'initial'}
       />
     </svg>
   );
@@ -58,9 +63,9 @@ function Header({ title, className, initialTheme }) {
   const [isPending, startTransition] = useTransition();
   const [navigatingTo, setNavigatingTo] = useState(null);
 
-  // Debugging active state
+  // Reset navigatingTo when pathname changes to prevent stale active states
   useEffect(() => {
-    // console.log('Current pathname:', pathname);
+    setNavigatingTo(null);
   }, [pathname]);
 
   const handleLinkClick = (e, href) => {

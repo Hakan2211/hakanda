@@ -12,7 +12,7 @@ export default function NoteCard({ note, children }) {
     <motion.div
       layout
       onClick={() => setIsExpanded(!isExpanded)}
-      className="group relative z-10 grid grid-cols-[1fr_3fr] gap-6 rounded-2xl border border-border/50 bg-background/50 p-6 backdrop-blur-sm transition-colors hover:border-[#f5e3a3]/50 hover:bg-[#a58512]/5 cursor-pointer"
+      className="group relative z-10 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 md:gap-6 rounded-2xl border border-border/50 bg-background/50 p-6 backdrop-blur-sm transition-colors hover:border-[#f5e3a3]/50 hover:bg-[#a58512]/5 cursor-pointer"
     >
       <div className="space-y-4">
         <time className="block text-sm font-medium text-muted-foreground">

@@ -9,6 +9,10 @@ function QuickFacts() {
       </div>
       <div>
         <ul>
+          <li className="flex items-center gap-2">
+            <ArrowRight className="w-4 h-4" />
+            <span>@janestreet</span>
+          </li>
           <li className="flex gap-2">
             <ArrowRight className="w-4 h-4 shrink-0 translate-y-2" />
             <span className="text-balance">

@@ -29,8 +29,8 @@ export default function Library() {
 
           <motion.div
             layoutId={`card-${currentlyReading.id}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.4, type: 'spring' }}
             className="relative group cursor-pointer rounded-2xl overflow-hidden bg-gradient-to-br from-amber-500/10 via-background to-background border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.1)] hover:shadow-[0_0_50px_rgba(245,158,11,0.2)] transition-shadow duration-500"
             onClick={() => setSelectedId(currentlyReading.id)}
