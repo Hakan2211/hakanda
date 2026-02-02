@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import BullbearzLogo from '@/app/garden/projects/bullbearz-logo';
 import MarketMagicBoxLogo from '@/app/garden/projects/marketmagicbox-logo';
 import MemdiaLogo from '@/app/garden/projects/memdia-logo';
+import CinevidoLogo from '@/app/garden/projects/cinevido-logo';
 
 export default function ProjectCard({ project, index }) {
   return (
@@ -19,14 +20,14 @@ export default function ProjectCard({ project, index }) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="group mb-12 md:mb-24 last:mb-0 w-full flex items-center justify-center px-4"
     >
-      <div className="relative w-full max-w-5xl aspect-auto md:aspect-[16/9] rounded-3xl overflow-hidden bg-white/50 dark:bg-slate-800/40 border border-slate-200 dark:border-white/5 shadow-2xl backdrop-blur-sm">
+      <div className="relative w-full max-w-5xl min-h-[400px] md:min-h-[450px] rounded-3xl overflow-hidden bg-white/50 dark:bg-slate-800/40 border border-slate-200 dark:border-white/5 shadow-2xl backdrop-blur-sm">
         {/* Abstract/Placeholder Backend Graphic */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900/50 dark:to-slate-950 group-hover:scale-105 transition-transform duration-700 ease-out">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#a58512]/20 via-transparent to-transparent" />
         </div>
 
         {/* Content Overlay */}
-        <div className="relative md:absolute md:inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-white/95 via-white/50 dark:from-slate-950/95 dark:via-slate-950/50 to-transparent">
+        <div className="relative flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-white/95 via-white/50 dark:from-slate-950/95 dark:via-slate-950/50 to-transparent">
           <div className="flex justify-between items-start md:items-end flex-col md:flex-row gap-8">
             <div className="flex-1 space-y-5">
               <div className="flex items-center gap-3 mb-2">
@@ -40,20 +41,22 @@ export default function ProjectCard({ project, index }) {
                 <div className="w-12 h-12 mb-4 relative">
                   <div className="absolute inset-0 bg-black/5 dark:bg-black/5 rounded-full blur-xl" />
                   <div className="relative w-full h-full bg-white/50 dark:bg-white/10 border border-slate-200 dark:border-white/10 rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 font-bold text-xs backdrop-blur-md overflow-hidden">
-                    {project.logo === 'bullbearz' ? (
-                      <BullbearzLogo className="w-full h-full p-1" />
-                    ) : project.logo === 'marketmagicbox' ? (
-                      <MarketMagicBoxLogo className="w-full h-full p-1" />
-                    ) : project.logo === 'memdia' ? (
-                      <div className="w-full h-full rounded-lg bg-gradient-to-br from-[#7e9ec9] to-[#5a7ba6] flex items-center justify-center">
-                        <MemdiaLogo className="w-3/5 h-3/5 text-white" />
-                      </div>
-                    ) : (
+{project.logo === 'cinevido' ? (
+                                      <CinevidoLogo className="w-full h-full" size={48} animate={false} />
+                                    ) : project.logo === 'bullbearz' ? (
+                                      <BullbearzLogo className="w-full h-full p-1" />
+                                    ) : project.logo === 'marketmagicbox' ? (
+                                      <MarketMagicBoxLogo className="w-full h-full p-1" />
+                                    ) : project.logo === 'memdia' ? (
+                                      <div className="w-full h-full rounded-lg bg-gradient-to-br from-[#7e9ec9] to-[#5a7ba6] flex items-center justify-center">
+                                        <MemdiaLogo className="w-3/5 h-3/5 text-white" />
+                                      </div>
+                                    ) : (
                       <Image
                         src={project.logo}
                         alt={`${project.title} logo`}
                         width={48}
-                        height={48}
+                      height={48}
                         className="w-full h-full object-cover"
                       />
                     )}

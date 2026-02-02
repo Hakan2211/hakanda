@@ -13,6 +13,15 @@ export const currentProject = {
 // Completed/showcase projects (shown on projects page)
 export const projects = [
   {
+    title: 'Cinevido',
+    description:
+      'A bring-your-own-key AI platform for generating images, videos, and 3D models. Pay only for what you use with your own API keys.',
+    tags: ['WebApp', 'AI', 'Image Generation', 'Video Generation', '3D Models', 'BYOK'],
+    link: 'https://cinevido.com',
+    year: '2026',
+    logo: 'cinevido',
+  },
+  {
     title: 'Memdia',
     description:
       'An AI voice journal companion that listens, asks questions, and speaks with you to help you grow through daily reflection. Capture moments in 3-minute voice sessions, have 10-minute therapeutic conversations, and gain insights over time.',
