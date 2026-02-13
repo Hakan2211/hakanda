@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { BookOpen, Camera, PenTool, Layers, Sprout } from 'lucide-react';
+import { BookOpen, Camera, Music, PenTool, Layers, Sprout } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useTransition } from 'react';
 import { Loader } from '@/components/ui/loader';
@@ -11,6 +11,7 @@ const items = [
   { title: 'Garden', href: '/garden', icon: Sprout },
   { title: 'Notes', href: '/garden/notes', icon: PenTool },
   { title: 'Projects', href: '/garden/projects', icon: Layers },
+  { title: 'Songs', href: '/garden/songs', icon: Music },
   { title: 'Gallery', href: '/garden/gallery', icon: Camera },
   { title: 'Library', href: '/garden/library', icon: BookOpen },
 ];

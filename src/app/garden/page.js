@@ -1,11 +1,13 @@
 import { books } from '@/data/books';
 import { currentProject } from './projects/projects-data';
+import { songs } from './songs/songs-data';
 import { galleryItems } from '@/data/gallery';
 import { getLatestNote } from '@/helpers/getNotes';
 import DashboardHero from '@/components/garden/dashboard/DashboardHero';
 import CurrentlyReading from '@/components/garden/dashboard/CurrentlyReading';
 import LatestNote from '@/components/garden/dashboard/LatestNote';
 import CurrentProject from '@/components/garden/dashboard/CurrentProject';
+import LatestSongs from '@/components/garden/dashboard/LatestSongs';
 import LatestGallery from '@/components/garden/dashboard/LatestGallery';
 
 export const metadata = {
@@ -31,6 +33,8 @@ export default function GardenPage() {
         {latestNote && <LatestNote note={latestNote} />} 
         {/* Current Project */}
         {currentProject && <CurrentProject project={currentProject} />}
+        {/* Latest Songs */}
+        {songs && songs.length > 0 && <LatestSongs songs={songs} />}
         {/* Latest Gallery */}
         {galleryItems && <LatestGallery items={galleryItems} />}
         {/* Currently Reading Book */}
