@@ -27,7 +27,7 @@ export default async function NotesPage() {
             <div className="absolute left-[27px] top-8 h-4 w-4 -translate-x-1/2 rounded-full border-2 border-[#a58512] bg-background shadow-[0_0_10px_rgba(165,133,18,0.5)] z-20 transition-all duration-300 group-hover:scale-125 group-hover:border-[#f5e3a3]" />
 
             <NoteCard note={note}>
-              <MDXRemote source={note.content} components={COMPONENT_MAP} />
+              <MDXRemote source={note.content} components={COMPONENT_MAP} options={{ blockJS: false }} />
             </NoteCard>
           </div>
         ))}

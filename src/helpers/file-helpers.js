@@ -8,7 +8,6 @@ import { visit } from 'unist-util-visit';
 import { toString } from 'mdast-util-to-string';
 import remarkSlug from 'remark-slug';
 import { slugify } from '@/lib/utils';
-import { serialize } from 'next-mdx-remote/serialize';
 
 export async function getBlogPostList() {
   const fileNames = await readDirectory('/content');
@@ -61,13 +60,7 @@ export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
 
   const headings = await extractHeadings(content);
 
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkSlug],
-    },
-  });
-
-  return { frontmatter, content, headings, mdxSource };
+  return { frontmatter, content, headings };
 });
 
 async function extractHeadings(mdxContent) {

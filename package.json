@@ -39,7 +39,7 @@
     "lucide-react": "^0.323.0",
     "mdast-util-to-string": "^4.0.0",
     "next": "14.0.4",
-    "next-mdx-remote": "^4.4.1",
+    "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",

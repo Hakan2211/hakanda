@@ -113,7 +113,7 @@ async function BlogPost({ params }) {
               </div>
             </div>
             <div className="pb-6 pt-12 flex flex-col gap-4 text-[var(--text-color-primary-800)] leading-[1.9] tracking-[0.3px]">
-              <MDXRemote source={content} components={COMPONENT_MAP} />
+              <MDXRemote source={content} components={COMPONENT_MAP} options={{ blockJS: false }} />
             </div>
           </div>
         </div>
