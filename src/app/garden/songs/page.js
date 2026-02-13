@@ -14,7 +14,7 @@ export default function SongsPage() {
           Songs
         </h1>
         <p className="text-muted-foreground text-lg">
-          AI-generated music created with ElevenLabs and MiniMax. Hit play and enjoy.
+          Music created with Songlar.com. Hit play and enjoy.
         </p>
       </header>
 
