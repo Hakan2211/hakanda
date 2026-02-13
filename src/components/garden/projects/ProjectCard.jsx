@@ -10,6 +10,7 @@ import BullbearzLogo from '@/app/garden/projects/bullbearz-logo';
 import MarketMagicBoxLogo from '@/app/garden/projects/marketmagicbox-logo';
 import MemdiaLogo from '@/app/garden/projects/memdia-logo';
 import CinevidoLogo from '@/app/garden/projects/cinevido-logo';
+import SonglarLogo from '@/app/garden/projects/songlar-logo';
 
 export default function ProjectCard({ project, index }) {
   return (
@@ -41,7 +42,11 @@ export default function ProjectCard({ project, index }) {
                 <div className="w-12 h-12 mb-4 relative">
                   <div className="absolute inset-0 bg-black/5 dark:bg-black/5 rounded-full blur-xl" />
                   <div className="relative w-full h-full bg-white/50 dark:bg-white/10 border border-slate-200 dark:border-white/10 rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 font-bold text-xs backdrop-blur-md overflow-hidden">
-{project.logo === 'cinevido' ? (
+{project.logo === 'songlar' ? (
+                                      <div className="w-full h-full rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
+                                        <SonglarLogo className="w-3/5 h-3/5 text-primary-foreground" />
+                                      </div>
+                                    ) : project.logo === 'cinevido' ? (
                                       <CinevidoLogo className="w-full h-full" size={48} animate={false} />
                                     ) : project.logo === 'bullbearz' ? (
                                       <BullbearzLogo className="w-full h-full p-1" />

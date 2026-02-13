@@ -13,6 +13,15 @@ export const currentProject = {
 // Completed/showcase projects (shown on projects page)
 export const projects = [
   {
+    title: 'Songlar',
+    description:
+      'Create music with AI using ElevenLabs and MiniMax models. Generate songs, beats, and instrumentals in seconds.',
+    tags: ['AI', 'Music', 'Voice Cloning', 'Music Generation'],
+    link: 'https://songlar.com',
+    year: '2026',
+    logo: 'songlar',
+  },
+  {
     title: 'Cinevido',
     description:
       'A bring-your-own-key AI platform for generating images, videos, and 3D models. Pay only for what you use with your own API keys.',
